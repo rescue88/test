@@ -39,7 +39,8 @@ ul {
   list-style: none; }
 
 label {
-  display: block; }
+  display: block;
+  cursor: pointer; }
 
 svg {
   width: 1.5rem;
@@ -93,6 +94,7 @@ button {
 
 .subheaders {
   font-size: 1.6rem;
+  font-weight: 700;
   color: #171E2B; }
 
 .plain-text {
@@ -102,6 +104,22 @@ button {
 .plain-text-2 {
   font-size: 1.4rem;
   color: #9CAABB; }
+
+.underlined-text {
+  color: #325899;
+  font-size: 1.6rem;
+  text-decoration: underline; }
+
+.underlined-text-bold {
+  color: #325899;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: underline; }
+
+.filter-title {
+  margin-bottom: 7px;
+  color: #7B8FA7;
+  font-size: 1.6rem; }
 
 .center-childs {
   display: flex;
@@ -116,9 +134,6 @@ button {
 .align-center {
   display: flex;
   align-items: center; }
-
-.needed-padding {
-  margin: 7rem 0; }
 
 .blue-button {
   background: #202b63; }
@@ -138,6 +153,71 @@ button {
   color: #222933; }
   .logo img {
     margin-right: 7px; }
+
+.select {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: #FFF;
+  color: #171E2B;
+  font-size: 1.4rem;
+  font-weight: 700; }
+
+.new-select {
+  position: relative;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none; }
+
+.new-select__list {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  background: #fff;
+  user-select: none; }
+
+.new-select__list.on {
+  display: block; }
+
+.new-select__item span {
+  display: block;
+  padding: 10px 15px; }
+
+.new-select__item span:hover {
+  background: rgba(203, 37, 36, 0.8); }
+
+.new-select:after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  background: url("path-to-image") no-repeat right center/cover;
+  opacity: 0.6;
+  -webkit-transition: all .27s ease-in-out;
+  -o-transition: all .27s ease-in-out;
+  transition: all .27s ease-in-out;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+.new-select.on:after {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.custom-select--show .custom-select__current::after {
+  transform: rotate(-180deg);
+  top: 40%; }
 
 .main-container_hat, .main-container_footer {
   padding: 2rem 0; }
@@ -363,6 +443,62 @@ button {
       color: #9CAABB;
       font-size: 1.4rem; }
 
+.main-container_filter > div {
+  margin: 2rem 0; }
+
+.main-container_filter_form > div {
+  margin: 2rem 0; }
+
+.main-container_filter_form_invest-city_invest, .main-container_filter_form_profit-payback_profit {
+  flex-basis: 60%; }
+
+.main-container_filter_form_invest-city_city, .main-container_filter_form_profit-payback_payback {
+  flex-basis: 30%; }
+
+.main-container_filter_form_profit-payback_payback_radio_item:first-child:nth-last-child(4), .main-container_filter_form_profit-payback_payback_radio_item:first-child:nth-last-child(4) ~ .main-container_filter_form_profit-payback_payback_radio_item {
+  width: 25%; }
+
+.main-container_filter_form_branches_checkbox {
+  display: flex;
+  flex-wrap: wrap; }
+  .main-container_filter_form_branches_checkbox_item {
+    width: 33%;
+    padding: 5px 0;
+    font-size: 1.4rem;
+    color: #7B8FA7;
+    display: flex; }
+    .main-container_filter_form_branches_checkbox_item label {
+      padding: 0 7px; }
+    .main-container_filter_form_branches_checkbox_item input[type="checkbox"] {
+      width: 2rem;
+      height: 2rem; }
+
+.main-container_filter_form_results_show-offers_clear-filter {
+  margin-right: 15px; }
+
+.main-container_filter .filter-radio {
+  display: flex; }
+  .main-container_filter .filter-radio :first-child label {
+    border-radius: 5px 0 0 5px; }
+  .main-container_filter .filter-radio :last-child label {
+    border-radius: 0 5px 5px 0; }
+  .main-container_filter .filter-radio_item {
+    width: calc(100%/6);
+    display: inline-block; }
+    .main-container_filter .filter-radio_item input[type="radio"] {
+      display: none; }
+    .main-container_filter .filter-radio_item label {
+      width: 100%;
+      padding: 1.5rem;
+      background: #F1F1F1;
+      text-align: center;
+      color: #171E2B;
+      font-size: 1.2rem;
+      user-select: none; }
+    .main-container_filter .filter-radio_item input[type="radio"]:checked + label {
+      background: #cb2524;
+      color: #FFF; }
+
 .main-container_help_buyer-seller {
   display: flex;
   justify-content: space-between;
@@ -529,58 +665,31 @@ button {
       color: #9CAABB;
       font-size: 1.2rem; }
 
-.main-container_invest_types {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .main-container_invest_types_header {
-    font-size: 2.4rem;
+.main-container_invest_types_buttons {
+  display: flex; }
+  .main-container_invest_types_buttons button {
+    padding: 0 7rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    text-transform: uppercase; }
-  .main-container_invest_types_buttons {
-    display: flex; }
-    .main-container_invest_types_buttons button {
-      padding: 0 7rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #7B8FA7; }
-    .main-container_invest_types_buttons .active-button {
-      background: #F1F1F1;
-      color: #171E2B;
-      border-radius: .4rem .4rem 0 0; }
+    color: #7B8FA7; }
+  .main-container_invest_types_buttons .active-button {
+    background: #F1F1F1;
+    color: #171E2B;
+    border-radius: .4rem .4rem 0 0; }
 
 .main-container_invest_container {
   width: 100%;
-  background: #F1F1F1;
-  padding: 7rem 0; }
-  .main-container_invest_container_form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    .main-container_invest_container_form label {
-      color: #171E2B;
-      font-size: 1.6rem;
-      margin: 1rem 0; }
-    .main-container_invest_container_form select {
-      width: 25rem;
-      height: 5rem;
-      padding: 1rem 2rem;
-      color: #171E2B;
-      font-size: 1.6rem;
-      font-weight: bold;
-      border: none;
-      border-radius: .4rem; }
-      .main-container_invest_container_form select option:hover {
-        background: #cb2524; }
-      .main-container_invest_container_form select:hover {
-        border: 1px solid #7B8FA7; }
-      .main-container_invest_container_form select:focus {
-        border: none;
-        outline: none; }
-    .main-container_invest_container_form_submit {
-      align-self: flex-end; }
-      .main-container_invest_container_form_submit button {
-        width: 25rem; }
+  padding: 4rem;
+  background: #F1F1F1; }
+  .main-container_invest_container_form > div {
+    flex-basis: 20%; }
+  .main-container_invest_container_form_profit_title, .main-container_invest_container_form_price-from_title, .main-container_invest_container_form_price-for_title {
+    font-weight: 400;
+    margin-bottom: 7px; }
+  .main-container_invest_container_form_submit {
+    align-self: flex-end; }
+    .main-container_invest_container_form_submit button {
+      width: 25rem; }
 
 .main-container_news_header {
   text-align: center;

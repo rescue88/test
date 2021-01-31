@@ -378,8 +378,8 @@
             </section>
 
             <section class="main-container_invest">
-                <div class="main-container_invest_types centered">
-                    <div class="main-container_invest_types_header">
+                <div class="main-container_invest_types space-between centered">
+                    <div class="main-container_invest_types_header headers">
                         Инвестиции в бизнес для каждого
                     </div>
                     <div class="main-container_invest_types_buttons">
@@ -389,33 +389,54 @@
                     </div>
                 </div>
                 <div class="main-container_invest_container">
-                    <form class="main-container_invest_container_form centered" action="">
+                    <form class="main-container_invest_container_form centered space-between" action="">
                         <div class="main-container_invest_container_form_profit">
-                            <label for="profit">Чистая прибыль от</label>
-                            <select name="profit" id="profit">
-                                <option value="100000">100 000 ₽</option>
-                                <option value="300000">300 000 ₽</option>
-                                <option value="500000">500 000 ₽</option>
-                                <option value="1000000">1 000 000 ₽</option>
-                            </select>
+                            <div class="main-container_invest_container_form_profit_title subheaders">
+                                Чистая прибыль от
+                            </div>
+                            <div class="main-container_invest_container_form_profit_select">
+                                <label for="profit">
+                                    <select class="select" id="profit" name="profit">
+                                        <option disabled>Выбрать</option>
+                                        <option value="100000">100 000 ₽</option>
+                                        <option value="300000">300 000 ₽</option>
+                                        <option value="500000">500 000 ₽</option>
+                                        <option value="1000000">1 000 000 ₽</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="main-container_invest_container_form_price-from">
-                            <label for="price_from">Цена от</label>
-                            <select name="price_from" id="price_from">
-                                <option value="100000">100 000 ₽</option>
-                                <option value="300000">300 000 ₽</option>
-                                <option value="500000">500 000 ₽</option>
-                                <option value="1000000">1 000 000 ₽</option>
-                            </select>
+                            <div class="main-container_invest_container_form_price-from_title subheaders">
+                                Цена от
+                            </div>
+                            <div class="main-container_invest_container_form_price-from_select">
+                                <label for="price_from">
+                                    <select class="select" id="price_from" name="price_from">
+                                        <option disabled>Выбрать</option>
+                                        <option value="100000">100 000 ₽</option>
+                                        <option value="300000">300 000 ₽</option>
+                                        <option value="500000">500 000 ₽</option>
+                                        <option value="1000000">1 000 000 ₽</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="main-container_invest_container_form_price-for">
-                            <label for="price_for">Цена от</label>
-                            <select name="price_for" id="price_for">
-                                <option value="100000">100 000 ₽</option>
-                                <option value="300000">300 000 ₽</option>
-                                <option value="500000">500 000 ₽</option>
-                                <option value="1000000">1 000 000 ₽</option>
-                            </select>
+                            <div class="main-container_invest_container_form_price-for_title subheaders">
+                                Цена до
+                            </div>
+                            <div class="main-container_invest_container_form_price-for_select">
+                                <label for="price_for">
+                                    <select class="select" id="price_for" name="price_for">
+                                        <option disabled>Выбрать</option>
+                                        <option value="100000">100 000 ₽</option>
+                                        <option value="300000">300 000 ₽</option>
+                                        <option value="500000">500 000 ₽</option>
+                                        <option value="1000000">1 000 000 ₽</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="main-container_invest_container_form_submit">
                             <button class="red-button" type="submit">Показать результаты</button>
@@ -506,6 +527,236 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="main-container_filter centered">
+
+                <div class="main-container_filter_header headers">
+                    Фильтр Бизнесов
+                </div>
+                <form class="main-container_filter_form" action="">
+                    <div class="main-container_filter_form_invest-city space-between">
+                        <div class="main-container_filter_form_invest-city_invest">
+                            <div class="main-container_filter_form_invest-city_invest_title filter-title">
+                                Вложения, до
+                            </div>
+                            <div class="main-container_filter_form_invest-city_invest_radio filter-radio">
+                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
+                                    <input id="invest-min" type="radio" name="invest" checked>
+                                    <label for="invest-min">50 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
+                                    <input id="invest-100k" type="radio" name="invest">
+                                    <label for="invest-100k">100 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
+                                    <input id="invest-300k" type="radio" name="invest">
+                                    <label for="invest-300k">300 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
+                                    <input id="invest-500k" type="radio" name="invest">
+                                    <label for="invest-500k">500 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
+                                    <input id="invest-1kk" type="radio" name="invest">
+                                    <label for="invest-1kk">1 000 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
+                                    <input id="invest-max" type="radio" name="invest">
+                                    <label for="invest-max">>1 000 000 ₽</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-container_filter_form_invest-city_city">
+                            <div class="main-container_filter_form_invest-city_city_title filter-title">
+                                Город
+                            </div>
+                            <div class="main-container_filter_form_invest-city_city_title_select">
+                                <label for="city">
+                                    <select class="select" id="city" name="city">
+                                        <option disabled>Выбрать</option>
+                                        <option value="Moscow">Москва</option>
+                                        <option value="Ekaterinburg">Екатеринбург</option>
+                                        <option value="Rostov">Ростов</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container_filter_form_profit-payback space-between">
+                        <div class="main-container_filter_form_profit-payback_profit">
+                            <div class="main-container_filter_form_profit-payback_profit_title filter-title">
+                                Прибыль, до
+                            </div>
+                            <div class="main-container_filter_form_profit-payback_profit_radio filter-radio">
+                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
+                                    <input id="profit-min" type="radio" name="profit" checked>
+                                    <label for="profit-min">100 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
+                                    <input id="profit-200k" type="radio" name="profit">
+                                    <label for="profit-200k">200 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
+                                    <input id="profit-500k" type="radio" name="profit">
+                                    <label for="profit-500k">500 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
+                                    <input id="profit-1kk" type="radio" name="profit">
+                                    <label for="profit-1kk">1 000 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
+                                    <input id="profit-2kk" type="radio" name="profit">
+                                    <label for="profit-2kk">2 000 000 ₽</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
+                                    <input id="profit-max" type="radio" name="profit">
+                                    <label for="profit-max">3 000 000 ₽</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-container_filter_form_profit-payback_payback">
+                            <div class="main-container_filter_form_profit-payback_payback_title filter-title">
+                                Окупаемость, мес
+                            </div>
+                            <div class="main-container_filter_form_profit-payback_payback_radio filter-radio">
+                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
+                                    <input id="payback-min" type="radio" name="payback" checked>
+                                    <label for="payback-min">3</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
+                                    <input id="payback-6" type="radio" name="payback">
+                                    <label for="payback-6">6</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
+                                    <input id="payback-12" type="radio" name="payback">
+                                    <label for="payback-12">12</label>
+                                </div>
+                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
+                                    <input id="payback-max" type="radio" name="payback">
+                                    <label for="payback-max">>12</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container_filter_form_branches">
+                        <div class="main-container_filter_form_branches_title filter-title">
+                            Отрасли бизнеса
+                        </div>
+                        <div class="main-container_filter_form_branches_checkbox">
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="autobusiness" type="checkbox" name="branches">
+                                <label class="underlined-text" for="autobusiness">Автобизнес</label>(36)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="non-food-store" type="checkbox" name="branches">
+                                <label class="underlined-text" for="non-food-store">Непродовольственные магазины</label>(42)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="services" type="checkbox" name="branches">
+                                <label class="underlined-text" for="services">Сервис и услуги</label>(57)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="hotel" type="checkbox" name="branches">
+                                <label class="underlined-text" for="hotel">Гостиницы</label>(46)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="education" type="checkbox" name="branches">
+                                <label class="underlined-text" for="education">Образование</label>(35)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="buildings" type="checkbox" name="branches">
+                                <label class="underlined-text" for="buildings">Строительство</label>(4)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="medecine" type="checkbox" name="branches">
+                                <label class="underlined-text" for="medecine">Медицина</label>(62)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="franchises" type="checkbox" name="branches">
+                                <label class="underlined-text" for="franchises">Продажа франшиз</label>(0)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="trade" type="checkbox" name="branches">
+                                <label class="underlined-text" for="trade">Торговля</label>(24)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="inet-proj" type="checkbox" name="branches">
+                                <label class="underlined-text" for="inet-proj">Интернет-проекты</label>(49)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="food-store" type="checkbox" name="branches">
+                                <label class="underlined-text" for="food-store">Продовольственные магазины</label>(18)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="transport" type="checkbox" name="branches">
+                                <label class="underlined-text" for="transport">Транспорт и услуги</label>(15)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="rent" type="checkbox" name="branches">
+                                <label class="underlined-text" for="rent">Арендный бизнес</label>(40)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="production" type="checkbox" name="branches">
+                                <label class="underlined-text" for="production">Производство</label>(45)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="tourism" type="checkbox" name="branches">
+                                <label class="underlined-text" for="tourism">Туризм</label>(3)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="business-rent" type="checkbox" name="branches">
+                                <label class="underlined-text" for="business-rent">Бизнес в аренду</label>(0)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="entertainment" type="checkbox" name="branches">
+                                <label class="underlined-text" for="entertainment">Развлечения</label>(32)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="fitness" type="checkbox" name="branches">
+                                <label class="underlined-text" for="fitness">Фитнес</label>(16)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="business-rent-special" type="checkbox" name="branches">
+                                <label class="underlined-text" for="business-rent-special">Бизнес с арендой от ДИГМ/КИГИ</label>(12)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="restaurants" type="checkbox" name="branches">
+                                <label class="underlined-text" for="restaurants">Ресторанный бизнес</label>(87)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="flowers" type="checkbox" name="branches">
+                                <label class="underlined-text" for="flowers">Цветочный бизнес</label>(8)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="beauty" type="checkbox" name="branches">
+                                <label class="underlined-text" for="beauty">Индустрия красоты</label>(88)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="agriculture" type="checkbox" name="branches">
+                                <label class="underlined-text" for="agriculture">Сельское хозяйство</label>(0)
+                            </div>
+                            <div class="main-container_filter_form_branches_checkbox_item align-center">
+                                <input id="property" type="checkbox" name="branches">
+                                <label class="underlined-text" for="property">Недвижемость в собственности</label>(57)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container_filter_form_results space-between">
+                        <div class="main-container_filter_form_results_matches plain-text">
+                            <span class="subheaders">91 предложение </span>подходит под ваши параметры 
+                        </div>
+                        <div class="main-container_filter_form_results_show-offers align-center">
+                            <div class="main-container_filter_form_results_show-offers_clear-filter">
+                                <a class="underlined-text-bold" href="#">Очистить фильтр</a>
+                            </div>
+                            <div class="main-container_filter_form_results_show-offers_submit">
+                                <button class="red-button" type="submit">Показать предложения</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
             </section>
 
             <section class="main-container_help">
@@ -743,8 +994,8 @@
             </section>
 
             <section class="main-container_invest">
-                <div class="main-container_invest_types centered">
-                    <div class="main-container_invest_types_header">
+                <div class="main-container_invest_types space-between centered">
+                    <div class="main-container_invest_types_header headers">
                         Инвестиции в бизнес для каждого
                     </div>
                     <div class="main-container_invest_types_buttons">
@@ -754,33 +1005,54 @@
                     </div>
                 </div>
                 <div class="main-container_invest_container">
-                    <form class="main-container_invest_container_form centered" action="">
+                    <form class="main-container_invest_container_form centered space-between" action="">
                         <div class="main-container_invest_container_form_profit">
-                            <label for="profit">Чистая прибыль от</label>
-                            <select name="profit" id="profit">
-                                <option value="100000">100 000 ₽</option>
-                                <option value="300000">300 000 ₽</option>
-                                <option value="500000">500 000 ₽</option>
-                                <option value="1000000">1 000 000 ₽</option>
-                            </select>
+                            <div class="main-container_invest_container_form_profit_title subheaders">
+                                Чистая прибыль от
+                            </div>
+                            <div class="main-container_invest_container_form_profit_select">
+                                <label for="profit">
+                                    <select class="select" id="profit" name="profit">
+                                        <option disabled>Выбрать</option>
+                                        <option value="100000">100 000 ₽</option>
+                                        <option value="300000">300 000 ₽</option>
+                                        <option value="500000">500 000 ₽</option>
+                                        <option value="1000000">1 000 000 ₽</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="main-container_invest_container_form_price-from">
-                            <label for="price_from">Цена от</label>
-                            <select name="price_from" id="price_from">
-                                <option value="100000">100 000 ₽</option>
-                                <option value="300000">300 000 ₽</option>
-                                <option value="500000">500 000 ₽</option>
-                                <option value="1000000">1 000 000 ₽</option>
-                            </select>
+                            <div class="main-container_invest_container_form_price-from_title subheaders">
+                                Цена от
+                            </div>
+                            <div class="main-container_invest_container_form_price-from_select">
+                                <label for="price_from">
+                                    <select class="select" id="price_from" name="price_from">
+                                        <option disabled>Выбрать</option>
+                                        <option value="100000">100 000 ₽</option>
+                                        <option value="300000">300 000 ₽</option>
+                                        <option value="500000">500 000 ₽</option>
+                                        <option value="1000000">1 000 000 ₽</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="main-container_invest_container_form_price-for">
-                            <label for="price_for">Цена от</label>
-                            <select name="price_for" id="price_for">
-                                <option value="100000">100 000 ₽</option>
-                                <option value="300000">300 000 ₽</option>
-                                <option value="500000">500 000 ₽</option>
-                                <option value="1000000">1 000 000 ₽</option>
-                            </select>
+                            <div class="main-container_invest_container_form_price-for_title subheaders">
+                                Цена до
+                            </div>
+                            <div class="main-container_invest_container_form_price-for_select">
+                                <label for="price_for">
+                                    <select class="select" id="price_for" name="price_for">
+                                        <option disabled>Выбрать</option>
+                                        <option value="100000">100 000 ₽</option>
+                                        <option value="300000">300 000 ₽</option>
+                                        <option value="500000">500 000 ₽</option>
+                                        <option value="1000000">1 000 000 ₽</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="main-container_invest_container_form_submit">
                             <button class="red-button" type="submit">Показать результаты</button>
@@ -1092,10 +1364,12 @@
 
         </main>
 
-        <script src="./scripts/jQuery.js"></script>
-        <script src="./scripts/nouislider.min.js"></script>
+        <script src="./scripts/libs/slick.min.js"></script>
+        <script src="./scripts/libs/jQuery.js"></script>
+        <script src="./scripts/libs/nouislider.min.js"></script>
         <script src="./scripts/step-slider.js"></script>
         <script src="./scripts/main.js"></script>
+        <script src="./scripts/select.js"></script>
         
     </body>
 </html>

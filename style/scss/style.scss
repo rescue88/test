@@ -20,6 +20,7 @@
 // Colors
 $projectColor-blue: rgb(32,43,99);
 $projectColor-red: rgb(203,37,36);
+$projectColor-red-blur: rgba(203,37,36,.8);
 $defaultBackground-color: #F1F1F1;
 
 $headers-color: #1D1E20;
@@ -64,6 +65,7 @@ ul {
 // let the inputs being under/upper label
 label {
     display: block;
+    cursor: pointer;
 }
 // standart svg icon settings
 svg {
@@ -136,6 +138,7 @@ button {
 // subheaders settings
 .subheaders {
     font-size: 1.6rem;
+    font-weight: 700;
     color: $subheaders-color;
 }
 // plain text
@@ -147,6 +150,23 @@ button {
 .plain-text-2 {
     font-size: 1.4rem;
     color: $plainText-color-2;
+}
+.underlined-text {
+    color: $helpButtons-color;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+.underlined-text-bold {
+    color: $helpButtons-color;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
+// filter titles above the buttons
+.filter-title {
+    margin-bottom: 7px;
+    color: $plainText-color;
+    font-size: 1.6rem;
 }
 // centralize childs
 .center-childs {
@@ -164,10 +184,6 @@ button {
 .align-center {
     display: flex;
     align-items: center;
-}
-//typical top and bottom padding for some block
-.needed-padding {
-    margin: 7rem 0;
 }
 // blue buttons
 .blue-button {
@@ -194,6 +210,88 @@ button {
     color: #222933;
     img {
         margin-right: 7px;
+    }
+}
+// select styles
+.select {
+    display: block;
+    position: relative;
+    width: 100%;
+    background: #FFF;
+    color: $subheaders-color;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.new-select {
+    position: relative;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.new-select__list {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    background: #fff;
+    user-select: none;
+}
+
+.new-select__list.on {
+    display: block;
+}
+
+.new-select__item span {
+    display: block;
+    padding: 10px 15px;
+}
+
+.new-select__item span:hover {
+    background: $projectColor-red-blur;
+}
+
+.new-select:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    background: url('path-to-image') no-repeat right center / cover;
+    opacity: 0.6;
+
+    -webkit-transition: all .27s ease-in-out;
+        -o-transition: all .27s ease-in-out;
+            transition: all .27s ease-in-out;
+
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+
+.new-select.on:after {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.custom-select {
+    &--show {
+        .custom-select__current {
+            &::after {
+                transform: rotate(-180deg);
+                top: 40%;
+            }
+        }
     }
 }
 
@@ -489,10 +587,6 @@ button {
     }
 }
 
-// .main-container_investments {
-//     background: red;
-// }
-
 .main-container_tips {
     &_header {
         margin-bottom: 7rem;
@@ -534,6 +628,104 @@ button {
                     color: #9CAABB;
                     font-size: 1.4rem;
                 }
+            }
+        }
+    }
+}
+
+.main-container_filter {
+    & > div {
+        margin: 2rem 0;
+    }
+
+    &_form {
+        // blocks with radiobuttons
+        & > div {
+            margin: 2rem 0;
+        }
+        &_invest-city_invest, &_profit-payback_profit {
+            flex-basis: 60%;
+        }
+
+        &_invest-city_city, &_profit-payback_payback {
+            flex-basis: 30%;
+        }
+
+        &_profit-payback {
+            &_payback {
+                &_radio {
+                    &_item:first-child:nth-last-child(4), &_item:first-child:nth-last-child(4) ~ &_item {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+        // checkboxes
+        &_branches {
+            &_checkbox {
+                display: flex;
+                flex-wrap: wrap;
+                &_item {
+                    width: 33%;
+                    padding: 5px 0;
+                    font-size: 1.4rem;
+                    color: $plainText-color;
+                    display: flex;
+                    label {
+                        padding: 0 7px;
+                    }
+                    input[type="checkbox"] {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+
+        &_results {
+            &_show-offers {
+                &_clear-filter {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    // same styles for every radio buttons group
+    .filter-radio {
+        display: flex;
+        :first-child {
+            label {
+                border-radius: 5px 0 0 5px;
+            }
+        }
+
+        :last-child {
+            label {
+                border-radius: 0 5px 5px 0;
+            }
+        }
+
+        &_item {
+            width: calc(100%/6);
+            display: inline-block;
+            input[type="radio"] {
+                display: none;
+            }
+
+            label {
+                width: 100%;
+                padding: 1.5rem;
+                background: #F1F1F1;
+                text-align: center;
+                color: $subheaders-color;
+                font-size: 1.2rem;
+                user-select: none;
+            }
+
+            input[type="radio"]:checked + label {
+                background: $projectColor-red;
+                color: #FFF;
             }
         }
     }
@@ -781,15 +973,6 @@ button {
 
 .main-container_invest {
     &_types {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &_header {
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
         &_buttons {
             display: flex;
             button {
@@ -809,42 +992,17 @@ button {
 
     &_container {
         width: 100%;
+        padding: 4rem;
         background: #F1F1F1;
-        padding: 7rem 0;
-
         &_form {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            label {
-                color: #171E2B;
-                font-size: 1.6rem;
-                margin: 1rem 0;
+            & > div {
+                flex-basis: 20%;
             }
 
-            select {
-                width: 25rem;
-                height: 5rem;
-                padding: 1rem 2rem;
-
-                color: #171E2B;
-                font-size: 1.6rem;
-                font-weight: bold;
-                border: none;
-                border-radius: .4rem;
-
-                option:hover {
-                    background: rgb(203,37,36);
-                }
-
-                &:hover {
-                    border: 1px solid #7B8FA7;
-                }
-
-                &:focus {
-                    border: none;
-                    outline: none;
+            &_profit, &_price-from, &_price-for {
+                &_title {
+                    font-weight: 400;
+                    margin-bottom: 7px;
                 }
             }
 
