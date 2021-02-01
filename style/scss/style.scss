@@ -295,6 +295,44 @@ button {
     }
 }
 
+// tabs logic
+.tabs {
+    &_triggers {
+        &_header {
+            margin-bottom: 2rem;
+        }
+        &_buttons {
+            &_item {
+                height: 100%;
+                font-weight: bold;
+                padding: 2rem 4rem;
+                transition: all .3s;
+                &--active {
+                    font-size: 1.6rem;
+                    color: $subheaders-color;
+                    background: $defaultBackground-color;
+                }
+                &:not(.tabs_triggers_buttons_item--active):hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &_content {
+        background: $defaultBackground-color;
+        &_wrapper {
+            // background: red;
+            &_item {
+                display: none;
+                &--active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
 // MAIN CONTAINER
 .main-container {
     &_hat, &_footer {
@@ -562,44 +600,6 @@ button {
                             width: 13rem;
                         }
                     }
-                }
-            }
-        }
-    }
-}
-
-// tabs logic
-.tabs {
-    &_triggers {
-        &_header {
-            margin-bottom: 2rem;
-        }
-        &_buttons {
-            &_item {
-                height: 100%;
-                font-weight: bold;
-                padding: 2rem 4rem;
-                transition: all .3s;
-                &--active {
-                    font-size: 1.6rem;
-                    color: $subheaders-color;
-                    background: $defaultBackground-color;
-                }
-                &:not(.tabs_triggers_buttons_item--active):hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-
-    &_content {
-        background: $defaultBackground-color;
-        &_wrapper {
-            // background: red;
-            &_item {
-                display: none;
-                &--active {
-                    display: block;
                 }
             }
         }

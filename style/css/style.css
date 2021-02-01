@@ -219,6 +219,28 @@ button {
   transform: rotate(-180deg);
   top: 40%; }
 
+.tabs_triggers_header {
+  margin-bottom: 2rem; }
+
+.tabs_triggers_buttons_item {
+  height: 100%;
+  font-weight: bold;
+  padding: 2rem 4rem;
+  transition: all .3s; }
+  .tabs_triggers_buttons_item--active {
+    font-size: 1.6rem;
+    color: #171E2B;
+    background: #EEE; }
+  .tabs_triggers_buttons_item:not(.tabs_triggers_buttons_item--active):hover {
+    text-decoration: underline; }
+
+.tabs_content {
+  background: #EEE; }
+  .tabs_content_wrapper_item {
+    display: none; }
+    .tabs_content_wrapper_item--active {
+      display: block; }
+
 .main-container_hat, .main-container_footer {
   padding: 2rem 0; }
 
@@ -396,28 +418,6 @@ button {
           font-size: 3rem; }
         .main-container_best-offers_items_carousel_item_more_button button {
           width: 13rem; }
-
-.tabs_triggers_header {
-  margin-bottom: 2rem; }
-
-.tabs_triggers_buttons_item {
-  height: 100%;
-  font-weight: bold;
-  padding: 2rem 4rem;
-  transition: all .3s; }
-  .tabs_triggers_buttons_item--active {
-    font-size: 1.6rem;
-    color: #171E2B;
-    background: #EEE; }
-  .tabs_triggers_buttons_item:not(.tabs_triggers_buttons_item--active):hover {
-    text-decoration: underline; }
-
-.tabs_content {
-  background: #EEE; }
-  .tabs_content_wrapper_item {
-    display: none; }
-    .tabs_content_wrapper_item--active {
-      display: block; }
 
 .main-container_invest-top .tabs_content, .main-container_invest-bottom .tabs_content {
   height: 17rem; }
