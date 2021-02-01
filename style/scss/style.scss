@@ -21,7 +21,7 @@
 $projectColor-blue: rgb(32,43,99);
 $projectColor-red: rgb(203,37,36);
 $projectColor-red-blur: rgba(203,37,36,.8);
-$defaultBackground-color: #F1F1F1;
+$defaultBackground-color: #EEE;
 
 $headers-color: #1D1E20;
 $subheaders-color: #171E2B;
@@ -30,7 +30,7 @@ $plainText-color-2: #9CAABB;
 $helpButtons-color: #325899;
 
 // Common default tags
-* {
+*, ::before, ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -416,18 +416,7 @@ button {
 .main-container_best-offers {
     &_hat {
         width: 100%;
-        margin-bottom: 2rem;
-        font-weight: 700;
-
-        display: flex;
-        align-items: center ;
-        &_header {
-            flex-basis: 20%;
-            color: #171E2B;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-        }
-
+        margin-bottom: 3rem;
         &_buttons {
             flex-basis: 80%;
             display: flex;
@@ -435,9 +424,8 @@ button {
             &_button {
                 width: 4.7rem;
                 height: 4.7rem;
-                margin: 1rem;
-                background: #EEEFEF;
-                cursor: pointer;
+                margin: 0 1rem;
+                background: $defaultBackground-color;
 
                 display: flex;
                 justify-content: center;
@@ -495,12 +483,6 @@ button {
 
             &_show-more {
                 margin-top: 5rem;
-                a {
-                    color: #325899;
-                    font-size: 1.4rem;
-                    font-weight: 700;
-                    text-decoration: underline;
-                }
             }
         }
 
@@ -582,6 +564,66 @@ button {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+// tabs logic
+.tabs {
+    &_triggers {
+        &_header {
+            margin-bottom: 2rem;
+        }
+        &_buttons {
+            &_item {
+                height: 100%;
+                font-weight: bold;
+                padding: 2rem;
+                transition: all .3s;
+                &--active {
+                    font-size: 1.6rem;
+                    color: $subheaders-color;
+                    background: $defaultBackground-color;
+                }
+                &:not(.tabs_triggers_buttons_item--active):hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &_content {
+        padding: 7rem 0;
+        background: $defaultBackground-color;
+        &_wrapper {
+            &_item {
+                display: none;
+                &--active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.main-container_invest-top, .main-container_invest-bottom {
+    &_form {
+        & > div {
+            flex-basis: 20%;
+        }
+
+        &_profit, &_price-from, &_price-for {
+            &_title {
+                font-weight: 400;
+                margin-bottom: 7px;
+            }
+        }
+
+        &_submit {
+            align-self: flex-end;
+            button {
+                width: 25rem;
             }
         }
     }
@@ -732,51 +774,14 @@ button {
 }
 
 .main-container_help {
-    &_buyer-seller {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &_header {
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        &_buttons {
-            display: flex;
-            button {
-                padding: 0 10rem;
-                font-size: 1.6rem;
-                font-weight: 700;
-                color: #7B8FA7;
-            }
-
-            .active-button {
-                background: #F1F1F1;
-                color: #171E2B;
-                border-radius: .4rem .4rem 0 0;
-            }
-        }
-    }
-
     &_container {
-        padding: 7rem 0;
-        background: #F1F1F1;
-
         &_items {
-            display: flex;
-            justify-content: center;
+            width: 100%;
             flex-wrap: wrap;
-
-            & > div:not(:nth-child(4)) {
-                margin-right: 3rem;
-            }
-
             &_item {
-                width: 25rem;
+                flex-basis: 22%;
                 height: 40rem;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                margin: 2rem;
                 border-radius: .4rem;
                 box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 
@@ -791,31 +796,10 @@ button {
                 &_picture {
                     width: 100%;
                     height: 45%;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-                &_subheader {
-                    color: #171E2B;
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                }
-
-                &_text {
-                    color: #7B8FA7;
-                    font-size: 1.4rem;
                 }
 
                 &_more {
                     text-align: right;
-                    a {
-                        color: #325899;
-                        font-size: 1.4rem;
-                        font-weight: 700;
-                        text-decoration: underline;
-                    }
                 }
             }
         }
@@ -971,51 +955,6 @@ button {
     }
 }
 
-.main-container_invest {
-    &_types {
-        &_buttons {
-            display: flex;
-            button {
-                padding: 0 7rem;
-                font-size: 1.6rem;
-                font-weight: 700;
-                color: #7B8FA7;
-            }
-
-            .active-button {
-                background: #F1F1F1;
-                color: #171E2B;
-                border-radius: .4rem .4rem 0 0;
-            }
-        }
-    }
-
-    &_container {
-        width: 100%;
-        padding: 4rem;
-        background: #F1F1F1;
-        &_form {
-            & > div {
-                flex-basis: 20%;
-            }
-
-            &_profit, &_price-from, &_price-for {
-                &_title {
-                    font-weight: 400;
-                    margin-bottom: 7px;
-                }
-            }
-
-            &_submit {
-                align-self: flex-end;
-                button {
-                    width: 25rem;
-                }
-            }
-        }
-    }
-}
-
 .main-container_news {
     &_header {
         text-align: center;
@@ -1100,65 +1039,24 @@ button {
 }
 
 .main-container_how-works {
-    &_buy-sell {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &_header {
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
 
-        &_buttons {
-            display: flex;
-            button {
-                padding: 0 10rem;
-                font-size: 1.6rem;
-                font-weight: 700;
-                color: #7B8FA7;
-            }
-
-            .active-button {
-                background: #F1F1F1;
-                color: #171E2B;
-                border-radius: .4rem .4rem 0 0;
-            }
-        }
-    }
-    &_container {
-        padding: 7rem 0;
-        background: #F1F1F1;
-
-        display: flex;
-        justify-content: space-between;
-
+    &_how-sell {
         :not(:last-child) {
             margin-right: 2rem;
         }
 
         &_item {
-            width: 26rem;
+            flex-basis: 20%;
             height: 30rem;
             background: #FFF;
 
             &_img {
                 width: 100%;
                 height: 70%;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
             }
             &_text {
                 height: 30%;
-                padding: 1rem;
-                font-size: 1.6rem;
-                font-weight: 700;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                padding: 1.5rem;
             }
         }
     }

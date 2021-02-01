@@ -13,7 +13,7 @@
   src: url(./../../fonts/Geometria/Geometria-ExtraBold.woff);
   font-weight: 800; }
 
-* {
+*, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -244,7 +244,7 @@ button {
 
 .main-container_nav {
   font-weight: 700;
-  background: #F1F1F1; }
+  background: #EEE; }
   .main-container_nav ul {
     height: 100%;
     display: flex; }
@@ -263,7 +263,7 @@ button {
         text-decoration: underline; }
 
 .main-container_find-business {
-  background: #F1F1F1; }
+  background: #EEE; }
   .main-container_find-business_container {
     height: 80rem;
     position: relative;
@@ -301,15 +301,7 @@ button {
 
 .main-container_best-offers_hat {
   width: 100%;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center; }
-  .main-container_best-offers_hat_header {
-    flex-basis: 20%;
-    color: #171E2B;
-    font-size: 2.4rem;
-    text-transform: uppercase; }
+  margin-bottom: 3rem; }
   .main-container_best-offers_hat_buttons {
     flex-basis: 80%;
     display: flex;
@@ -317,9 +309,8 @@ button {
     .main-container_best-offers_hat_buttons_button {
       width: 4.7rem;
       height: 4.7rem;
-      margin: 1rem;
-      background: #EEEFEF;
-      cursor: pointer;
+      margin: 0 1rem;
+      background: #EEE;
       display: flex;
       justify-content: center;
       align-items: center; }
@@ -358,11 +349,6 @@ button {
           background: #cb2524; }
     .main-container_best-offers_items_options_show-more {
       margin-top: 5rem; }
-      .main-container_best-offers_items_options_show-more a {
-        color: #325899;
-        font-size: 1.4rem;
-        font-weight: 700;
-        text-decoration: underline; }
   .main-container_best-offers_items_carousel {
     flex-basis: 80%;
     margin-right: 3rem;
@@ -412,6 +398,41 @@ button {
           font-size: 3rem; }
         .main-container_best-offers_items_carousel_item_more_button button {
           width: 13rem; }
+
+.tabs_triggers_header {
+  margin-bottom: 2rem; }
+
+.tabs_triggers_buttons_item {
+  height: 100%;
+  font-weight: bold;
+  padding: 2rem;
+  transition: all .3s; }
+  .tabs_triggers_buttons_item--active {
+    font-size: 1.6rem;
+    color: #171E2B;
+    background: #EEE; }
+  .tabs_triggers_buttons_item:not(.tabs_triggers_buttons_item--active):hover {
+    text-decoration: underline; }
+
+.tabs_content {
+  padding: 7rem 0;
+  background: #EEE; }
+  .tabs_content_wrapper_item {
+    display: none; }
+    .tabs_content_wrapper_item--active {
+      display: block; }
+
+.main-container_invest-top_form > div, .main-container_invest-bottom_form > div {
+  flex-basis: 20%; }
+
+.main-container_invest-top_form_profit_title, .main-container_invest-top_form_price-from_title, .main-container_invest-top_form_price-for_title, .main-container_invest-bottom_form_profit_title, .main-container_invest-bottom_form_price-from_title, .main-container_invest-bottom_form_price-for_title {
+  font-weight: 400;
+  margin-bottom: 7px; }
+
+.main-container_invest-top_form_submit, .main-container_invest-bottom_form_submit {
+  align-self: flex-end; }
+  .main-container_invest-top_form_submit button, .main-container_invest-bottom_form_submit button {
+    width: 25rem; }
 
 .main-container_tips_header {
   margin-bottom: 7rem;
@@ -499,67 +520,25 @@ button {
       background: #cb2524;
       color: #FFF; }
 
-.main-container_help_buyer-seller {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .main-container_help_buyer-seller_header {
-    font-size: 2.4rem;
-    font-weight: 700;
-    text-transform: uppercase; }
-  .main-container_help_buyer-seller_buttons {
-    display: flex; }
-    .main-container_help_buyer-seller_buttons button {
-      padding: 0 10rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #7B8FA7; }
-    .main-container_help_buyer-seller_buttons .active-button {
-      background: #F1F1F1;
-      color: #171E2B;
-      border-radius: .4rem .4rem 0 0; }
-
-.main-container_help_container {
-  padding: 7rem 0;
-  background: #F1F1F1; }
-  .main-container_help_container_items {
+.main-container_help_container_items {
+  width: 100%;
+  flex-wrap: wrap; }
+  .main-container_help_container_items_item {
+    flex-basis: 22%;
+    height: 40rem;
+    margin: 2rem;
+    border-radius: .4rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
-    .main-container_help_container_items > div:not(:nth-child(4)) {
-      margin-right: 3rem; }
-    .main-container_help_container_items_item {
-      width: 25rem;
-      height: 40rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      border-radius: .4rem;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; }
-      .main-container_help_container_items_item > div:not(:first-child) {
-        padding: 1.5rem; }
-      .main-container_help_container_items_item_picture {
-        width: 100%;
-        height: 45%; }
-        .main-container_help_container_items_item_picture img {
-          width: 100%;
-          height: 100%; }
-      .main-container_help_container_items_item_subheader {
-        color: #171E2B;
-        font-size: 1.6rem;
-        font-weight: 700; }
-      .main-container_help_container_items_item_text {
-        color: #7B8FA7;
-        font-size: 1.4rem; }
-      .main-container_help_container_items_item_more {
-        text-align: right; }
-        .main-container_help_container_items_item_more a {
-          color: #325899;
-          font-size: 1.4rem;
-          font-weight: 700;
-          text-decoration: underline; }
+    flex-direction: column;
+    justify-content: space-between; }
+    .main-container_help_container_items_item > div:not(:first-child) {
+      padding: 1.5rem; }
+    .main-container_help_container_items_item_picture {
+      width: 100%;
+      height: 45%; }
+    .main-container_help_container_items_item_more {
+      text-align: right; }
 
 .main-container_work-with_hat {
   display: flex; }
@@ -665,32 +644,6 @@ button {
       color: #9CAABB;
       font-size: 1.2rem; }
 
-.main-container_invest_types_buttons {
-  display: flex; }
-  .main-container_invest_types_buttons button {
-    padding: 0 7rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #7B8FA7; }
-  .main-container_invest_types_buttons .active-button {
-    background: #F1F1F1;
-    color: #171E2B;
-    border-radius: .4rem .4rem 0 0; }
-
-.main-container_invest_container {
-  width: 100%;
-  padding: 4rem;
-  background: #F1F1F1; }
-  .main-container_invest_container_form > div {
-    flex-basis: 20%; }
-  .main-container_invest_container_form_profit_title, .main-container_invest_container_form_price-from_title, .main-container_invest_container_form_price-for_title {
-    font-weight: 400;
-    margin-bottom: 7px; }
-  .main-container_invest_container_form_submit {
-    align-self: flex-end; }
-    .main-container_invest_container_form_submit button {
-      width: 25rem; }
-
 .main-container_news_header {
   text-align: center;
   font-size: 2.4rem;
@@ -745,51 +698,19 @@ button {
       color: #171E2B;
       border: 1px solid black; }
 
-.main-container_how-works_buy-sell {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .main-container_how-works_buy-sell_header {
-    font-size: 2.4rem;
-    font-weight: 700;
-    text-transform: uppercase; }
-  .main-container_how-works_buy-sell_buttons {
-    display: flex; }
-    .main-container_how-works_buy-sell_buttons button {
-      padding: 0 10rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #7B8FA7; }
-    .main-container_how-works_buy-sell_buttons .active-button {
-      background: #F1F1F1;
-      color: #171E2B;
-      border-radius: .4rem .4rem 0 0; }
+.main-container_how-works_how-sell :not(:last-child) {
+  margin-right: 2rem; }
 
-.main-container_how-works_container {
-  padding: 7rem 0;
-  background: #F1F1F1;
-  display: flex;
-  justify-content: space-between; }
-  .main-container_how-works_container :not(:last-child) {
-    margin-right: 2rem; }
-  .main-container_how-works_container_item {
-    width: 26rem;
-    height: 30rem;
-    background: #FFF; }
-    .main-container_how-works_container_item_img {
-      width: 100%;
-      height: 70%; }
-      .main-container_how-works_container_item_img img {
-        width: 100%;
-        height: 100%; }
-    .main-container_how-works_container_item_text {
-      height: 30%;
-      padding: 1rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
+.main-container_how-works_how-sell_item {
+  flex-basis: 20%;
+  height: 30rem;
+  background: #FFF; }
+  .main-container_how-works_how-sell_item_img {
+    width: 100%;
+    height: 70%; }
+  .main-container_how-works_how-sell_item_text {
+    height: 30%;
+    padding: 1.5rem; }
 
 .main-container_free-call {
   color: #FFF;

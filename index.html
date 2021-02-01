@@ -178,8 +178,8 @@
             </section>
 
             <section class="main-container_best-offers not-centered">
-                <div class="main-container_best-offers_hat">
-                    <div class="main-container_best-offers_hat_header">
+                <div class="main-container_best-offers_hat align-center">
+                    <div class="main-container_best-offers_hat_header headers">
                         Лучшие предложения
                     </div>
                     <div class="main-container_best-offers_hat_buttons">
@@ -212,7 +212,7 @@
                             </ul>
                         </div>
                         <div class="main-container_best-offers_items_options_show-more">
-                            <a href="#">Показать всё</a>
+                            <a class="underlined-text-bold" href="#">Показать всё</a>
                         </div>
                     </div>
 
@@ -377,71 +377,83 @@
                 </div>
             </section>
 
-            <section class="main-container_invest">
-                <div class="main-container_invest_types space-between centered">
-                    <div class="main-container_invest_types_header headers">
-                        Инвестиции в бизнес для каждого
+            <section class="main-container_invest-top">
+                <div class="tabs">
+                    <div class="tabs_triggers centered space-between">
+                        <div class="tabs_triggers_header headers">
+                            Инвестиции в бизнес для каждого
+                        </div>
+                        <div class="tabs_triggers_buttons">
+                            <a class="tabs_triggers_buttons_item active-tab plain-text" href="#tab-1-invest">Готовый бизнес</a>
+                            <a class="tabs_triggers_buttons_item plain-text" href="#tab-2-invest">Франшизы</a>
+                            <a class="tabs_triggers_buttons_item plain-text" href="#tab-3-invest">Инвестиции</a>
+                        </div>
                     </div>
-                    <div class="main-container_invest_types_buttons">
-                        <button class="active-button">Готовый бизнес</button>
-                        <button>Франшизы</button>
-                        <button>Инвестиции</button>
+                    <div class="tabs_content align-center">
+                        <div class="tabs_content_wrapper centered">
+                            <div id="tab-1-invest" class="tabs_content_wrapper_item">
+                                <form class="main-container_invest-top_form space-between" action="">
+                                    <div class="main-container_invest-top_form_profit">
+                                        <div class="main-container_invest-top_form_profit_title subheaders">
+                                            Чистая прибыль от
+                                        </div>
+                                        <div class="main-container_invest-top_form_profit_select">
+                                            <label for="profit">
+                                                <select class="select" id="profit" name="profit">
+                                                    <option disabled>Выбрать</option>
+                                                    <option value="100000">100 000 ₽</option>
+                                                    <option value="300000">300 000 ₽</option>
+                                                    <option value="500000">500 000 ₽</option>
+                                                    <option value="1000000">1 000 000 ₽</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="main-container_invest-top_form_price-from">
+                                        <div class="main-container_invest-top_form_price-from_title subheaders">
+                                            Цена от
+                                        </div>
+                                        <div class="main-container_invest-top_form_price-from_select">
+                                            <label for="price_from">
+                                                <select class="select" id="price_from" name="price_from">
+                                                    <option disabled>Выбрать</option>
+                                                    <option value="100000">100 000 ₽</option>
+                                                    <option value="300000">300 000 ₽</option>
+                                                    <option value="500000">500 000 ₽</option>
+                                                    <option value="1000000">1 000 000 ₽</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="main-container_invest-top_form_price-for">
+                                        <div class="main-container_invest-top_form_price-for_title subheaders">
+                                            Цена до
+                                        </div>
+                                        <div class="main-container_invest-top_form_price-for_select">
+                                            <label for="price_for">
+                                                <select class="select" id="price_for" name="price_for">
+                                                    <option disabled>Выбрать</option>
+                                                    <option value="100000">100 000 ₽</option>
+                                                    <option value="300000">300 000 ₽</option>
+                                                    <option value="500000">500 000 ₽</option>
+                                                    <option value="1000000">1 000 000 ₽</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="main-container_invest-top_form_submit">
+                                        <button class="red-button" type="submit">Показать результаты</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="tab-2-invest" class="tabs_content_wrapper_item">
+                                Content 2
+                            </div>
+                            <div id="tab-3-invest" class="tabs_content_wrapper_item">
+                                Content 3
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="main-container_invest_container">
-                    <form class="main-container_invest_container_form centered space-between" action="">
-                        <div class="main-container_invest_container_form_profit">
-                            <div class="main-container_invest_container_form_profit_title subheaders">
-                                Чистая прибыль от
-                            </div>
-                            <div class="main-container_invest_container_form_profit_select">
-                                <label for="profit">
-                                    <select class="select" id="profit" name="profit">
-                                        <option disabled>Выбрать</option>
-                                        <option value="100000">100 000 ₽</option>
-                                        <option value="300000">300 000 ₽</option>
-                                        <option value="500000">500 000 ₽</option>
-                                        <option value="1000000">1 000 000 ₽</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main-container_invest_container_form_price-from">
-                            <div class="main-container_invest_container_form_price-from_title subheaders">
-                                Цена от
-                            </div>
-                            <div class="main-container_invest_container_form_price-from_select">
-                                <label for="price_from">
-                                    <select class="select" id="price_from" name="price_from">
-                                        <option disabled>Выбрать</option>
-                                        <option value="100000">100 000 ₽</option>
-                                        <option value="300000">300 000 ₽</option>
-                                        <option value="500000">500 000 ₽</option>
-                                        <option value="1000000">1 000 000 ₽</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main-container_invest_container_form_price-for">
-                            <div class="main-container_invest_container_form_price-for_title subheaders">
-                                Цена до
-                            </div>
-                            <div class="main-container_invest_container_form_price-for_select">
-                                <label for="price_for">
-                                    <select class="select" id="price_for" name="price_for">
-                                        <option disabled>Выбрать</option>
-                                        <option value="100000">100 000 ₽</option>
-                                        <option value="300000">300 000 ₽</option>
-                                        <option value="500000">500 000 ₽</option>
-                                        <option value="1000000">1 000 000 ₽</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main-container_invest_container_form_submit">
-                            <button class="red-button" type="submit">Показать результаты</button>
-                        </div>
-                    </form>
                 </div>
             </section>
 
@@ -761,99 +773,110 @@
 
             <section class="main-container_help">
 
-                <div class="main-container_help_buyer-seller centered">
-                    <div class="main-container_help_buyer-seller_header">
-                        Как мы вам поможем
+                <div class="tabs">
+                    <div class="tabs_triggers centered space-between">
+                        <div class="tabs_triggers_header headers">
+                            Как мы вам поможем
+                        </div>
+                        <div class="tabs_triggers_buttons">
+                            <a class="tabs_triggers_buttons_item active-tab active-tab plain-text" href="#tab-1-help">Для продавцов</a>
+                            <a class="tabs_triggers_buttons_item plain-text" href="#tab-2-help">Для покупателей</a>
+                        </div>
                     </div>
-                    <div class="main-container_help_buyer-seller_buttons">
-                        <button class="active-button">Для продавцов</button>
-                        <button>Для покупателей</button>
-                    </div>
-                </div>
-                <div class="main-container_help_container">
-                    <div class="main-container_help_container_items centered">
-                        <div class="main-container_help_container_items_item">
-                            <div class="main-container_help_container_items_item_picture">
-                                <img src="./img/help/1.png" alt="">
+                    <div class="tabs_content align-center">
+                        <div class="tabs_content_wrapper centered">
+                            <div id="tab-1-help" class="tabs_content_wrapper_item">
+                                <div class="main-container_help_container">
+                                    <div class="main-container_help_container_items center-childs centered">
+                                        <div class="main-container_help_container_items_item">
+                                            <div class="main-container_help_container_items_item_picture">
+                                                <img class="full-img" src="./img/help/1.png" alt="">
+                                            </div>
+                                            <div class="main-container_help_container_items_item_subheader subheaders">
+                                                Поиск бизнеса под запрос покупателя
+                                            </div>
+                                            <div class="main-container_help_container_items_item_text plain-text">
+                                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
+                                            </div>
+                                            <div class="main-container_help_container_items_item_more">
+                                                <a class="underlined-text-bold" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="main-container_help_container_items_item">
+                                            <div class="main-container_help_container_items_item_picture">
+                                                <img class="full-img" src="./img/help/2.png" alt="">
+                                            </div>
+                                            <div class="main-container_help_container_items_item_subheader subheaders">
+                                                Поиск бизнеса под запрос покупателя
+                                            </div>
+                                            <div class="main-container_help_container_items_item_text plain-text">
+                                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
+                                            </div>
+                                            <div class="main-container_help_container_items_item_more">
+                                                <a class="underlined-text-bold" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="main-container_help_container_items_item">
+                                            <div class="main-container_help_container_items_item_picture">
+                                                <img class="full-img" src="./img/help/3.png" alt="">
+                                            </div>
+                                            <div class="main-container_help_container_items_item_subheader subheaders">
+                                                Поиск бизнеса под запрос покупателя
+                                            </div>
+                                            <div class="main-container_help_container_items_item_text plain-text">
+                                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
+                                            </div>
+                                            <div class="main-container_help_container_items_item_more">
+                                                <a class="underlined-text-bold" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="main-container_help_container_items_item">
+                                            <div class="main-container_help_container_items_item_picture">
+                                                <img class="full-img" src="./img/help/4.png" alt="">
+                                            </div>
+                                            <div class="main-container_help_container_items_item_subheader subheaders">
+                                                Поиск бизнеса под запрос покупателя
+                                            </div>
+                                            <div class="main-container_help_container_items_item_text plain-text">
+                                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
+                                            </div>
+                                            <div class="main-container_help_container_items_item_more">
+                                                <a class="underlined-text-bold" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="main-container_help_container_items_item">
+                                            <div class="main-container_help_container_items_item_picture">
+                                                <img class="full-img" src="./img/help/5.png" alt="">
+                                            </div>
+                                            <div class="main-container_help_container_items_item_subheader subheaders">
+                                                Поиск бизнеса под запрос покупателя
+                                            </div>
+                                            <div class="main-container_help_container_items_item_text plain-text">
+                                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
+                                            </div>
+                                            <div class="main-container_help_container_items_item_more">
+                                                <a class="underlined-text-bold" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="main-container_help_container_items_item">
+                                            <div class="main-container_help_container_items_item_picture">
+                                                <img class="full-img" src="./img/help/6.png" alt="">
+                                            </div>
+                                            <div class="main-container_help_container_items_item_subheader subheaders">
+                                                Поиск бизнеса под запрос покупателя
+                                            </div>
+                                            <div class="main-container_help_container_items_item_text plain-text">
+                                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
+                                            </div>
+                                            <div class="main-container_help_container_items_item_more">
+                                                <a class="underlined-text-bold" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="main-container_help_container_items_item_subheader">
-                                Поиск бизнеса под запрос покупателя
-                            </div>
-                            <div class="main-container_help_container_items_item_text">
-                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
-                            </div>
-                            <div class="main-container_help_container_items_item_more">
-                                <a href="#">Подробнее</a>
-                            </div>
-                        </div>
-                        <div class="main-container_help_container_items_item">
-                            <div class="main-container_help_container_items_item_picture">
-                                <img src="./img/help/2.png" alt="">
-                            </div>
-                            <div class="main-container_help_container_items_item_subheader">
-                                Поиск бизнеса под запрос покупателя
-                            </div>
-                            <div class="main-container_help_container_items_item_text">
-                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
-                            </div>
-                            <div class="main-container_help_container_items_item_more">
-                                <a href="#">Подробнее</a>
-                            </div>
-                        </div>
-                        <div class="main-container_help_container_items_item">
-                            <div class="main-container_help_container_items_item_picture">
-                                <img src="./img/help/3.png" alt="">
-                            </div>
-                            <div class="main-container_help_container_items_item_subheader">
-                                Поиск бизнеса под запрос покупателя
-                            </div>
-                            <div class="main-container_help_container_items_item_text">
-                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
-                            </div>
-                            <div class="main-container_help_container_items_item_more">
-                                <a href="#">Подробнее</a>
-                            </div>
-                        </div>
-                        <div class="main-container_help_container_items_item">
-                            <div class="main-container_help_container_items_item_picture">
-                                <img src="./img/help/4.png" alt="">
-                            </div>
-                            <div class="main-container_help_container_items_item_subheader">
-                                Поиск бизнеса под запрос покупателя
-                            </div>
-                            <div class="main-container_help_container_items_item_text">
-                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
-                            </div>
-                            <div class="main-container_help_container_items_item_more">
-                                <a href="#">Подробнее</a>
-                            </div>
-                        </div>
-                        <div class="main-container_help_container_items_item">
-                            <div class="main-container_help_container_items_item_picture">
-                                <img src="./img/help/5.png" alt="">
-                            </div>
-                            <div class="main-container_help_container_items_item_subheader">
-                                Поиск бизнеса под запрос покупателя
-                            </div>
-                            <div class="main-container_help_container_items_item_text">
-                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
-                            </div>
-                            <div class="main-container_help_container_items_item_more">
-                                <a href="#">Подробнее</a>
-                            </div>
-                        </div>
-                        <div class="main-container_help_container_items_item">
-                            <div class="main-container_help_container_items_item_picture">
-                                <img src="./img/help/6.png" alt="">
-                            </div>
-                            <div class="main-container_help_container_items_item_subheader">
-                                Поиск бизнеса под запрос покупателя
-                            </div>
-                            <div class="main-container_help_container_items_item_text">
-                                Брокер уточнит приоритеты и организует поиск предложения по каталогу и личным каналам. После чего поможет оформить сделку.
-                            </div>
-                            <div class="main-container_help_container_items_item_more">
-                                <a href="#">Подробнее</a>
+                            <div id="tab-2-help" class="tabs_content_wrapper_item">
+                                Content 2
                             </div>
                         </div>
                     </div>
@@ -937,7 +960,7 @@
                         <div class="main-container_reviews_carousel_item_subheader">
                             Коротки заголовок в одну или две строчки.
                         </div>
-                        <div class="main-container_reviews_carousel_item_text">
+                        <div class="main-container_reviews_carousel_item_text plain-text">
                             Текст отзыва клиента. Ограничений по символам нет, но тут лучше не разгоняться, иначе будет не удобно читать такой формат отображения данных. Ячейки с отзывами будут с атоподстройкой высоты.
                         </div>
                         <div class="main-container_reviews_carousel_item_author">
@@ -951,7 +974,7 @@
                         <div class="main-container_reviews_carousel_item_subheader">
                             Коротки заголовок в одну или две строчки.
                         </div>
-                        <div class="main-container_reviews_carousel_item_text">
+                        <div class="main-container_reviews_carousel_item_text plain-text">
                             Текст отзыва клиента. Ограничений по символам нет, но тут лучше не разгоняться, иначе будет не удобно читать такой формат отображения данных. Ячейки с отзывами будут с атоподстройкой высоты.
                         </div>
                         <div class="main-container_reviews_carousel_item_author">
@@ -965,7 +988,7 @@
                         <div class="main-container_reviews_carousel_item_subheader">
                             Коротки заголовок в одну или две строчки.
                         </div>
-                        <div class="main-container_reviews_carousel_item_text">
+                        <div class="main-container_reviews_carousel_item_text plain-text">
                             Текст отзыва клиента. Ограничений по символам нет, но тут лучше не разгоняться, иначе будет не удобно читать такой формат отображения данных. Ячейки с отзывами будут с атоподстройкой высоты.
                         </div>
                         <div class="main-container_reviews_carousel_item_author">
@@ -979,7 +1002,7 @@
                         <div class="main-container_reviews_carousel_item_subheader">
                             Коротки заголовок в одну или две строчки.
                         </div>
-                        <div class="main-container_reviews_carousel_item_text">
+                        <div class="main-container_reviews_carousel_item_text plain-text">
                             Текст отзыва клиента. Ограничений по символам нет, но тут лучше не разгоняться, иначе будет не удобно читать такой формат отображения данных. Ячейки с отзывами будут с атоподстройкой высоты.
                         </div>
                         <div class="main-container_reviews_carousel_item_author">
@@ -993,71 +1016,83 @@
 
             </section>
 
-            <section class="main-container_invest">
-                <div class="main-container_invest_types space-between centered">
-                    <div class="main-container_invest_types_header headers">
-                        Инвестиции в бизнес для каждого
+            <section class="main-container_invest-bottom">
+                <div class="tabs">
+                    <div class="tabs_triggers centered space-between">
+                        <div class="tabs_triggers_header headers">
+                            Инвестиции в бизнес для каждого
+                        </div>
+                        <div class="tabs_triggers_buttons">
+                            <a class="tabs_triggers_buttons_item active-tab plain-text" href="#tab-1-invest-bottom">Готовый бизнес</a>
+                            <a class="tabs_triggers_buttons_item plain-text" href="#tab-2-invest-bottom">Франшизы</a>
+                            <a class="tabs_triggers_buttons_item plain-text" href="#tab-3-invest-bottom">Инвестиции</a>
+                        </div>
                     </div>
-                    <div class="main-container_invest_types_buttons">
-                        <button class="active-button">Готовый бизнес</button>
-                        <button>Франшизы</button>
-                        <button>Инвестиции</button>
+                    <div class="tabs_content align-center">
+                        <div class="tabs_content_wrapper centered">
+                            <div id="tab-1-invest-bottom" class="tabs_content_wrapper_item">
+                                <form class="main-container_invest-bottom_form space-between" action="">
+                                    <div class="main-container_invest-bottom_form_profit">
+                                        <div class="main-container_invest-bottom_form_profit_title subheaders">
+                                            Чистая прибыль от
+                                        </div>
+                                        <div class="main-container_invest-bottom_form_profit_select">
+                                            <label for="profit">
+                                                <select class="select" id="profit" name="profit">
+                                                    <option disabled>Выбрать</option>
+                                                    <option value="100000">100 000 ₽</option>
+                                                    <option value="300000">300 000 ₽</option>
+                                                    <option value="500000">500 000 ₽</option>
+                                                    <option value="1000000">1 000 000 ₽</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="main-container_invest-bottom_form_price-from">
+                                        <div class="main-container_invest-bottom_form_price-from_title subheaders">
+                                            Цена от
+                                        </div>
+                                        <div class="main-container_invest-bottom_form_price-from_select">
+                                            <label for="price_from">
+                                                <select class="select" id="price_from" name="price_from">
+                                                    <option disabled>Выбрать</option>
+                                                    <option value="100000">100 000 ₽</option>
+                                                    <option value="300000">300 000 ₽</option>
+                                                    <option value="500000">500 000 ₽</option>
+                                                    <option value="1000000">1 000 000 ₽</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="main-container_invest-bottom_form_price-for">
+                                        <div class="main-container_invest-bottom_form_price-for_title subheaders">
+                                            Цена до
+                                        </div>
+                                        <div class="main-container_invest-bottom_form_price-for_select">
+                                            <label for="price_for">
+                                                <select class="select" id="price_for" name="price_for">
+                                                    <option disabled>Выбрать</option>
+                                                    <option value="100000">100 000 ₽</option>
+                                                    <option value="300000">300 000 ₽</option>
+                                                    <option value="500000">500 000 ₽</option>
+                                                    <option value="1000000">1 000 000 ₽</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="main-container_invest-bottom_form_submit">
+                                        <button class="red-button" type="submit">Показать результаты</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="tab-2-invest-bottom" class="tabs_content_wrapper_item">
+                                Content 2
+                            </div>
+                            <div id="tab-3-invest-bottom" class="tabs_content_wrapper_item">
+                                Content 3
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="main-container_invest_container">
-                    <form class="main-container_invest_container_form centered space-between" action="">
-                        <div class="main-container_invest_container_form_profit">
-                            <div class="main-container_invest_container_form_profit_title subheaders">
-                                Чистая прибыль от
-                            </div>
-                            <div class="main-container_invest_container_form_profit_select">
-                                <label for="profit">
-                                    <select class="select" id="profit" name="profit">
-                                        <option disabled>Выбрать</option>
-                                        <option value="100000">100 000 ₽</option>
-                                        <option value="300000">300 000 ₽</option>
-                                        <option value="500000">500 000 ₽</option>
-                                        <option value="1000000">1 000 000 ₽</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main-container_invest_container_form_price-from">
-                            <div class="main-container_invest_container_form_price-from_title subheaders">
-                                Цена от
-                            </div>
-                            <div class="main-container_invest_container_form_price-from_select">
-                                <label for="price_from">
-                                    <select class="select" id="price_from" name="price_from">
-                                        <option disabled>Выбрать</option>
-                                        <option value="100000">100 000 ₽</option>
-                                        <option value="300000">300 000 ₽</option>
-                                        <option value="500000">500 000 ₽</option>
-                                        <option value="1000000">1 000 000 ₽</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main-container_invest_container_form_price-for">
-                            <div class="main-container_invest_container_form_price-for_title subheaders">
-                                Цена до
-                            </div>
-                            <div class="main-container_invest_container_form_price-for_select">
-                                <label for="price_for">
-                                    <select class="select" id="price_for" name="price_for">
-                                        <option disabled>Выбрать</option>
-                                        <option value="100000">100 000 ₽</option>
-                                        <option value="300000">300 000 ₽</option>
-                                        <option value="500000">500 000 ₽</option>
-                                        <option value="1000000">1 000 000 ₽</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main-container_invest_container_form_submit">
-                            <button class="red-button" type="submit">Показать результаты</button>
-                        </div>
-                    </form>
                 </div>
             </section>
 
@@ -1139,46 +1174,57 @@
 
             <section class="main-container_how-works">
 
-                <div class="main-container_how-works_buy-sell centered">
-                    <div class="main-container_how-works_buy-sell_header">
-                        Как мы работаем
-                    </div>
-                    <div class="main-container_how-works_buy-sell_buttons">
-                        <button class="active-button">Как продать бизнес</button>
-                        <button >Как купить бизнес</button>
-                    </div>
-                </div>
-                <div class="main-container_how-works_container centered">
-                    <div class="main-container_how-works_container_item">
-                        <div class="main-container_how-works_container_item_img">
-                            <img src="./img/how-works/man.png" alt="">
+                <div class="tabs">
+                    <div class="tabs_triggers centered space-between">
+                        <div class="tabs_triggers_header headers">
+                            Как мы работаем
                         </div>
-                        <div class="main-container_how-works_container_item_text">
-                            Описание шага в одну или две строки текста
+                        <div class="tabs_triggers_buttons">
+                            <a class="tabs_triggers_buttons_item active-tab active-tab plain-text" href="#tab-1-how">Как продать бизнес</a>
+                            <a class="tabs_triggers_buttons_item plain-text" href="#tab-2-how">Как купить бизнес</a>
                         </div>
                     </div>
-                    <div class="main-container_how-works_container_item">
-                        <div class="main-container_how-works_container_item_img">
-                            <img src="./img/how-works/man.png" alt="">
-                        </div>
-                        <div class="main-container_how-works_container_item_text">
-                            Описание шага в одну или две строки текста
-                        </div>
-                    </div>
-                    <div class="main-container_how-works_container_item">
-                        <div class="main-container_how-works_container_item_img">
-                            <img src="./img/how-works/man.png" alt="">
-                        </div>
-                        <div class="main-container_how-works_container_item_text">
-                            Описание шага в одну или две строки текста
-                        </div>
-                    </div>
-                    <div class="main-container_how-works_container_item">
-                        <div class="main-container_how-works_container_item_img">
-                            <img src="./img/how-works/man.png" alt="">
-                        </div>
-                        <div class="main-container_how-works_container_item_text">
-                            Описание шага в одну или две строки текста
+                    <div class="tabs_content align-center">
+                        <div class="tabs_content_wrapper centered">
+                            <div id="tab-1-how" class="tabs_content_wrapper_item">
+                                <div class="main-container_how-works_how-sell space-between">
+                                    <div class="main-container_how-works_how-sell_item">
+                                        <div class="main-container_how-works_how-sell_item_img">
+                                            <img class="full-img" src="./img/how-works/man.png" alt="">
+                                        </div>
+                                        <div class="main-container_how-works_how-sell_item_text align-center subheaders">
+                                            Описание шага в одну или две строки текста
+                                        </div>
+                                    </div>
+                                    <div class="main-container_how-works_how-sell_item">
+                                        <div class="main-container_how-works_how-sell_item_img">
+                                            <img class="full-img" src="./img/how-works/man.png" alt="">
+                                        </div>
+                                        <div class="main-container_how-works_how-sell_item_text align-center subheaders">
+                                            Описание шага в одну или две строки текста
+                                        </div>
+                                    </div>
+                                    <div class="main-container_how-works_how-sell_item">
+                                        <div class="main-container_how-works_how-sell_item_img">
+                                            <img class="full-img" src="./img/how-works/man.png" alt="">
+                                        </div>
+                                        <div class="main-container_how-works_how-sell_item_text align-center subheaders">
+                                            Описание шага в одну или две строки текста
+                                        </div>
+                                    </div>
+                                    <div class="main-container_how-works_how-sell_item">
+                                        <div class="main-container_how-works_how-sell_item_img">
+                                            <img class="full-img" src="./img/how-works/man.png" alt="">
+                                        </div>
+                                        <div class="main-container_how-works_how-sell_item_text align-center subheaders">
+                                            Описание шага в одну или две строки текста
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-2-how" class="tabs_content_wrapper_item">
+                                Content 2
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1364,12 +1410,10 @@
 
         </main>
 
-        <script src="./scripts/libs/slick.min.js"></script>
         <script src="./scripts/libs/jQuery.js"></script>
+        <script src="./scripts/libs/slick.min.js"></script>
         <script src="./scripts/libs/nouislider.min.js"></script>
-        <script src="./scripts/step-slider.js"></script>
         <script src="./scripts/main.js"></script>
-        <script src="./scripts/select.js"></script>
         
     </body>
 </html>

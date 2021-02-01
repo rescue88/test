@@ -1,56 +1,41 @@
 // common functions
-// let chooseRightTab(clickedElem, ) {
-//     let links = $(path);
-//     $()
-// }
+
+// template for making choosen link active
+function chooseRightLink(elements, activeClass) {
+    $(elements).click(function(){
+        for(let item of elements) {
+            $(item).removeClass(activeClass);
+        }
+        $(this).toggleClass(activeClass);
+    })  
+}
+//template for tabs
+function tabsLogic(parentClass, _this) {
+    let triggerClass ='tabs_triggers_buttons_item';
+    let contentClass = 'tabs_content_wrapper_item';
+    // remove active classes
+    $(`.${parentClass} .${triggerClass}`).removeClass(`${triggerClass}--active`);
+    $(`.${parentClass} .${contentClass}`).removeClass(`${contentClass}--active`);
+    // add needed class for choosen element
+    $($(_this)).addClass(`${triggerClass}--active`);
+    $($(_this).attr('href')).addClass(`${contentClass}--active`);
+}
 
 // empty links without reacting for click
-let links = document.querySelectorAll("a");
-for(const item of links) {
-    item.addEventListener("click", function(event) {
+let links = $("a");
+for(let item of links) {
+    $(item).click(function(event) {
         event.preventDefault();
-    });
+    })
 }
 
 // main scripts
 $(document).ready(function() {
     // choose category
     let categoryLinks = $(".main-container_best-offers_items_options_menu ul a");
-    $(categoryLinks).click(function() {
-        for(let item of categoryLinks) {
-            $(item).removeClass("choosen-item");
-        }
-        $(this).toggleClass("choosen-item");
-    });
-
-    // change tab how-works
-    let howWorkTabs = $(".main-container_how-works_buy-sell_buttons button");
-    $(howWorkTabs).click(function() {
-        for(let item of howWorkTabs) {
-            $(item).removeClass("active-button");
-        }
-        $(this).toggleClass("active-button");
-    });
-
-    // change tab invest
-    let investTabs = $(".main-container_invest_types_buttons button");
-    $(investTabs).click(function() {
-        for(let item of investTabs) {
-            $(item).removeClass("active-button");
-        }
-        $(this).toggleClass("active-button");
-    }); 
-
-    // change tab help
-    let helpTabs = $(".main-container_help_buyer-seller_buttons button");
-    $(helpTabs).click(function() {
-        for(let item of helpTabs) {
-            $(item).removeClass("active-button");
-        }
-        $(this).toggleClass("active-button");
-    });
-
-    // select styles
+    chooseRightLink(categoryLinks, "choosen-item");
+    
+    // select logic
     $('.select').each(function() {
         const _this = $(this),
             selectOption = _this.find('option'),
@@ -105,4 +90,26 @@ $(document).ready(function() {
             }
         });
     });
+
+    // invest-top block tabs
+    $('.main-container_invest-top .tabs_triggers_buttons_item').click(function(){
+        tabsLogic('main-container_invest-top', $(this));
+    });
+    // invest-bottom block tabs
+    $('.main-container_invest-bottom .tabs_triggers_buttons_item').click(function(){
+        tabsLogic('main-container_invest-bottom', $(this));
+    });
+    // how-works block tabs
+    $('.main-container_how-works .tabs_triggers_buttons_item').click(function(){
+        tabsLogic('main-container_how-works', $(this));
+    });
+    // help block tabs
+    $('.main-container_help .tabs_triggers_buttons_item').click(function(){
+        tabsLogic('main-container_help', $(this));
+    })
+    // first tab is active
+    let activeTabs = $(".active-tab");
+    for(let i = 0; i < activeTabs.length; i++) {
+        $(activeTabs[i]).click();
+    }
 })
