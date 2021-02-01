@@ -112,4 +112,9 @@ $(document).ready(function() {
     for(let i = 0; i < activeTabs.length; i++) {
         $(activeTabs[i]).click();
     }
+
+    // reset filter
+    $('#reset-filter').click(function(){
+        $('.main-container_filter_form')[0].reset();
+    })
 })

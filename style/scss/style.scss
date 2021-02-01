@@ -578,7 +578,7 @@ button {
             &_item {
                 height: 100%;
                 font-weight: bold;
-                padding: 2rem;
+                padding: 2rem 4rem;
                 transition: all .3s;
                 &--active {
                     font-size: 1.6rem;
@@ -593,7 +593,6 @@ button {
     }
 
     &_content {
-        padding: 7rem 0;
         background: $defaultBackground-color;
         &_wrapper {
             // background: red;
@@ -608,6 +607,11 @@ button {
 }
 
 .main-container_invest-top, .main-container_invest-bottom {
+    .tabs {
+        &_content {
+            height: 17rem;
+        }
+    }
     &_form {
         & > div {
             flex-basis: 20%;
@@ -758,7 +762,7 @@ button {
             label {
                 width: 100%;
                 padding: 1.5rem;
-                background: #F1F1F1;
+                background: $defaultBackground-color;
                 text-align: center;
                 color: $subheaders-color;
                 font-size: 1.2rem;
@@ -774,6 +778,11 @@ button {
 }
 
 .main-container_help {
+    .tabs {
+        &_content {
+            height: 96rem;
+        }
+    }
     &_container {
         &_items {
             width: 100%;
@@ -1039,6 +1048,11 @@ button {
 }
 
 .main-container_how-works {
+    .tabs {
+        &_content {
+            height: 45rem;
+        }
+    }
 
     &_how-sell {
         :not(:last-child) {

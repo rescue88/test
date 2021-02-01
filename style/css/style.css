@@ -403,7 +403,7 @@ button {
 .tabs_triggers_buttons_item {
   height: 100%;
   font-weight: bold;
-  padding: 2rem;
+  padding: 2rem 4rem;
   transition: all .3s; }
   .tabs_triggers_buttons_item--active {
     font-size: 1.6rem;
@@ -413,12 +413,14 @@ button {
     text-decoration: underline; }
 
 .tabs_content {
-  padding: 7rem 0;
   background: #EEE; }
   .tabs_content_wrapper_item {
     display: none; }
     .tabs_content_wrapper_item--active {
       display: block; }
+
+.main-container_invest-top .tabs_content, .main-container_invest-bottom .tabs_content {
+  height: 17rem; }
 
 .main-container_invest-top_form > div, .main-container_invest-bottom_form > div {
   flex-basis: 20%; }
@@ -509,7 +511,7 @@ button {
     .main-container_filter .filter-radio_item label {
       width: 100%;
       padding: 1.5rem;
-      background: #F1F1F1;
+      background: #EEE;
       text-align: center;
       color: #171E2B;
       font-size: 1.2rem;
@@ -517,6 +519,9 @@ button {
     .main-container_filter .filter-radio_item input[type="radio"]:checked + label {
       background: #cb2524;
       color: #FFF; }
+
+.main-container_help .tabs_content {
+  height: 96rem; }
 
 .main-container_help_container_items {
   width: 100%;
@@ -695,6 +700,9 @@ button {
     .main-container_news_container_watch-all button {
       color: #171E2B;
       border: 1px solid black; }
+
+.main-container_how-works .tabs_content {
+  height: 45rem; }
 
 .main-container_how-works_how-sell :not(:last-child) {
   margin-right: 2rem; }
