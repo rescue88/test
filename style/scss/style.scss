@@ -300,7 +300,8 @@ button {
     &_hat, &_footer {
         padding: 2rem 0;
     }
-    & > section {
+
+    & > section:not(.no-padding) {
         padding: 5rem 0;
     }
 }
@@ -363,11 +364,9 @@ button {
     &_container {
         height: 80rem;
         position: relative;
-        display: flex;
-        align-items: center;
         
         &_info {
-            flex-basis: 70%;
+            flex-basis: 65%;
             & > div:not(:last-child) {
                 margin-bottom: 2.5rem;
             }
@@ -389,7 +388,7 @@ button {
         }
 
         &_crawlers {
-            min-width: 45rem;
+            flex-basis: 35%;
             height: 100%;
             background: url(./../../img/find-business/3-background.png);
             background-size: cover;
@@ -597,6 +596,7 @@ button {
         padding: 7rem 0;
         background: $defaultBackground-color;
         &_wrapper {
+            // background: red;
             &_item {
                 display: none;
                 &--active {
@@ -623,7 +623,7 @@ button {
         &_submit {
             align-self: flex-end;
             button {
-                width: 25rem;
+                width: 100%;
             }
         }
     }

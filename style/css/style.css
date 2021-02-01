@@ -222,7 +222,7 @@ button {
 .main-container_hat, .main-container_footer {
   padding: 2rem 0; }
 
-.main-container > section {
+.main-container > section:not(.no-padding) {
   padding: 5rem 0; }
 
 .main-container_hat_phone, .main-container_hat_email {
@@ -266,11 +266,9 @@ button {
   background: #EEE; }
   .main-container_find-business_container {
     height: 80rem;
-    position: relative;
-    display: flex;
-    align-items: center; }
+    position: relative; }
     .main-container_find-business_container_info {
-      flex-basis: 70%; }
+      flex-basis: 65%; }
       .main-container_find-business_container_info > div:not(:last-child) {
         margin-bottom: 2.5rem; }
       .main-container_find-business_container_info_subheader {
@@ -282,7 +280,7 @@ button {
         .main-container_find-business_container_info_buttons :first-child {
           margin-right: 1rem; }
     .main-container_find-business_container_crawlers {
-      min-width: 45rem;
+      flex-basis: 35%;
       height: 100%;
       background: url(./../../img/find-business/3-background.png);
       background-size: cover;
@@ -432,7 +430,7 @@ button {
 .main-container_invest-top_form_submit, .main-container_invest-bottom_form_submit {
   align-self: flex-end; }
   .main-container_invest-top_form_submit button, .main-container_invest-bottom_form_submit button {
-    width: 25rem; }
+    width: 100%; }
 
 .main-container_tips_header {
   margin-bottom: 7rem;
