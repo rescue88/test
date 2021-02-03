@@ -31,6 +31,8 @@ $helpButtons-color: #325899;
 
 // Common default tags
 *, ::before, ::after {
+    min-width: 0;
+    min-height: 0;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -378,6 +380,7 @@ button {
     }
 }
 
+// most of items sets
 .typical-item {
     display: flex;
     flex-direction: column;
@@ -388,28 +391,26 @@ button {
         box-shadow: 0 0px 10px rgba(0, 0, 0, .4);
     }
 
-    & > div:not(.typical-item_picture) {
-        padding: 1.5rem;
+    & > div {
+        width: 100%;
     }
 
+    & > div:not(.typical-item_picture):not(.typical-item_location) {
+        padding: 1.5rem;
+    }
+    // same components
     &_picture {
-        width: 100%;
         height: 65%;
-
         img {
             border-radius: 5px 5px 0 0;
         }
-    }
-
-    &_subheader {
-        height: 25%;
     }
 
     &_date {
         font-size: 1.2rem;
         color: $plainText-color-2;
     }
-
+    // only for news block
     &_open {
         a svg {
             margin: 0;
@@ -424,10 +425,54 @@ button {
             }
         }
     }
-
+    // only for help block
     &_show-more {
         text-align: right;
     }
+    // only for best-offers block
+    &_location {
+        color: $subheaders-color;
+    }
+    &_advantages {
+        &_profit, &_yield, &_payback {
+            line-height: 1.5;
+            span {
+                color: $subheaders-color;
+            }
+        }
+    }
+    &_more {
+        background: #ecf0f9;
+        &_sum {
+            span {
+                color: #202B63;
+                font-size: 3rem;
+            }
+        }
+    }
+}
+// margins for some of items in carousels
+.margin-item {
+    margin: 2rem;
+}
+// standart slider settings
+.slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.slick-list {
+    overflow: hidden;
+}
+.slick-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slick-slide:active, .slick-slide:focus {
+    border: none;
+    outline: none;
 }
 
 // MAIN CONTAINER
@@ -547,70 +592,11 @@ button {
     }
 }
 
-.slick-track {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.slick-list {
-    overflow: hidden;
-}
-
-.slick-slide {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slick-slide:active, .slick-slide:focus {
-    outline: none;
-}
-
-.slider {
-    position: relative;
-    padding: 0 50px;
-    min-width: 0;
-
-    img {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-// .slider .slick-arrow {
-//     font-size: 0;
-//     width: 30px;
-//     height: 50px;
-//     border: none;
-//     outline: none;
-
-//     transition: all .5s;
-// }
-
-.slider .slick-arrow.slick-disabled {
-    opacity: .2;
-}
-
-// .slider .slick-arrow.slick-prev {
-//     left: 0;
-// }
-
-// .slider .slick-arrow.slick-next {
-//     right: 0;
-// }
-
-.slider_item {
-    text-align: center;
-    width: 300px;
-}
-
 .main-container_best-offers {
     &_options {
         display: flex;
         &_menu {
-            min-width: 15%;
+            min-width: 20%;
             &_nav {
                 font-weight: 700;
                 ul {
@@ -642,12 +628,10 @@ button {
         }
 
         &_slider {
-            &_item {
-                // width: 33rem;
-                height: 60rem;
-                &_picture{
-                    
-                }
+            //best-offers item within a slider
+            .typical-item {
+                margin: 2rem;
+                margin-top: 0;
             }
         }
     }
@@ -809,6 +793,7 @@ button {
                 flex-basis: 20%;
                 height: 40rem;
                 margin: 2rem;
+                background: #FFF;
 
                 .typical-item_picture {
                     height: 50%;
@@ -823,47 +808,6 @@ button {
 }
 
 .main-container_work-with {
-    &_hat {
-        display: flex;
-        &_header {
-            flex-basis: 30%;
-            color: #171E2B;
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        &_buttons {
-            flex-basis: 70%;
-            display: flex;
-            justify-content: center;
-            &_button {
-                width: 4.7rem;
-                height: 4.7rem;
-                margin: 1rem;
-                background: #EEEFEF;
-                cursor: pointer;
-    
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &_button:active {
-                transform: scale(1.2);
-            }
-
-            &_button:hover {
-                background: #dfe4ed;
-                svg {
-                    transition: all .5s;
-                    fill: #000;
-                    transform: scale(1.5);
-                }
-            }
-        }
-    }
-
     &_carousel {
         &_item {
             width: 20rem;

@@ -119,14 +119,7 @@ $(document).ready(function() {
         $('.main-container_filter_form')[0].reset();
     });
 
-    let chevronStr = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 320 512">
-                        <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 
-                        33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                        </path>
-                    </svg>`;
-
-    // sliders
+    // left/right chevrons to put them as html using JS
     let chevronLeft = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" 
                         viewBox="0 0 320 512">
                         <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 
@@ -139,19 +132,40 @@ $(document).ready(function() {
                             101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
                             </path>
                         </svg>`;
-    $('.slider').slick({
+    // best-offers block slider
+    $('.best-offers_slider').slick({
         arrows: true,
         adaptiveHeight: true,
         slidesToShow: 3,
         infinite: false,
         draggable: false,
-        variableWidth: true,
-        appendArrows: $('.hat-carousel_buttons'),
+        // variableWidth: true,
+        // adaptiveHeight: true,
+        appendArrows: $('.main-container_best-offers_hat .hat-carousel_buttons'),
         prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
     });
-
-    $('.hat-carousel_buttons_prev').click(function(){
-        
+    // work-with block slider
+    $('.work-with_slider').slick({
+        arrows: true,
+        adaptiveHeight: true,
+        slidesToShow: 5,
+        infinite: false,
+        draggable: false,
+        appendArrows: $('.main-container_work-with_hat .hat-carousel_buttons'),
+        prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+        nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
     })
+    // reviews block slider
+    $('.reviews_slider').slick({
+        arrows: true,
+        adaptiveHeight: true,
+        slidesToShow: 4,
+        infinite: false,
+        draggable: false,
+        variableHeight: true,
+        appendArrows: $('.main-container_reviews_hat .hat-carousel_buttons'),
+        prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+        nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+    });
 })

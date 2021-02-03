@@ -14,6 +14,8 @@
   font-weight: 800; }
 
 *, ::before, ::after {
+  min-width: 0;
+  min-height: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -279,15 +281,14 @@ button {
   border-radius: 5px; }
   .typical-item:hover {
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4); }
-  .typical-item > div:not(.typical-item_picture) {
+  .typical-item > div {
+    width: 100%; }
+  .typical-item > div:not(.typical-item_picture):not(.typical-item_location) {
     padding: 1.5rem; }
   .typical-item_picture {
-    width: 100%;
     height: 65%; }
     .typical-item_picture img {
       border-radius: 5px 5px 0 0; }
-  .typical-item_subheader {
-    height: 25%; }
   .typical-item_date {
     font-size: 1.2rem;
     color: #9CAABB; }
@@ -300,6 +301,38 @@ button {
       transform: scale(1.1); }
   .typical-item_show-more {
     text-align: right; }
+  .typical-item_location {
+    color: #171E2B; }
+  .typical-item_advantages_profit, .typical-item_advantages_yield, .typical-item_advantages_payback {
+    line-height: 1.5; }
+    .typical-item_advantages_profit span, .typical-item_advantages_yield span, .typical-item_advantages_payback span {
+      color: #171E2B; }
+  .typical-item_more {
+    background: #ecf0f9; }
+    .typical-item_more_sum span {
+      color: #202B63;
+      font-size: 3rem; }
+
+.margin-item {
+  margin: 2rem; }
+
+.slick-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+
+.slick-list {
+  overflow: hidden; }
+
+.slick-slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.slick-slide:active, .slick-slide:focus {
+  border: none;
+  outline: none; }
 
 .main-container_hat, .main-container_footer {
   padding: 2rem 0; }
@@ -379,42 +412,10 @@ button {
         right: calc(50%);
         flex-direction: column; }
 
-.slick-track {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; }
-
-.slick-list {
-  overflow: hidden; }
-
-.slick-slide {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.slick-slide:active, .slick-slide:focus {
-  outline: none; }
-
-.slider {
-  position: relative;
-  padding: 0 50px;
-  min-width: 0; }
-  .slider img {
-    width: 150px;
-    height: 150px; }
-
-.slider .slick-arrow.slick-disabled {
-  opacity: .2; }
-
-.slider_item {
-  text-align: center;
-  width: 300px; }
-
 .main-container_best-offers_options {
   display: flex; }
   .main-container_best-offers_options_menu {
-    min-width: 15%; }
+    min-width: 20%; }
     .main-container_best-offers_options_menu_nav {
       font-weight: 700; }
       .main-container_best-offers_options_menu_nav ul a li {
@@ -434,8 +435,9 @@ button {
           top: .8rem;
           left: .1rem;
           background: #cb2524; }
-  .main-container_best-offers_options_slider_item {
-    height: 60rem; }
+  .main-container_best-offers_options_slider .typical-item {
+    margin: 2rem;
+    margin-top: 0; }
 
 .main-container_invest-top .tabs_content, .main-container_invest-bottom .tabs_content {
   height: 17rem; }
@@ -526,41 +528,12 @@ button {
   .main-container_help_container_items_item {
     flex-basis: 20%;
     height: 40rem;
-    margin: 2rem; }
+    margin: 2rem;
+    background: #FFF; }
     .main-container_help_container_items_item .typical-item_picture {
       height: 50%; }
     .main-container_help_container_items_item .typical-item_subheader {
       height: auto; }
-
-.main-container_work-with_hat {
-  display: flex; }
-  .main-container_work-with_hat_header {
-    flex-basis: 30%;
-    color: #171E2B;
-    font-size: 2.4rem;
-    font-weight: 700;
-    text-transform: uppercase; }
-  .main-container_work-with_hat_buttons {
-    flex-basis: 70%;
-    display: flex;
-    justify-content: center; }
-    .main-container_work-with_hat_buttons_button {
-      width: 4.7rem;
-      height: 4.7rem;
-      margin: 1rem;
-      background: #EEEFEF;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-    .main-container_work-with_hat_buttons_button:active {
-      transform: scale(1.2); }
-    .main-container_work-with_hat_buttons_button:hover {
-      background: #dfe4ed; }
-      .main-container_work-with_hat_buttons_button:hover svg {
-        transition: all .5s;
-        fill: #000;
-        transform: scale(1.5); }
 
 .main-container_work-with_carousel_item {
   width: 20rem;
