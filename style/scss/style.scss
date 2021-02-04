@@ -475,6 +475,26 @@ button {
     outline: none;
 }
 
+// value sliders
+.noUi-target {
+    background: $projectColor-red;
+}
+// hiding density points
+.noUi-marker-normal, .noUi-vertical {
+    display: none;
+}
+
+// .noUi-handle {
+//     width: 30px;
+//     height: 30px;
+//     border-radius: 50%;
+// }
+
+.noUi-horizontal .noUi-handle, .noUi-vertical {
+    background: $projectColor-red;
+}
+
+
 // MAIN CONTAINER
 .main-container {
     &_hat, &_footer {
@@ -568,25 +588,25 @@ button {
         }
 
         &_crawlers {
+            position: relative;
             flex-basis: 35%;
             height: 100%;
             background: url(./../../img/find-business/3-background.png);
             background-size: cover;
-            position: relative;
     
-            display: flex;
-            align-items: center;
-    
-            &_instruments {
+            &_form {
                 width: 100%;
                 height: 80%;
-    
+                padding: 2rem;
                 background: #FFF;
-                border: 3px solid black;
-                border-radius: 10px;
+                border-radius: 5px;
                 position: absolute;
                 right: calc(50%);
                 flex-direction: column;
+
+                .instrument_sum {
+
+                }
             }
         }
     }

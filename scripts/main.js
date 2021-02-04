@@ -168,4 +168,39 @@ $(document).ready(function() {
         prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
     });
+
+    // value sliders(crawlers)
+    var range = [50000, 100000, 300000, 500000, 1000000];
+    var slider_steps = {
+        'min': [ 50000, 50000 ],
+        '25%': [ 100000, 200000 ],
+        '50%': [ 300000, 200000 ],
+        '75%': [ 500000, 500000 ],
+        'max': [ 1000000 ],
+    };
+
+    function filterPips(value, type) {
+        if (type === 0) {
+            return value < 2000 ? -1 : 0;
+        }
+        return range.indexOf(value) !== -1 ? 2 : 1;
+    }
+
+    // var range_all_sliders = {
+    //     'min': [ 0 ],
+    //     '10%': [ 500, 500 ],
+    //     '50%': [ 4000, 1000 ],
+    //     'max': [ 10000 ]
+    // };
+    let slider = document.getElementById('sum-slider');
+    noUiSlider.create(slider, {
+        range: slider_steps,
+        tooltips: true,
+        connect: 'lower',
+        start: 0,
+        pips: {
+            mode: 'steps',
+            filter: filterPips,
+        }
+    });
 })

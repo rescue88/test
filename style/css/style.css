@@ -334,6 +334,15 @@ button {
   border: none;
   outline: none; }
 
+.noUi-target {
+  background: #cb2524; }
+
+.noUi-marker-normal, .noUi-vertical {
+  display: none; }
+
+.noUi-horizontal .noUi-handle, .noUi-vertical {
+  background: #cb2524; }
+
 .main-container_hat, .main-container_footer {
   padding: 2rem 0; }
 
@@ -395,19 +404,17 @@ button {
         .main-container_find-business_container_info_buttons :first-child {
           margin-right: 1rem; }
     .main-container_find-business_container_crawlers {
+      position: relative;
       flex-basis: 35%;
       height: 100%;
       background: url(./../../img/find-business/3-background.png);
-      background-size: cover;
-      position: relative;
-      display: flex;
-      align-items: center; }
-      .main-container_find-business_container_crawlers_instruments {
+      background-size: cover; }
+      .main-container_find-business_container_crawlers_form {
         width: 100%;
         height: 80%;
+        padding: 2rem;
         background: #FFF;
-        border: 3px solid black;
-        border-radius: 10px;
+        border-radius: 5px;
         position: absolute;
         right: calc(50%);
         flex-direction: column; }
