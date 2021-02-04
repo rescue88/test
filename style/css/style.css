@@ -505,14 +505,17 @@ button {
   .main-container_invest-top_form_submit button, .main-container_invest-bottom_form_submit button {
     width: 100%; }
 
-.main-container_tips_content_item {
-  width: 35rem; }
-  .main-container_tips_content_item div {
-    padding: 7px; }
-  .main-container_tips_content_item svg {
-    width: 7rem;
-    height: 7rem;
-    fill: #cb2524; }
+.main-container_tips_content {
+  display: flex;
+  justify-content: space-around; }
+  .main-container_tips_content_item {
+    width: 35rem; }
+    .main-container_tips_content_item_info_subheader {
+      margin-bottom: 10px; }
+    .main-container_tips_content_item svg {
+      width: 7rem;
+      height: 7rem;
+      fill: #cb2524; }
 
 .main-container_filter > div {
   margin: 2rem 0; }

@@ -740,10 +740,14 @@ button {
 
 .main-container_tips {
     &_content {
+        display: flex;
+        justify-content: space-around;
         &_item {
             width: 35rem;
-            div {
-                padding: 7px;
+            &_info {
+                &_subheader {
+                    margin-bottom: 10px;
+                }
             }
 
             svg {
