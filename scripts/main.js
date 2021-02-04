@@ -170,37 +170,97 @@ $(document).ready(function() {
     });
 
     // value sliders(crawlers)
-    var range = [50000, 100000, 300000, 500000, 1000000];
-    var slider_steps = {
-        'min': [ 50000, 50000 ],
-        '25%': [ 100000, 200000 ],
-        '50%': [ 300000, 200000 ],
-        '75%': [ 500000, 500000 ],
-        'max': [ 1000000 ],
-    };
-
-    function filterPips(value, type) {
+    // sum slider
+    function filterPipsSum(value, type) {
+        let sumRange = [50000, 100000, 300000, 500000, 1000000];
         if (type === 0) {
             return value < 2000 ? -1 : 0;
         }
-        return range.indexOf(value) !== -1 ? 2 : 1;
+        return sumRange.indexOf(value) !== -1 ? 2 : 1;
     }
 
-    // var range_all_sliders = {
-    //     'min': [ 0 ],
-    //     '10%': [ 500, 500 ],
-    //     '50%': [ 4000, 1000 ],
-    //     'max': [ 10000 ]
-    // };
-    let slider = document.getElementById('sum-slider');
-    noUiSlider.create(slider, {
-        range: slider_steps,
-        tooltips: true,
-        connect: 'lower',
-        start: 0,
+    let sumCrawler = document.getElementById('sum-slider');
+
+    noUiSlider.create(sumCrawler, {
+        range: {
+            'min': [50000, 50000],
+            '25%': [100000, 200000],
+            '47%': [300000, 200000],
+            '70%': [500000, 500000],
+            'max': [1000000],
+        },
+        start: [300000],
+        connect: [true, false],
         pips: {
             mode: 'steps',
-            filter: filterPips,
+            filter: filterPipsSum,
+            density: 10,
         }
     });
-})
+
+    sumCrawler.noUiSlider.on('update', (value, handle) => {
+        $('#sum-change').val(parseInt(value));
+    });
+    // time slider
+    function filterPipsTime(value, type) {
+        let timeRange = [3, 6, 12, 24];
+        if (type === 0) {
+            return value < 2000 ? -1 : 0;
+        }
+        return timeRange.indexOf(value) !== -1 ? 2 : 1;
+    }
+
+    let timeCrawler = document.getElementById('time-slider');
+
+    noUiSlider.create(timeCrawler, {
+        range: {
+            'min': [3, 3],
+            '32%': [6, 6],
+            '64%': [12, 12],
+            'max': [24],
+        },
+        start: 6,
+        connect: [true, false],
+        pips: {
+            mode: 'steps',
+            filter: filterPipsTime,
+            density: 10,
+        }
+    });
+
+    timeCrawler.noUiSlider.on('update', (value, handle) => {
+        $('#time-change').val(parseInt(value));
+    });
+    // profit slider
+    function filterPipsProfit(value, type) {
+        let profitRange = [100000, 200000, 500000, 1000000, 2000000, 3000000];
+        if (type === 0) {
+            return value < 2000 ? -1 : 0;
+        }
+        return profitRange.indexOf(value) !== -1 ? 2 : 1;
+    }
+
+    let profitCrawler = document.getElementById('profit-slider');
+
+    noUiSlider.create(profitCrawler, {
+        range: {
+            'min': [100000, 100000],
+            '20%': [200000, 300000],
+            '38%': [500000, 500000],
+            '56%': [1000000, 1000000],
+            '75%': [2000000, 1000000],
+            'max': [3000000]
+        },
+        start: 500000,
+        connect: [true, false],
+        pips: {
+            mode: 'steps',
+            filter: filterPipsProfit,
+            density: 10,
+        }
+    });
+
+    profitCrawler.noUiSlider.on('update', (value, handle) => {
+        $('#profit-change').val(parseInt(value));
+    })
+});

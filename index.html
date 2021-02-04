@@ -168,8 +168,50 @@
 
                     <div class="main-container_find-business_container_crawlers align-center">
                         <form class="main-container_find-business_container_crawlers_form" action="">
-                            <div id="sum-slider">
-                                
+                            <div class="instrument_sum instrument">
+                                <div class="instrument_value space-between">
+                                    <div class="instrument_value_subheader subheaders">
+                                        Сумма
+                                    </div>
+                                    <div class="instrument_value_field plain-text">
+                                        <input id="sum-change" class="headers" type="number" disabled> ₽
+                                    </div>
+                                </div>
+                                <div id="sum-slider"></div>
+                            </div>
+                            <div class="instrument_time instrument">
+                                <div class="instrument_value space-between">
+                                    <div class="instrument_value_subheader subheaders">
+                                        Срок
+                                    </div>
+                                    <div class="instrument_value_field plain-text">
+                                        <input id="time-change" class="headers" type="number" disabled> мес.
+                                    </div>
+                                </div>
+                                <div id="time-slider"></div>
+                            </div>
+                            <div class="instrument_profit instrument">
+                                <div class="instrument_value space-between">
+                                    <div class="instrument_value_subheader subheaders">
+                                        Прибыль
+                                    </div>
+                                    <div class="instrument_value_field plain-text">
+                                        <input id="profit-change" class="headers" type="number" disabled> ₽
+                                    </div>
+                                </div>
+                                <div id="profit-slider"></div>
+                            </div>
+                            <div class="instrument_branch">
+                                <label class="instrument_value_subheader subheaders" for="find-business">Отрасль</label>
+                                <select class="select" name="find-business" id="find-business">
+                                    <option disabled>Выбрать</option>
+                                    <option value="autobusiness">Автобизнес</option>
+                                    <option value="buildings">Недвижимость</option>
+                                    <option value="trading">Трейдинг</option>
+                                </select>
+                            </div>
+                            <div class="instrument_submit">
+                                <button class="red-button" type="submit">Подобрать предложения</button>
                             </div>
                         </form>
                     </div>
