@@ -144,6 +144,20 @@ $(document).ready(function() {
         appendArrows: $('.main-container_best-offers_hat .hat-carousel_buttons'),
         prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+        responsive: [
+            {
+                breakpoint: 1450,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 1150,
+                settings: {
+                    slidesToShow: 1.5,
+                }
+            },
+        ],
     });
     // work-with block slider
     $('.work-with_slider').slick({
@@ -155,6 +169,20 @@ $(document).ready(function() {
         appendArrows: $('.main-container_work-with_hat .hat-carousel_buttons'),
         prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }
+        ],
     })
     // reviews block slider
     $('.reviews_slider').slick({
@@ -167,6 +195,20 @@ $(document).ready(function() {
         appendArrows: $('.main-container_reviews_hat .hat-carousel_buttons'),
         prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2.5,
+                }
+            }
+        ],
     });
 
     // value sliders(crawlers)

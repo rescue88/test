@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport"="width=device-width, initial-scale=1.0"> -->
         <title>Main Page</title>
         
         <link rel="stylesheet" href="./style/css/normalize.css">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="main-container_hat_profiles center-childs">
+                <div class="main-container_hat_profile center-childs">
                     <a class="center-childs profile-link" href="#">
                         <div class="main-container_hat_profile_icon">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -145,7 +145,7 @@
 
             <section class="main-container_find-business no-padding">
 
-                <div class="main-container_find-business_container not-centered align-center">
+                <div class="main-container_find-business_container not-centered space-between">
                     <div class="main-container_find-business_container_info">
                         <div class="main-container_find-business_container_info_header extra-headers">
                             Продажа готового<br>
@@ -221,14 +221,14 @@
 
             </section>
 
-            <section class="main-container_best-offers not-centered">
-                <div class="main-container_best-offers_hat hat-carousel">
+            <section class="main-container_best-offers">
+                <div class="main-container_best-offers_hat hat-carousel not-centered">
                     <div class="hat-carousel_header headers">
                         Лучшие предложения
                     </div>
                     <div class="hat-carousel_buttons center-childs"></div>
                 </div>
-                <div class="main-container_best-offers_options">
+                <div class="main-container_best-offers_options not-centered">
                     <div class="main-container_best-offers_options_menu">
                         <nav class="main-container_best-offers_options_menu_nav">
                             <ul>
@@ -517,11 +517,11 @@
                 </div>
             </section>
 
-            <section class="main-container_tips centered">
+            <section class="main-container_tips">
                 <div class="main-container_tips_header headers centered-header">
                     Почему работать с нами выгодно
                 </div>
-                <div class="main-container_tips_content space-between">
+                <div class="main-container_tips_content centered space-between">
                     <div class="main-container_tips_content_item center-childs">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 447.83 576.83">
                             <defs><style>.cls-1{fill:#fff;}</style></defs>
@@ -607,112 +607,114 @@
                 </div>
             </section>
 
-            <section class="main-container_filter centered">
+            <section class="main-container_filter">
 
-                <div class="main-container_filter_header headers">
+                <div class="main-container_filter_header headers centered">
                     Фильтр Бизнесов
                 </div>
-                <form class="main-container_filter_form" action="">
-                    <div class="main-container_filter_form_invest-city space-between">
-                        <div class="main-container_filter_form_invest-city_invest">
-                            <div class="main-container_filter_form_invest-city_invest_title filter-title">
-                                Вложения, до
+                <form class="main-container_filter_form centered" action="">
+                    <div class="main-container_filter_form_container space-between">
+                        <div class="main-container_filter_form_container_long-radio">
+                            <div class="main-container_filter_form_container_long-radio_invest">
+                                <div class="main-container_filter_form_container_long-radio_invest_title filter-title">
+                                    Вложения, до
+                                </div>
+                                <div class="main-container_filter_form_container_long-radio_invest_radio filter-radio">
+                                    <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
+                                        <input id="invest-min" type="radio" name="invest" checked>
+                                        <label for="invest-min">50 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
+                                        <input id="invest-100k" type="radio" name="invest">
+                                        <label for="invest-100k">100 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
+                                        <input id="invest-300k" type="radio" name="invest">
+                                        <label for="invest-300k">300 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
+                                        <input id="invest-500k" type="radio" name="invest">
+                                        <label for="invest-500k">500 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
+                                        <input id="invest-1kk" type="radio" name="invest">
+                                        <label for="invest-1kk">1 000 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
+                                        <input id="invest-max" type="radio" name="invest">
+                                        <label for="invest-max">>1 000 000 ₽</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="main-container_filter_form_invest-city_invest_radio filter-radio">
-                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
-                                    <input id="invest-min" type="radio" name="invest" checked>
-                                    <label for="invest-min">50 000 ₽</label>
+                            <div class="main-container_filter_form_container_long-radio_profit">
+                                <div class="main-container_filter_form_container_long-radio_profit_title filter-title">
+                                    Прибыль, до
                                 </div>
-                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
-                                    <input id="invest-100k" type="radio" name="invest">
-                                    <label for="invest-100k">100 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
-                                    <input id="invest-300k" type="radio" name="invest">
-                                    <label for="invest-300k">300 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
-                                    <input id="invest-500k" type="radio" name="invest">
-                                    <label for="invest-500k">500 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
-                                    <input id="invest-1kk" type="radio" name="invest">
-                                    <label for="invest-1kk">1 000 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_invest-city_invest_radio_item filter-radio_item">
-                                    <input id="invest-max" type="radio" name="invest">
-                                    <label for="invest-max">>1 000 000 ₽</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-container_filter_form_invest-city_city">
-                            <div class="main-container_filter_form_invest-city_city_title filter-title">
-                                Город
-                            </div>
-                            <div class="main-container_filter_form_invest-city_city_title_select">
-                                <label for="city">
-                                    <select class="select" id="city" name="city">
-                                        <option disabled>Выбрать</option>
-                                        <option value="Moscow">Москва</option>
-                                        <option value="Ekaterinburg">Екатеринбург</option>
-                                        <option value="Rostov">Ростов</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-container_filter_form_profit-payback space-between">
-                        <div class="main-container_filter_form_profit-payback_profit">
-                            <div class="main-container_filter_form_profit-payback_profit_title filter-title">
-                                Прибыль, до
-                            </div>
-                            <div class="main-container_filter_form_profit-payback_profit_radio filter-radio">
-                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
-                                    <input id="profit-min" type="radio" name="profit" checked>
-                                    <label for="profit-min">100 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
-                                    <input id="profit-200k" type="radio" name="profit">
-                                    <label for="profit-200k">200 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
-                                    <input id="profit-500k" type="radio" name="profit">
-                                    <label for="profit-500k">500 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
-                                    <input id="profit-1kk" type="radio" name="profit">
-                                    <label for="profit-1kk">1 000 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
-                                    <input id="profit-2kk" type="radio" name="profit">
-                                    <label for="profit-2kk">2 000 000 ₽</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_profit_radio_item filter-radio_item">
-                                    <input id="profit-max" type="radio" name="profit">
-                                    <label for="profit-max">3 000 000 ₽</label>
+                                <div class="main-container_filter_form_container_long-radio_profit_radio filter-radio">
+                                    <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
+                                        <input id="profit-min" type="radio" name="profit" checked>
+                                        <label for="profit-min">100 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
+                                        <input id="profit-200k" type="radio" name="profit">
+                                        <label for="profit-200k">200 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
+                                        <input id="profit-500k" type="radio" name="profit">
+                                        <label for="profit-500k">500 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
+                                        <input id="profit-1kk" type="radio" name="profit">
+                                        <label for="profit-1kk">1 000 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
+                                        <input id="profit-2kk" type="radio" name="profit">
+                                        <label for="profit-2kk">2 000 000 ₽</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
+                                        <input id="profit-max" type="radio" name="profit">
+                                        <label for="profit-max">3 000 000 ₽</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="main-container_filter_form_profit-payback_payback">
-                            <div class="main-container_filter_form_profit-payback_payback_title filter-title">
-                                Окупаемость, мес
+                        <div class="main-container_filter_form_container_small-radio">
+                            <div class="main-container_filter_form_container_small-radio_city">
+                                <div class="main-container_filter_form_container_small-radio_city_title filter-title">
+                                    Город
+                                </div>
+                                <div class="main-container_filter_form_container_small-radio_city_select">
+                                    <label for="city">
+                                        <select class="select" id="city" name="city">
+                                            <option disabled>Выбрать</option>
+                                            <option value="Moscow">Москва</option>
+                                            <option value="Ekaterinburg">Екатеринбург</option>
+                                            <option value="Rostov">Ростов</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="main-container_filter_form_profit-payback_payback_radio filter-radio">
-                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
-                                    <input id="payback-min" type="radio" name="payback" checked>
-                                    <label for="payback-min">3</label>
+                            <div class="main-container_filter_form_container_small-radio_payback">
+                                <div class="main-container_filter_form_container_small-radio_payback_title filter-title">
+                                    Окупаемость, мес
                                 </div>
-                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
-                                    <input id="payback-6" type="radio" name="payback">
-                                    <label for="payback-6">6</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
-                                    <input id="payback-12" type="radio" name="payback">
-                                    <label for="payback-12">12</label>
-                                </div>
-                                <div class="main-container_filter_form_profit-payback_payback_radio_item filter-radio_item">
-                                    <input id="payback-max" type="radio" name="payback">
-                                    <label for="payback-max">>12</label>
+                                <div class="main-container_filter_form_container_small-radio_payback_radio filter-radio">
+                                    <div class="main-container_filter_form_container_small-radio_payback_radio_item filter-radio_item">
+                                        <input id="payback-min" type="radio" name="payback" checked>
+                                        <label for="payback-min">3</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_small-radio_payback_radio_item filter-radio_item">
+                                        <input id="payback-6" type="radio" name="payback">
+                                        <label for="payback-6">6</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_small-radio_payback_radio_item filter-radio_item">
+                                        <input id="payback-12" type="radio" name="payback">
+                                        <label for="payback-12">12</label>
+                                    </div>
+                                    <div class="main-container_filter_form_container_small-radio_payback_radio_item filter-radio_item">
+                                        <input id="payback-max" type="radio" name="payback">
+                                        <label for="payback-max">>12</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -950,15 +952,15 @@
 
             </section>
 
-            <section class="main-container_work-with not-centered">
+            <section class="main-container_work-with">
 
-                <div class="main-container_work-with_hat hat-carousel">
+                <div class="main-container_work-with_hat hat-carousel not-centered">
                     <div class="hat-carousel_header headers">
                         С кем мы работаем
                     </div>
                     <div class="hat-carousel_buttons center-childs"></div>
                 </div>
-                <div class="main-container_work-with_carousel work-with_slider space-between">
+                <div class="main-container_work-with_carousel not-centered work-with_slider space-between">
                     <a href="#">
                         <div class="main-container_work-with_carousel_item center-childs">
                             <img src="./img/work-with/item.png" alt="">
@@ -1003,16 +1005,16 @@
 
             </section>
 
-            <section class="main-container_reviews not-centered">
+            <section class="main-container_reviews">
 
-                <div class="main-container_reviews_hat hat-carousel">
+                <div class="main-container_reviews_hat hat-carousel not-centered">
                     <div class="hat-carousel_header headers">
-                        С кем мы работаем
+                        Отзывы наших клиентов
                     </div>
                     <div class="hat-carousel_buttons center-childs"></div>
                 </div>
 
-                <div class="main-container_reviews_carousel reviews_slider space-between">
+                <div class="main-container_reviews_carousel not-centered reviews_slider space-between">
                     <a href="#">
                         <div class="main-container_reviews_carousel_item typical-item margin-item">
                             <div class="typical-item_subheader subheaders">
@@ -1209,12 +1211,12 @@
                 </div>
             </section>
 
-            <section class="main-container_news centered">
+            <section class="main-container_news">
 
                 <div class="main-container_news_header headers centered-header">
                     Новости отрасли
                 </div>
-                <div class="main-container_news_container space-between">
+                <div class="main-container_news_container centered space-between">
                     <div class="main-container_news_container_item typical-item">
                         <div class="typical-item_picture">
                             <img class="full-img" src="./img/news/city.png" alt="">
@@ -1306,14 +1308,6 @@
                         <div class="tabs_content_wrapper centered">
                             <div id="tab-1-how" class="tabs_content_wrapper_item">
                                 <div class="main-container_how-works_how-sell space-between">
-                                    <div class="main-container_how-works_how-sell_item typical-item">
-                                        <div class="typical-item_picture">
-                                            <img class="full-img" src="./img/how-works/man.png" alt="">
-                                        </div>
-                                        <div class="typical-item_subheader align-center subheaders">
-                                            Описание шага в одну или две строки текста
-                                        </div>
-                                    </div>
                                     <div class="main-container_how-works_how-sell_item typical-item">
                                         <div class="typical-item_picture">
                                             <img class="full-img" src="./img/how-works/man.png" alt="">

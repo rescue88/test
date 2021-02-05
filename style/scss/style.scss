@@ -44,17 +44,17 @@ html {
     font-weight: 400;
 }
 
-@media screen and (max-device-width: 1500px) {
+@media screen and (max-device-width: 1600px) {
     html {
-        font-size: 8.5px;
+        font-size: 9px;
     }
 }
 
-@media screen and (max-device-width: 1200px) {
-    html {
-        font-size: 7px;
-    }
-}
+// @media screen and (max-device-width: 1200px) {
+//     html {
+//         font-size: 7px;
+//     }
+// }
 // links without styles
 a {
     color: #FFF;
@@ -324,6 +324,7 @@ button {
         background: $defaultBackground-color;
         &_wrapper {
             &_item {
+                padding: 5rem 0;
                 display: none;
                 &--active {
                     display: block;
@@ -339,11 +340,11 @@ button {
     align-items: center;
     margin-bottom: 5rem;
     &_header {
-        flex-basis: 25%;
+        flex-basis: 30%;
     }
 
     &_buttons{
-        flex-basis: 75%;
+        flex-basis: 70%;
         .hat-carousel_buttons_prev, .hat-carousel_buttons_next {
             width: 4.5rem;
             height: 4.5rem;
@@ -365,7 +366,7 @@ button {
         }
 
         .hat-carousel_buttons_prev.slick-disabled, .hat-carousel_buttons_next.slick-disabled {
-            opacity: .5;
+            opacity: .5 ;
             &:hover {
                 background: $defaultBackground-color;
                 svg {
@@ -522,7 +523,7 @@ button {
     justify-content: space-between;
     align-items: center;
 }
-// MAIN CONTAINER
+// MAIN CONTAINER + media queries for same classes
 .main-container {
     &_hat, &_footer {
         padding: 2rem 0;
@@ -531,6 +532,44 @@ button {
     & > section:not(.no-padding) {
         padding: 5rem 0;
     }
+
+    @media(max-width: 1400px) {
+        .headers {
+            font-size: 1.8rem;
+        }
+        .hat-carousel {
+            &_header {
+                flex-basis: 40%;
+            }
+
+            &_buttons {
+                flex-basis: 60%;
+            }
+        }
+    }
+
+    @media(max-width: 1200px) {
+        .tabs {
+            &_triggers {
+                &_buttons {
+                    &_item {
+                        padding-left: 1.5rem;
+                        padding-right: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 991px) {
+        .centered, .not-centered, .full-width {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+    }
 }
 
 // HEADER
@@ -538,7 +577,7 @@ button {
     &_phone, &_email {
         font-size: 1.6rem;
         font-weight: 700;
-    }   
+    }
 
     &_address, .profile-link {
         font-size: 1.2rem;
@@ -555,7 +594,31 @@ button {
 
     &_phone-call {
         button {
-            width: 20rem;
+            width: 18rem;
+            padding: 1.5rem;
+            svg {
+                margin: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    @media(max-width: 1400px) {
+        &_address {
+            display: none;
+        }
+    }
+
+    @media(max-width: 1100px) {
+        &_phone, &_email {
+            display: none;
+        }
+    }
+
+    @media(max-width: 992px) {
+        &_phone, &_email {
+            display: flex;
+            align-items: center;
         }
     }
 }
@@ -593,7 +656,7 @@ button {
         position: relative;
         
         &_info {
-            flex-basis: 65%;
+            flex-basis: 50%;
             & > div:not(:last-child) {
                 margin-bottom: 2.5rem;
             }
@@ -673,6 +736,35 @@ button {
                 }
             }
         }
+        
+        @media(max-width: 1400px) {
+            &_info {
+                &_header {
+                    font-size: 4rem;
+                }
+                &_subheader {
+                    font-size: 1.4rem;
+                }
+            }
+            &_crawlers {
+                &_form {
+                    width: 115%;
+                    right: calc(40%);
+                }
+            }
+        }
+
+        @media(max-width: 1200px) {
+            &_crawlers {
+                flex-basis: 50%;
+                background: none;
+                &_form {
+                    position: inherit;
+                    width: 100%;
+                    right: 0;
+                }
+            }
+        }
     }
 }
 
@@ -718,6 +810,18 @@ button {
                 margin-top: 0;
             }
         }
+
+        @media(max-width: 1450px) {
+            &_menu {
+                min-width: 25%;
+            }
+        }
+
+        @media(max-width: 1150px) {
+            &_menu {
+                min-width: 30%;
+            }
+        }
     }
 }
 
@@ -746,6 +850,10 @@ button {
             }
         }
     }
+
+    // @media {
+        
+    // }
 }
 
 .main-container_tips {
@@ -767,37 +875,60 @@ button {
             }
         }
     }
+
+    @media(max-width: 1150px) {
+        &_content {
+            &_item {
+                &_info {
+                    &_text {
+                        font-size: 12px;
+                    }
+                }
+                svg {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
 }
 
 .main-container_filter {
-    & > div {
-        margin: 2rem 0;
+    &_header {
+        margin-bottom: 3rem;
     }
 
     &_form {
         // blocks with radiobuttons
-        & > div {
-            margin: 2rem 0;
-        }
-        &_invest-city_invest, &_profit-payback_profit {
-            flex-basis: 60%;
-        }
+        &_container {
+            display: flex;
+            &_long-radio, &_small-radio {
+                :first-child {
+                    margin-bottom: 10px;
+                }
+            }
+            &_long-radio {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+            }
+            &_small-radio {
+                width: 25%;
+                display: flex;
+                flex-direction: column;
 
-        &_invest-city_city, &_profit-payback_payback {
-            flex-basis: 30%;
-        }
-
-        &_profit-payback {
-            &_payback {
-                &_radio {
-                    &_item:first-child:nth-last-child(4), &_item:first-child:nth-last-child(4) ~ &_item {
-                        width: 25%;
+                &_payback {
+                    &_radio {
+                        &_item:first-child:nth-last-child(4), &_item:first-child:nth-last-child(4) ~ &_item {
+                            width: 25%;
+                        }
                     }
                 }
             }
         }
         // checkboxes
         &_branches {
+            margin: 3rem 0;
             &_checkbox {
                 display: flex;
                 flex-wrap: wrap;
@@ -865,14 +996,32 @@ button {
             }
         }
     }
+
+    @media(max-width: 1300px) {
+        &_form {
+            &_container {
+                flex-direction: column;
+                align-items: flex-start;
+                &_long-radio {
+                    width: 100%;
+                }
+
+                &_small-radio {
+                    width: 40%;
+                }
+            }
+            &_branches {
+                &_checkbox {
+                    &_item {
+                        width: 49%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .main-container_help {
-    .tabs {
-        &_content {
-            height: 96rem;
-        }
-    }
     &_container {
         &_items {
             width: 100%;
@@ -893,6 +1042,36 @@ button {
             }   
         }
     }
+
+    @media(max-width: 1500px) {
+        &_container {
+            &_items {
+                &_item {
+                    flex-basis: 25%;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 1200px) {
+        &_container {
+            &_items {
+                &_item {
+                    flex-basis: 35%;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 991px) {
+        &_container {
+            &_items {
+                &_item {
+                    flex-basis: 25%;
+                }
+            }
+        }
+    }
 }
 
 .main-container_work-with {
@@ -906,7 +1085,6 @@ button {
 
 .main-container_reviews {
     &_hat {
-        margin: 5rem 0;
         display: flex;
         &_header {
             flex-basis: 30%;
@@ -972,7 +1150,7 @@ button {
 
             display: flex;
             flex-direction: column;
-            align-items: space-between; 
+            align-items: space-between;
             
             &_picture {
                 width: 100%;
@@ -993,18 +1171,25 @@ button {
             }
         }
     }
+
+    @media(max-width: 1400px) {
+        &_container {
+            &_item {
+                width: 25rem;
+                height: 27rem;
+                .typical-item_subheader {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
 }
 
 .main-container_how-works {
-    .tabs {
-        &_content {
-            height: 45rem;
-        }
-    }
-
     &_how-sell {
+        flex-wrap: wrap;
         &_item {
-            flex-basis: 20%;
+            width: 24rem;
             height: 30rem;
             background: #FFF;
 
@@ -1013,6 +1198,12 @@ button {
             }
         }
     }
+
+    // @media(max-width: 1300px) {
+    //     &_item {
+
+    //     }
+    // }
 }
 
 .main-container_free-call {
@@ -1105,6 +1296,33 @@ button {
             }
         }
     }
+
+    @media(max-width: 1300px) {
+        &_container {
+            .buy-sell_label {
+                &_fake {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+                &_text {
+                    font-size: 1.2rem;
+                }
+            }
+            &_form {
+                &_name, &_phone {
+                    input {
+                        width: 19rem;
+                    }
+                }
+
+                &_submit {
+                    button {
+                        width: 19rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 //TODO: make a common classes
@@ -1171,6 +1389,14 @@ button {
         font-size: 1.2rem;
         a {
             color: $plainText-color;
+        }
+    }
+
+    @media(max-width: 1300px) {
+        &_content {
+            &_nav {
+                display: none;
+            }
         }
     }
 }   
