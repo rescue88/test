@@ -168,49 +168,51 @@
 
                     <div class="main-container_find-business_container_crawlers align-center">
                         <form class="main-container_find-business_container_crawlers_form" action="">
-                            <div class="instrument_sum instrument">
-                                <div class="instrument_value space-between">
-                                    <div class="instrument_value_subheader subheaders">
-                                        Сумма
+                            <div class="instrument-container">
+                                <div class="instrument_sum instrument">
+                                    <div class="instrument_value space-between">
+                                        <div class="instrument_value_subheader subheaders">
+                                            Сумма
+                                        </div>
+                                        <div class="instrument_value_field plain-text">
+                                            <input id="sum-change" class="headers" type="number" disabled> ₽
+                                        </div>
                                     </div>
-                                    <div class="instrument_value_field plain-text">
-                                        <input id="sum-change" class="headers" type="number" disabled> ₽
-                                    </div>
+                                    <div id="sum-slider"></div>
                                 </div>
-                                <div id="sum-slider"></div>
-                            </div>
-                            <div class="instrument_time instrument">
-                                <div class="instrument_value space-between">
-                                    <div class="instrument_value_subheader subheaders">
-                                        Срок
+                                <div class="instrument_time instrument">
+                                    <div class="instrument_value space-between">
+                                        <div class="instrument_value_subheader subheaders">
+                                            Срок
+                                        </div>
+                                        <div class="instrument_value_field plain-text">
+                                            <input id="time-change" class="headers" type="number" disabled> мес.
+                                        </div>
                                     </div>
-                                    <div class="instrument_value_field plain-text">
-                                        <input id="time-change" class="headers" type="number" disabled> мес.
-                                    </div>
+                                    <div id="time-slider"></div>
                                 </div>
-                                <div id="time-slider"></div>
-                            </div>
-                            <div class="instrument_profit instrument">
-                                <div class="instrument_value space-between">
-                                    <div class="instrument_value_subheader subheaders">
-                                        Прибыль
+                                <div class="instrument_profit instrument">
+                                    <div class="instrument_value space-between">
+                                        <div class="instrument_value_subheader subheaders">
+                                            Прибыль
+                                        </div>
+                                        <div class="instrument_value_field plain-text">
+                                            <input id="profit-change" class="headers" type="number" disabled> ₽
+                                        </div>
                                     </div>
-                                    <div class="instrument_value_field plain-text">
-                                        <input id="profit-change" class="headers" type="number" disabled> ₽
-                                    </div>
+                                    <div id="profit-slider"></div>
                                 </div>
-                                <div id="profit-slider"></div>
+                                <div class="instrument_branch">
+                                    <label class="instrument_value_subheader subheaders" for="find-business">Отрасль</label>
+                                    <select class="select" name="find-business" id="find-business">
+                                        <option disabled>Выбрать</option>
+                                        <option value="autobusiness">Автобизнес</option>
+                                        <option value="buildings">Недвижимость</option>
+                                        <option value="trading">Трейдинг</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="instrument_branch">
-                                <label class="instrument_value_subheader subheaders" for="find-business">Отрасль</label>
-                                <select class="select" name="find-business" id="find-business">
-                                    <option disabled>Выбрать</option>
-                                    <option value="autobusiness">Автобизнес</option>
-                                    <option value="buildings">Недвижимость</option>
-                                    <option value="trading">Трейдинг</option>
-                                </select>
-                            </div>
-                            <div class="instrument_submit">
+                            <div class="submit-button">
                                 <button class="red-button" type="submit">Подобрать предложения</button>
                             </div>
                         </form>
@@ -519,7 +521,7 @@
                 <div class="main-container_tips_header headers centered-header">
                     Почему работать с нами выгодно
                 </div>
-                <div class="main-container_tips_content">
+                <div class="main-container_tips_content space-between">
                     <div class="main-container_tips_content_item center-childs">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 447.83 576.83">
                             <defs><style>.cls-1{fill:#fff;}</style></defs>

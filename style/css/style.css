@@ -202,7 +202,6 @@ button {
   position: absolute;
   right: 9px;
   top: 9px;
-  background: url("path-to-image") no-repeat right center/cover;
   opacity: 0.6;
   -webkit-transition: all .27s ease-in-out;
   -o-transition: all .27s ease-in-out;
@@ -266,7 +265,7 @@ button {
         .hat-carousel_buttons .hat-carousel_buttons_prev:hover svg, .hat-carousel_buttons .hat-carousel_buttons_next:hover svg {
           fill: #FFF; }
     .hat-carousel_buttons .hat-carousel_buttons_prev.slick-disabled, .hat-carousel_buttons .hat-carousel_buttons_next.slick-disabled {
-      opacity: .8; }
+      opacity: .5; }
       .hat-carousel_buttons .hat-carousel_buttons_prev.slick-disabled:hover, .hat-carousel_buttons .hat-carousel_buttons_next.slick-disabled:hover {
         background: #EEE; }
         .hat-carousel_buttons .hat-carousel_buttons_prev.slick-disabled:hover svg, .hat-carousel_buttons .hat-carousel_buttons_next.slick-disabled:hover svg {
@@ -439,29 +438,37 @@ button {
       background: url(./../../img/find-business/3-background.png);
       background-size: cover; }
       .main-container_find-business_container_crawlers_form {
+        position: relative;
         width: 100%;
         height: 80%;
         padding: 6rem 4rem;
         background: #FFF;
         border-radius: 5px;
         position: absolute;
-        right: calc(50%);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; }
-        .main-container_find-business_container_crawlers_form .instrument_value {
-          margin-bottom: 3rem; }
-          .main-container_find-business_container_crawlers_form .instrument_value_subheader {
-            font-weight: 400; }
-          .main-container_find-business_container_crawlers_form .instrument_value_field input[type="number"] {
-            width: 100px;
-            font-size: 1.4rem;
-            text-align: right;
-            border: none; }
-        .main-container_find-business_container_crawlers_form .instrument_branch label {
-          margin-bottom: 10px; }
-        .main-container_find-business_container_crawlers_form .instrument_submit {
-          margin: 0 auto; }
+        right: calc(50%); }
+        .main-container_find-business_container_crawlers_form .instrument-container {
+          height: 95%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between; }
+          .main-container_find-business_container_crawlers_form .instrument-container .instrument_value {
+            margin-bottom: 3rem; }
+            .main-container_find-business_container_crawlers_form .instrument-container .instrument_value_subheader {
+              font-weight: 400; }
+            .main-container_find-business_container_crawlers_form .instrument-container .instrument_value_field input[type="number"] {
+              width: 100px;
+              font-size: 1.4rem;
+              text-align: right;
+              border: none;
+              background: none; }
+          .main-container_find-business_container_crawlers_form .instrument-container .instrument_branch label {
+            margin-bottom: 10px; }
+        .main-container_find-business_container_crawlers_form .submit-button {
+          position: absolute;
+          top: calc(100% - 2.5rem);
+          left: calc(50% - 12.5rem); }
+          .main-container_find-business_container_crawlers_form .submit-button button {
+            width: 25rem; }
 
 .main-container_best-offers_options {
   display: flex; }
@@ -505,17 +512,17 @@ button {
   .main-container_invest-top_form_submit button, .main-container_invest-bottom_form_submit button {
     width: 100%; }
 
-.main-container_tips_content {
-  display: flex;
-  justify-content: space-around; }
-  .main-container_tips_content_item {
-    width: 35rem; }
+.main-container_tips_content_item {
+  width: 30rem; }
+  .main-container_tips_content_item_info {
+    padding-left: 2rem; }
     .main-container_tips_content_item_info_subheader {
       margin-bottom: 10px; }
-    .main-container_tips_content_item svg {
-      width: 7rem;
-      height: 7rem;
-      fill: #cb2524; }
+  .main-container_tips_content_item svg {
+    width: 7rem;
+    height: 7rem;
+    margin: 0;
+    fill: #cb2524; }
 
 .main-container_filter > div {
   margin: 2rem 0; }
