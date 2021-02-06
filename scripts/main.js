@@ -139,8 +139,6 @@ $(document).ready(function() {
         slidesToShow: 3,
         infinite: false,
         draggable: false,
-        // variableWidth: true,
-        // adaptiveHeight: true,
         appendArrows: $('.main-container_best-offers_hat .hat-carousel_buttons'),
         prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
@@ -155,6 +153,19 @@ $(document).ready(function() {
                 breakpoint: 1150,
                 settings: {
                     slidesToShow: 1.5,
+                }
+            },
+            {
+                breakpoint: 850,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
                 }
             },
         ],
@@ -181,7 +192,21 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 3,
                 }
-            }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1.5,
+                }
+            },
         ],
     })
     // reviews block slider
@@ -207,7 +232,21 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 2.5,
                 }
-            }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                }
+            },
         ],
     });
 

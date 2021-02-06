@@ -395,6 +395,32 @@ button {
     padding-left: 3%;
     padding-right: 3%; } }
 
+@media (max-width: 767px) {
+  .main-container .hat-carousel_header {
+    flex-basis: 100%;
+    text-align: center; }
+  .main-container .hat-carousel_buttons {
+    display: none; }
+  .main-container .tabs_triggers {
+    flex-direction: column; }
+    .main-container .tabs_triggers_header {
+      margin-bottom: 5rem; }
+    .main-container .tabs_triggers_buttons {
+      margin-bottom: 1rem; }
+      .main-container .tabs_triggers_buttons_item {
+        padding: 1rem 1rem;
+        font-size: 1.2rem; }
+        .main-container .tabs_triggers_buttons_item--active {
+          font-size: 1.4rem; } }
+
+@media (max-width: 550px) {
+  .main-container .tabs_buttons_item--active {
+    font-size: 1.4rem;
+    color: #171E2B;
+    background: #EEE; }
+  .main-container .tabs_buttons_item:not(.tabs_triggers_buttons_item--active):hover {
+    text-decoration: underline; } }
+
 .main-container_hat_phone, .main-container_hat_email {
   font-size: 1.6rem;
   font-weight: 700; }
@@ -424,10 +450,9 @@ button {
   .main-container_hat_phone, .main-container_hat_email {
     display: none; } }
 
-@media (max-width: 992px) {
-  .main-container_hat_phone, .main-container_hat_email {
-    display: flex;
-    align-items: center; } }
+@media (max-width: 520px) {
+  .main-container_hat_phone-call {
+    display: none; } }
 
 .main-container_nav {
   font-weight: 700;
@@ -448,6 +473,12 @@ button {
       .main-container_nav ul a:hover {
         color: #7B8FA7;
         text-decoration: underline; }
+  @media (max-width: 991px) {
+    .main-container_nav ul {
+      justify-content: center; } }
+  @media (max-width: 520px) {
+    .main-container_nav {
+      display: none; } }
 
 .main-container_find-business {
   background: #EEE; }
@@ -462,8 +493,6 @@ button {
         font-size: 1.6rem; }
       .main-container_find-business_container_info_buttons {
         display: flex; }
-        .main-container_find-business_container_info_buttons button {
-          width: 20rem; }
         .main-container_find-business_container_info_buttons :first-child {
           margin-right: 1rem; }
     .main-container_find-business_container_crawlers {
@@ -520,6 +549,29 @@ button {
           position: inherit;
           width: 100%;
           right: 0; } }
+    @media (max-width: 850px) {
+      .main-container_find-business_container {
+        height: auto;
+        flex-direction: column; }
+        .main-container_find-business_container_info {
+          flex-basis: 40%;
+          margin: 3rem 0; }
+        .main-container_find-business_container_crawlers {
+          width: 85%;
+          height: 60rem;
+          margin: 5rem 0; }
+          .main-container_find-business_container_crawlers_form {
+            height: 100%; } }
+    @media (max-width: 500px) {
+      .main-container_find-business_container_info_header {
+        font-size: 2.5rem; }
+      .main-container_find-business_container_info_buttons {
+        flex-direction: column; }
+        .main-container_find-business_container_info_buttons :first-child {
+          margin: 0;
+          margin-bottom: 2rem; }
+      .main-container_find-business_container_crawlers {
+        display: none; } }
 
 .main-container_best-offers_options {
   display: flex; }
@@ -553,9 +605,22 @@ button {
   @media (max-width: 1150px) {
     .main-container_best-offers_options_menu {
       min-width: 30%; } }
-
-.main-container_invest-top .tabs_content, .main-container_invest-bottom .tabs_content {
-  height: 17rem; }
+  @media (max-width: 850px) {
+    .main-container_best-offers_options_menu {
+      min-width: 45%; } }
+  @media (max-width: 620px) {
+    .main-container_best-offers_options {
+      flex-direction: column; }
+      .main-container_best-offers_options_menu {
+        width: 100%;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column; }
+        .main-container_best-offers_options_menu_nav {
+          width: 100%; }
+      .main-container_best-offers_options_slider .typical-item_more_sum span {
+        color: #202B63;
+        font-size: 2.5rem; } }
 
 .main-container_invest-top_form > div, .main-container_invest-bottom_form > div {
   flex-basis: 20%; }
@@ -568,6 +633,20 @@ button {
   align-self: flex-end; }
   .main-container_invest-top_form_submit button, .main-container_invest-bottom_form_submit button {
     width: 100%; }
+
+@media (max-width: 767px) {
+  .main-container_invest-top_form, .main-container_invest-bottom_form {
+    width: 100%;
+    flex-direction: column; }
+    .main-container_invest-top_form .select, .main-container_invest-bottom_form .select {
+      width: 22rem;
+      margin-bottom: 2rem; }
+    .main-container_invest-top_form_submit, .main-container_invest-bottom_form_submit {
+      align-self: inherit; } }
+
+@media (max-width: 400px) {
+  .main-container_invest-top, .main-container_invest-bottom {
+    display: none; } }
 
 .main-container_tips_content_item {
   width: 30rem; }
@@ -587,6 +666,14 @@ button {
   .main-container_tips_content_item svg {
     width: 5rem;
     height: 5rem; } }
+
+@media (max-width: 767px) {
+  .main-container_tips_header {
+    margin-bottom: 3rem; }
+  .main-container_tips_content {
+    flex-direction: column; }
+    .main-container_tips_content_item {
+      margin: 1rem 0; } }
 
 .main-container_filter_header {
   margin-bottom: 3rem; }
@@ -660,6 +747,10 @@ button {
   .main-container_filter_form_branches_checkbox_item {
     width: 49%; } }
 
+@media (max-width: 700px) {
+  .main-container_filter {
+    display: none; } }
+
 .main-container_help_container_items {
   width: 100%;
   flex-wrap: wrap; }
@@ -681,9 +772,21 @@ button {
   .main-container_help_container_items_item {
     flex-basis: 35%; } }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
+  .main-container_help_container_items {
+    justify-content: space-between; }
+    .main-container_help_container_items_item {
+      flex-basis: 42%; } }
+
+@media (max-width: 575px) {
+  .main-container_help_container_items {
+    justify-content: center; }
+    .main-container_help_container_items_item {
+      flex-basis: 65%; } }
+
+@media (max-width: 400px) {
   .main-container_help_container_items_item {
-    flex-basis: 25%; } }
+    flex-basis: 90%; } }
 
 .main-container_work-with_carousel_item {
   width: 20rem;
@@ -754,6 +857,18 @@ button {
     .main-container_news_container_item .typical-item_subheader {
       font-size: 1.3rem; } }
 
+@media (max-width: 767px) {
+  .main-container_news_header {
+    margin-bottom: 3rem; }
+  .main-container_news_container {
+    flex-direction: column; }
+    .main-container_news_container_item {
+      width: 30rem;
+      height: 32rem;
+      margin: 2rem 0; }
+      .main-container_news_container_item .typical-item_subheader {
+        font-size: 1.4rem; } }
+
 .main-container_how-works_how-sell {
   flex-wrap: wrap; }
   .main-container_how-works_how-sell_item {
@@ -762,6 +877,14 @@ button {
     background: #FFF; }
     .main-container_how-works_how-sell_item .typical-item_subheader {
       height: 40%; }
+
+@media (max-width: 767px) {
+  .main-container_how-works_how-sell {
+    justify-content: center; }
+    .main-container_how-works_how-sell_item {
+      width: 27rem;
+      height: 32rem;
+      margin: 2rem; } }
 
 .main-container_free-call {
   color: #FFF;
@@ -821,15 +944,33 @@ button {
     .main-container_free-call_container_form_submit button {
       width: 26rem; }
   @media (max-width: 1300px) {
-    .main-container_free-call_container .buy-sell_label_fake {
+    .main-container_free-call_container_form .buy-sell_label_fake {
       width: 1.5rem;
       height: 1.5rem; }
-    .main-container_free-call_container .buy-sell_label_text {
+    .main-container_free-call_container_form .buy-sell_label_text {
       font-size: 1.2rem; }
     .main-container_free-call_container_form_name input, .main-container_free-call_container_form_phone input {
       width: 19rem; }
     .main-container_free-call_container_form_submit button {
       width: 19rem; } }
+  @media (max-width: 767px) {
+    .main-container_free-call_container_header {
+      text-align: center; }
+    .main-container_free-call_container_form {
+      flex-direction: column; }
+      .main-container_free-call_container_form > div {
+        margin: 1rem 0; }
+      .main-container_free-call_container_form_radio, .main-container_free-call_container_form_submit {
+        align-self: inherit; }
+      .main-container_free-call_container_form .buy-sell_label_fake {
+        width: 2rem;
+        height: 2rem; }
+      .main-container_free-call_container_form .buy-sell_label_text {
+        font-size: 1.4rem; }
+      .main-container_free-call_container_form_name input, .main-container_free-call_container_form_phone input {
+        width: 22rem; }
+      .main-container_free-call_container_form_submit button {
+        width: 22rem; } }
 
 .main-container_footer {
   color: #FFF;
@@ -871,4 +1012,12 @@ button {
       color: #7B8FA7; }
   @media (max-width: 1300px) {
     .main-container_footer_content_nav {
+      display: none; } }
+  @media (max-width: 767px) {
+    .main-container_footer hr {
+      display: none; }
+    .main-container_footer_rights {
+      display: none; } }
+  @media (max-width: 575px) {
+    .main-container_footer_content_contacts {
       display: none; } }

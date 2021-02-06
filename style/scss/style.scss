@@ -570,6 +570,56 @@ button {
             padding-right: 3%;
         }
     }
+
+    @media(max-width: 767px) {
+        // all blocks with sliders
+        .hat-carousel {
+            &_header {
+                flex-basis: 100%;
+                text-align: center;
+            }
+            &_buttons {
+                display: none;
+            }
+        }
+        // all blocks with tabs
+        .tabs {
+            &_triggers {
+                flex-direction: column;
+                &_header {
+                    margin-bottom: 5rem;
+                }
+                &_buttons {
+                    margin-bottom: 1rem;
+                    &_item {
+                        padding: 1rem 1rem;
+                        font-size: 1.2rem;
+                        &--active {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 550px) {
+        // all blocks with tabs
+        .tabs {
+            &_buttons {
+                &_item {
+                    &--active {
+                        font-size: 1.4rem;
+                        color: $subheaders-color;
+                        background: $defaultBackground-color;
+                    }
+                    &:not(.tabs_triggers_buttons_item--active):hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // HEADER
@@ -615,10 +665,9 @@ button {
         }
     }
 
-    @media(max-width: 992px) {
-        &_phone, &_email {
-            display: flex;
-            align-items: center;
+    @media(max-width: 520px) {
+        &_phone-call {
+            display: none;
         }
     }
 }
@@ -647,6 +696,16 @@ button {
             }
         }
     }
+
+    @media(max-width: 991px) {
+        ul {
+            justify-content: center;
+        }
+    }
+
+    @media(max-width: 520px) {
+        display: none;
+    }
 }
 // FIND-BUSINESS SECTION
 .main-container_find-business {
@@ -667,9 +726,9 @@ button {
     
             &_buttons {
                 display: flex;
-                button {
-                    width: 20rem;
-                }
+                // button {
+                //     width: 20rem;
+                // }
                 
                 :first-child {
                     margin-right: 1rem;
@@ -765,6 +824,43 @@ button {
                 }
             }
         }
+
+        @media(max-width: 850px) {
+            height: auto;
+            flex-direction: column;
+            &_info {
+                flex-basis: 40%;
+                margin: 3rem 0;
+            }
+
+            &_crawlers {
+                width: 85%;
+                height: 60rem;
+                margin: 5rem 0;
+                &_form {
+                    height: 100%;
+                }
+            }
+        }
+
+        @media(max-width: 500px) {
+            &_info {
+                &_header {
+                    font-size: 2.5rem;
+                }
+
+                &_buttons {
+                    flex-direction: column;
+                    :first-child {
+                        margin: 0;
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+            &_crawlers {
+                display: none;
+            }
+        }
     }
 }
 
@@ -822,15 +918,43 @@ button {
                 min-width: 30%;
             }
         }
+
+        @media(max-width: 850px) {
+            &_menu {
+                min-width: 45%;
+            }
+        }
+
+        @media(max-width: 620px) {
+            flex-direction: column;
+            &_menu {
+                width: 100%;
+                margin-bottom: 2rem;
+                display: flex;
+                flex-direction: column;
+
+                &_nav {
+                    width: 100%;
+                }
+            }
+
+            &_slider {
+                .typical-item {
+                    &_more {
+                        &_sum {
+                            span {
+                                color: #202B63;
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 .main-container_invest-top, .main-container_invest-bottom {
-    .tabs {
-        &_content {
-            height: 17rem;
-        }
-    }
     &_form {
         & > div {
             flex-basis: 20%;
@@ -851,9 +975,25 @@ button {
         }
     }
 
-    // @media {
-        
-    // }
+    @media(max-width: 767px) {
+        &_form {
+            width: 100%;
+            flex-direction: column;
+
+            .select {
+                width: 22rem;
+                margin-bottom: 2rem;
+            }
+
+            &_submit {
+                align-self: inherit;
+            }
+        }
+    }
+
+    @media(max-width: 400px) {
+        display: none;
+    }
 }
 
 .main-container_tips {
@@ -888,6 +1028,18 @@ button {
                     width: 5rem;
                     height: 5rem;
                 }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        &_header {
+            margin-bottom: 3rem;
+        }
+        &_content {
+            flex-direction: column;
+            &_item {
+                margin: 1rem 0;
             }
         }
     }
@@ -1019,6 +1171,10 @@ button {
             }
         }
     }
+
+    @media(max-width: 700px) {
+        display: none;
+    }
 }
 
 .main-container_help {
@@ -1063,11 +1219,33 @@ button {
         }
     }
 
-    @media(max-width: 991px) {
+    @media(max-width: 767px) {
+        &_container {
+            &_items {
+                justify-content: space-between;
+                &_item {
+                    flex-basis: 42%;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 575px) {
+        &_container {
+            &_items {
+                justify-content: center;
+                &_item {
+                    flex-basis: 65%;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 400px) {
         &_container {
             &_items {
                 &_item {
-                    flex-basis: 25%;
+                    flex-basis: 90%;
                 }
             }
         }
@@ -1183,6 +1361,23 @@ button {
             }
         }
     }
+
+    @media(max-width: 767px) {
+        &_header {
+            margin-bottom: 3rem;
+        }
+        &_container {
+            flex-direction: column;
+            &_item {
+                width: 30rem;
+                height: 32rem;
+                margin: 2rem 0;
+                .typical-item_subheader {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
 }
 
 .main-container_how-works {
@@ -1199,11 +1394,17 @@ button {
         }
     }
 
-    // @media(max-width: 1300px) {
-    //     &_item {
-
-    //     }
-    // }
+    @media(max-width:767px) {
+        &_how-sell {
+            justify-content: center;
+            // flex-direction: column;
+            &_item {
+                width: 27rem;
+                height: 32rem;
+                margin: 2rem;
+            }
+        }
+    }
 }
 
 .main-container_free-call {
@@ -1299,16 +1500,17 @@ button {
 
     @media(max-width: 1300px) {
         &_container {
-            .buy-sell_label {
-                &_fake {
-                    width: 1.5rem;
-                    height: 1.5rem;
-                }
-                &_text {
-                    font-size: 1.2rem;
-                }
-            }
             &_form {
+                .buy-sell_label {
+                    &_fake {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    &_text {
+                        font-size: 1.2rem;
+                    }
+                }
+
                 &_name, &_phone {
                     input {
                         width: 19rem;
@@ -1318,6 +1520,47 @@ button {
                 &_submit {
                     button {
                         width: 19rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        &_container {
+            &_header {
+                text-align: center;
+            }
+
+            &_form {
+                flex-direction: column;
+                & > div {
+                    margin: 1rem 0;
+                }
+
+                &_radio, &_submit {
+                    align-self: inherit;
+                }
+
+                .buy-sell_label {
+                    &_fake {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                    &_text {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                &_name, &_phone {
+                    input {
+                        width: 22rem;
+                    }
+                }
+
+                &_submit {
+                    button {
+                        width: 22rem;
                     }
                 }
             }
@@ -1395,6 +1638,23 @@ button {
     @media(max-width: 1300px) {
         &_content {
             &_nav {
+                display: none;
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        hr {
+            display: none;
+        }
+        &_rights {
+            display: none;
+        }
+    }
+
+    @media(max-width: 575px) {
+        &_content {
+            &_contacts {
                 display: none;
             }
         }
