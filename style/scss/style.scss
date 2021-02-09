@@ -27,6 +27,7 @@ $headers-color: #1D1E20;
 $subheaders-color: #171E2B;
 $plainText-color: #7B8FA7;
 $plainText-color-2: #9CAABB;
+$helpColor: #ecf0f9;
 $helpButtons-color: #325899;
 
 // Common default tags
@@ -86,7 +87,7 @@ hr {
 
 // button settings
 button {
-    height: 5rem;
+    height: 53px;
     padding: 1.8rem 3rem;
     color: #FFF;
     font-size: 1.4rem;
@@ -101,7 +102,7 @@ button {
     align-items: center;
 
     &:hover {
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
     }
 
     &:active {
@@ -214,21 +215,36 @@ button {
         margin-right: 7px;
     }
 }
+
+// repeating contacts block
+.contacts {
+    display: flex;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+}
 // select styles
 .select {
     display: block;
     position: relative;
     width: 100%;
+    height: 53px;
+    border-radius: 5px;
     background: #FFF;
     color: $subheaders-color;
     font-size: 1.4rem;
     font-weight: 700;
+
+    display: flex;
+    align-items: center;
 }
 
 .new-select {
     position: relative;
-    border: 1px solid #ced4da;
-    padding: 10px 15px;
+    padding: 0 15px;
     cursor: pointer;
     user-select: none;
 }
@@ -306,7 +322,10 @@ button {
             &_item {
                 height: 100%;
                 font-weight: bold;
-                padding: 2rem 4rem;
+                padding: 1.4rem 3rem;
+                margin: 0 1rem;
+                border-radius: 5px 5px 0 0;
+                background: $helpColor;
                 transition: all .3s;
                 &--active {
                     font-size: 1.6rem;
@@ -382,13 +401,15 @@ button {
 
 // most of items sets
 .typical-item {
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
 
     &:hover {
-        box-shadow: 0 0px 10px rgba(0, 0, 0, .4);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .25);
     }
 
     & > div {
@@ -442,11 +463,19 @@ button {
         }
     }
     &_more {
-        background: #ecf0f9;
+        height: 100px;
+        background: $helpColor;
+        border-radius: 0 0 5px 5px;
         &_sum {
             span {
                 color: #202B63;
                 font-size: 3rem;
+            }
+        }
+
+        &_button {
+            button {
+                width: 130px;
             }
         }
     }
@@ -497,12 +526,17 @@ button {
 }
 // styling crawler
 .noUi-horizontal .noUi-handle {
+    top: -9px;
     width: 21px;
     height: 21px;
     background: $projectColor-red;
     box-shadow: none;
     border: none;
     border-radius: 50%;
+
+    &:focus {
+        outline: none;
+    }
 }
 // styling numbers
 .noUi-pips .noUi-value-sub {
@@ -563,15 +597,16 @@ button {
 
     @media(max-width: 991px) {
         .centered, .not-centered, .full-width {
-            width: 100%;
-            margin-left: 0;
-            margin-right: 0;
-            padding-left: 3%;
-            padding-right: 3%;
+            width: 95%;
+            margin: 0 auto;
         }
     }
 
     @media(max-width: 767px) {
+        // all headers
+        .headers {
+            margin-bottom: 5rem;
+        }
         // all blocks with sliders
         .hat-carousel {
             &_header {
@@ -590,13 +625,9 @@ button {
                     margin-bottom: 5rem;
                 }
                 &_buttons {
-                    margin-bottom: 1rem;
+                    margin-bottom: 2rem;
                     &_item {
-                        padding: 1rem 1rem;
-                        font-size: 1.2rem;
-                        &--active {
-                            font-size: 1.4rem;
-                        }
+                        padding: 2rem 1rem;
                     }
                 }
             }
@@ -624,10 +655,6 @@ button {
 
 // HEADER
 .main-container_hat {
-    &_phone, &_email {
-        font-size: 1.6rem;
-        font-weight: 700;
-    }
 
     &_address, .profile-link {
         font-size: 1.2rem;
@@ -660,78 +687,86 @@ button {
     }
 
     @media(max-width: 1100px) {
-        &_phone, &_email {
-            display: none;
+        &_contacts {
+            flex-direction: column;
         }
     }
 
-    @media(max-width: 520px) {
+    @media(max-width: 650px) {
         &_phone-call {
             display: none;
         }
     }
-}
-// NAV-BAR
-.main-container_nav {
-    font-weight: 700;
-    background: $defaultBackground-color;
-    ul {
-        height: 100%;
-        display: flex;
-        :not(:last-child) li {
-            border-right: 1px solid black;
-            padding-right: 2rem;
-        }
-        :not(:first-child) li {
-            padding-left: 2rem;
-        }
-        a {
-            height: 100%;
-            padding: 1.5rem 0;
-            color: $headers-color;
-            font-size: 1.6rem;
-            &:hover {
-                color: $plainText-color;
-                text-decoration: underline;
-            }
-        }
-    }
 
-    @media(max-width: 991px) {
-        ul {
-            justify-content: center;
+    @media(max-width: 500px) {
+        &_contacts {
+            display: none;
         }
-    }
-
-    @media(max-width: 520px) {
-        display: none;
     }
 }
 // FIND-BUSINESS SECTION
 .main-container_find-business {
     background: $defaultBackground-color;
-    &_container {
-        height: 80rem;
+
+    &_content {
+        height: 68rem;
         position: relative;
+
+        &_container {
+            position: relative;
+            flex-basis: 65%;
+            height: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            &_nav {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                ul {
+                    height: 100%;   
+                    display: flex;
+                    :not(:last-child) li {
+                        border-right: 1px solid black;
+                        padding-right: 2rem;
+                    }
+                    :not(:first-child) li {
+                        padding-left: 2rem;
+                    }
+                    a {
+                        height: 100%;
+                        padding: 1.5rem 0;
+                        color: $headers-color;  
+                        &:hover {
+                            color: $plainText-color;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            &_info {
+                flex-basis: 50%;
+                &_header {
+                    margin-bottom: 2.5rem;
+                }
         
-        &_info {
-            flex-basis: 50%;
-            & > div:not(:last-child) {
-                margin-bottom: 2.5rem;
-            }
-    
-            &_subheader {
-                font-size: 1.6rem;
-            }
-    
-            &_buttons {
-                display: flex;
-                // button {
-                //     width: 20rem;
-                // }
-                
-                :first-child {
-                    margin-right: 1rem;
+                &_subheader {
+                    line-height: 1.5;
+                    margin-bottom: 5rem;
+                }
+        
+                &_buttons {
+                    display: flex;
+                    :first-child {
+                        margin-right: 1rem;
+                    }
+
+                    button {
+                        width: 20rem;
+                    }
                 }
             }
         }
@@ -744,7 +779,6 @@ button {
             background-size: cover;
     
             &_form {
-                position: relative;
                 width: 100%;
                 height: 80%;
                 padding: 6rem 4rem;
@@ -759,6 +793,14 @@ button {
                     flex-direction: column;
                     justify-content: space-between;
 
+                    .instrument_sum {
+                        // background: red;
+                        // #sum-slider {
+                        //     margin: 20px;
+                        //     width: 10%;
+                        // }
+                    }
+
                     .instrument {
                         &_value {
                             margin-bottom: 3rem;
@@ -766,7 +808,7 @@ button {
                                 font-weight: 400;
                             }
                             &_field {
-                                input[type="number"] {
+                                input[type="text"] {
                                     width: 100px;
                                     font-size: 1.4rem;
                                     text-align: right;
@@ -778,6 +820,9 @@ button {
                     }
     
                     .instrument_branch {
+                        .select {
+                            background: $defaultBackground-color;
+                        }
                         label {
                             margin-bottom: 10px;
                         }
@@ -786,7 +831,7 @@ button {
                 // special button position
                 .submit-button {
                     position: absolute;
-                    top: calc(100% - 2.5rem);
+                    top: calc(100% - 2.65rem);
                     left: calc(50% - 12.5rem);
 
                     button {
@@ -795,16 +840,10 @@ button {
                 }
             }
         }
-        
-        @media(max-width: 1400px) {
-            &_info {
-                &_header {
-                    font-size: 4rem;
-                }
-                &_subheader {
-                    font-size: 1.4rem;
-                }
-            }
+    }
+
+    @media(max-width: 1400px) {
+        &_content {
             &_crawlers {
                 &_form {
                     width: 115%;
@@ -812,51 +851,105 @@ button {
                 }
             }
         }
+    }
 
-        @media(max-width: 1200px) {
+    @media(max-width: 1200px) {
+        &_content {
+            &_container {
+                &_info {
+                    &_header {
+                        font-size: 4rem;
+                    }
+                }
+
+                &_crawlers {
+                    width: 85%;
+                    height: 60rem;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 1100px) {
+        &_content {
             &_crawlers {
                 flex-basis: 50%;
                 background: none;
                 &_form {
-                    position: inherit;
-                    width: 100%;
                     right: 0;
                 }
             }
         }
+    }
 
-        @media(max-width: 850px) {
-            height: auto;
-            flex-direction: column;
-            &_info {
-                flex-basis: 40%;
-                margin: 3rem 0;
+    @media(max-width: 991px) {
+        &_content {
+            &_container {
+                &_nav {
+                    display: none;
+                }
             }
+        }
+    }
 
+    @media(max-width: 850px) {
+        &_content {
+            height: auto;
+            text-align: center;
+            flex-direction: column;
+            &_container {
+                margin-top: 3rem;
+            }
+    
             &_crawlers {
-                width: 85%;
+                width: 100%;
                 height: 60rem;
                 margin: 5rem 0;
                 &_form {
                     height: 100%;
+                    width: 85%;
+                    margin: 0 auto;
+                    position: inherit;
                 }
             }
         }
+    }
 
-        @media(max-width: 500px) {
-            &_info {
-                &_header {
-                    font-size: 2.5rem;
-                }
-
-                &_buttons {
-                    flex-direction: column;
-                    :first-child {
-                        margin: 0;
-                        margin-bottom: 2rem;
+    @media(max-width: 500px) {
+        &_content {
+            &_container {
+                &_info {
+                    &_header {
+                        font-size: 3rem;
+                    }
+        
+                    &_buttons {
+                        flex-direction: column;
+                        align-items: center;
+                        :first-child {
+                            margin: 0;
+                            margin-bottom: 5px;
+                        }
                     }
                 }
             }
+
+            &_crawlers {
+                &_form {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 430px) {
+        &_content {
+            &_container {
+                &_info {
+                    margin-bottom: 3rem;
+                }
+            }
+
             &_crawlers {
                 display: none;
             }
@@ -975,6 +1068,30 @@ button {
         }
     }
 
+    @media(max-width: 1200px) {
+        .tabs {
+            &_triggers {
+                &_buttons {
+                    &_item {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 991px) {
+        .tabs {
+            &_triggers {
+                &_buttons {
+                    &_item {
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+
     @media(max-width: 767px) {
         &_form {
             width: 100%;
@@ -999,7 +1116,9 @@ button {
 .main-container_tips {
     &_content {
         &_item {
-            width: 30rem;
+            width: 35rem;
+            padding: 4rem 1.5rem 4rem 3rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, .05);
             &_info {
                 padding-left: 2rem;
                 &_subheader {
@@ -1016,26 +1135,7 @@ button {
         }
     }
 
-    @media(max-width: 1150px) {
-        &_content {
-            &_item {
-                &_info {
-                    &_text {
-                        font-size: 12px;
-                    }
-                }
-                svg {
-                    width: 5rem;
-                    height: 5rem;
-                }
-            }
-        }
-    }
-
-    @media(max-width: 767px) {
-        &_header {
-            margin-bottom: 3rem;
-        }
+    @media(max-width: 1400px) {
         &_content {
             flex-direction: column;
             &_item {
@@ -1046,13 +1146,10 @@ button {
 }
 
 .main-container_filter {
-    &_header {
-        margin-bottom: 3rem;
-    }
-
     &_form {
         // blocks with radiobuttons
         &_container {
+            margin-top: 3rem;
             display: flex;
             &_long-radio, &_small-radio {
                 :first-child {
@@ -1069,6 +1166,14 @@ button {
                 display: flex;
                 flex-direction: column;
 
+                &_city {
+                    &_select {
+                        .select {
+                            background: $defaultBackground-color;
+                        }
+                    }
+                }
+
                 &_payback {
                     &_radio {
                         &_item:first-child:nth-last-child(4), &_item:first-child:nth-last-child(4) ~ &_item {
@@ -1080,18 +1185,18 @@ button {
         }
         // checkboxes
         &_branches {
-            margin: 3rem 0;
+            margin: 3.5rem 0;
             &_checkbox {
                 display: flex;
                 flex-wrap: wrap;
                 &_item {
                     width: 33%;
-                    padding: 5px 0;
+                    padding: 8px 0;
                     font-size: 1.4rem;
                     color: $plainText-color;
                     display: flex;
                     label {
-                        padding: 0 7px;
+                        padding: 0 6px;
                     }
                     input[type="checkbox"] {
                         width: 2rem;
@@ -1255,58 +1360,22 @@ button {
 .main-container_work-with {
     &_carousel {
         &_item {
-            width: 20rem;
+            width: 25rem;
             height: 9rem;
+            padding: 1rem 5rem;
+            margin: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .05);
         }
     }
 }
 
 .main-container_reviews {
-    &_hat {
-        display: flex;
-        &_header {
-            flex-basis: 30%;
-            color: #171E2B;
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        &_buttons {
-            flex-basis: 70%;
-            display: flex;
-            justify-content: center;
-            &_button {
-                width: 4.7rem;
-                height: 4.7rem;
-                margin: 1rem;
-                background: #EEEFEF;
-                cursor: pointer;
-    
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &_button:active {
-                transform: scale(1.2);
-            }
-
-            &_button:hover {
-                background: #dfe4ed;
-                svg {
-                    transition: all .5s;
-                    fill: #000;
-                    transform: scale(1.5);
-                }
-            }
-        }
-    }
-
     &_carousel {
         &_item {
             width: 29rem;
             height: 30rem;
+            background: url(./../../svg/reviews/right-quotation.svg) 125% -30% / 70% 60% no-repeat border-box border-box;
 
             .typical-item_subheader {
                 height: auto;
@@ -1329,20 +1398,10 @@ button {
             display: flex;
             flex-direction: column;
             align-items: space-between;
-            
-            &_picture {
-                width: 100%;
-                height: 60%;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
         }
 
         &_watch-all {
-            margin: 7rem 0;
+            margin: 3rem 0;
             button {
                 color: $subheaders-color;
                 border: 1px solid black;
@@ -1363,9 +1422,6 @@ button {
     }
 
     @media(max-width: 767px) {
-        &_header {
-            margin-bottom: 3rem;
-        }
         &_container {
             flex-direction: column;
             &_item {
@@ -1384,7 +1440,7 @@ button {
     &_how-sell {
         flex-wrap: wrap;
         &_item {
-            width: 24rem;
+            width: 27rem;
             height: 30rem;
             background: #FFF;
 
@@ -1394,13 +1450,10 @@ button {
         }
     }
 
-    @media(max-width:767px) {
+    @media(max-width: 1450px) {
         &_how-sell {
             justify-content: center;
-            // flex-direction: column;
             &_item {
-                width: 27rem;
-                height: 32rem;
                 margin: 2rem;
             }
         }
@@ -1421,6 +1474,8 @@ button {
                 align-self: flex-end;
                 &_buy, &_sell {
                     .buy-sell_label {
+                        font-weight: bold;
+                        text-transform: uppercase;
                         cursor: pointer;
                         display: flex;
                         align-items: center;
@@ -1442,8 +1497,8 @@ button {
                                 content: '';
                                 position: absolute;
                                 display: block;
-                                width: 1.2rem;
-                                height: 1.2rem;
+                                width: 75%;
+                                height: 75%;
                                 border-radius: 50%;
                                 background: $projectColor-red;
                                 top: 50%;
@@ -1477,7 +1532,7 @@ button {
         
                 input {
                     width: 26rem;
-                    height: 5rem;
+                    height: 53px;
                     padding: 0 1rem;
                     border: none;
                     outline: none;
@@ -1544,8 +1599,8 @@ button {
 
                 .buy-sell_label {
                     &_fake {
-                        width: 2rem;
-                        height: 2rem;
+                        width: 2.5rem;
+                        height: 2.5rem;
                     }
                     &_text {
                         font-size: 1.4rem;
@@ -1554,13 +1609,13 @@ button {
 
                 &_name, &_phone {
                     input {
-                        width: 22rem;
+                        width: 30rem;
                     }
                 }
 
                 &_submit {
                     button {
-                        width: 22rem;
+                        width: 30rem;
                     }
                 }
             }
@@ -1568,12 +1623,24 @@ button {
     }
 }
 
-//TODO: make a common classes
+.main-container_seo {
+    line-height: 1.5;
+    &_header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    &_text-1 {
+        margin-bottom: 1.5rem;
+    }
+}
+
 .main-container_footer {
     color: #FFF;
     background: rgb(29,30,32);
 
     &_content {
+        padding-bottom: 2rem;
         &_nav {
             ul {
                 display: flex;
@@ -1598,40 +1665,53 @@ button {
 
         &_contacts {
             &_phone, &_email {
-                padding: 5px 0;
-                display: flex;
-                align-items: center;
-
                 &_text {
                     color: #FFF;
-                    font-weight: bold;
                 }
             }
         }
 
         &_networks {
             display: flex;
-            align-items: center;
+            :not(:last-child) {
+                margin-right: 1rem;
+            }
+
             &_item {
                 width: 3rem;
                 height: 3rem;
-                margin: 0 1rem;
                 background: #FFF;
                 border-radius: 4px;
 
+                :not(:last-child) {
+                    margin-right: 1rem;
+                }
+
                 &:hover {
                     transform: scale(1.05);
+                }
+
+                svg {
+                    margin: 0;
                 }
             }
         }
     }
 
     &_rights {
-        padding: 1rem 0;
+        padding-top: 2rem;
         color: $plainText-color;
         font-size: 1.2rem;
         a {
             color: $plainText-color;
+        }
+    }
+
+    @media(max-width:1450px) {
+        &_content {
+            &_contacts {
+                flex-direction: column;
+            }
         }
     }
 
@@ -1643,19 +1723,11 @@ button {
         }
     }
 
-    @media(max-width: 767px) {
-        hr {
-            display: none;
-        }
-        &_rights {
-            display: none;
-        }
-    }
-
-    @media(max-width: 575px) {
-        &_content {
-            &_contacts {
-                display: none;
+    @media(max-width: 650px) {
+        &_content, &_rights {
+            flex-direction: column;
+            & > div {
+                margin-bottom: 10px;
             }
         }
     }

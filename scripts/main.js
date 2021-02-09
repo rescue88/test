@@ -146,23 +146,23 @@ $(document).ready(function() {
             {
                 breakpoint: 1450,
                 settings: {
+                    slidesToShow: 2.5,
+                }
+            },
+            {
+                breakpoint: 1300,
+                settings: {
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 1150,
+                breakpoint: 1100,
                 settings: {
                     slidesToShow: 1.5,
                 }
             },
             {
                 breakpoint: 850,
-                settings: {
-                    slidesToShow: 1,
-                }
-            },
-            {
-                breakpoint: 767,
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
@@ -253,7 +253,7 @@ $(document).ready(function() {
     // value sliders(crawlers)
     // sum slider
     function filterPipsSum(value, type) {
-        let sumRange = [50000, 100000, 300000, 500000, 1000000];
+        let sumRange = [50000, 100000, 300000, 500000, 1000000, 2000000];
         if (type === 0) {
             return value < 2000 ? -1 : 0;
         }
@@ -265,10 +265,11 @@ $(document).ready(function() {
     noUiSlider.create(sumCrawler, {
         range: {
             'min': [50000, 50000],
-            '25%': [100000, 200000],
-            '47%': [300000, 200000],
-            '70%': [500000, 500000],
-            'max': [1000000],
+            '20%': [100000, 200000],
+            '36.5%': [300000, 200000],
+            '55%': [500000, 500000],
+            '74%': [1000000, 1000000],
+            'max': [2000000],
         },
         start: [300000],
         connect: [true, false],
@@ -279,8 +280,18 @@ $(document).ready(function() {
         }
     });
 
+    // making the last element like '>{number}' manually
+    $('#sum-slider .noUi-pips .noUi-value-sub:last-child').html('>1000000');
+
     sumCrawler.noUiSlider.on('update', (value, handle) => {
-        $('#sum-change').val(parseInt(value));
+        // if we reach the last element, make its value different
+        if(parseInt(value) === 2000000) {
+            value = '>1000000';
+            $('#sum-change').val(value);
+        }
+        else {
+            $('#sum-change').val(parseInt(value));
+        }
     });
     // time slider
     function filterPipsTime(value, type) {
@@ -309,8 +320,18 @@ $(document).ready(function() {
         }
     });
 
+    // making the last element like '>{number}' manually
+    $('#time-slider .noUi-pips .noUi-value-sub:last-child').html('>12');
+
     timeCrawler.noUiSlider.on('update', (value, handle) => {
-        $('#time-change').val(parseInt(value));
+        // if we reach the last element, make its value different
+        if(parseInt(value) === 24) {
+            value = '>12';
+            $('#time-change').val(value);
+        }
+        else {
+            $('#time-change').val(parseInt(value));
+        }
     });
     // profit slider
     function filterPipsProfit(value, type) {
