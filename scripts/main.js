@@ -144,25 +144,39 @@ $(document).ready(function() {
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
         responsive: [
             {
-                breakpoint: 1450,
+                breakpoint: 1600,
                 settings: {
                     slidesToShow: 2.5,
                 }
             },
             {
-                breakpoint: 1300,
+                breakpoint: 1450,
                 settings: {
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 1100,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 1.5,
                 }
             },
             {
                 breakpoint: 850,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1.5,
+                }
+            },
+            {
+                breakpoint: 500,
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
@@ -201,6 +215,13 @@ $(document).ready(function() {
                 }
             },
             {
+                breakpoint: 700,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                }
+            },
+            {
                 breakpoint: 575,
                 settings: {
                     arrows: false,
@@ -222,26 +243,19 @@ $(document).ready(function() {
         nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
         responsive: [
             {
-                breakpoint: 1400,
+                breakpoint: 1600,
                 settings: {
                     slidesToShow: 3,
                 }
             },
             {
-                breakpoint: 991,
+                breakpoint: 1200,
                 settings: {
-                    slidesToShow: 2.5,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    arrows: false,
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 575,
+                breakpoint: 650,
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
@@ -265,10 +279,10 @@ $(document).ready(function() {
     noUiSlider.create(sumCrawler, {
         range: {
             'min': [50000, 50000],
-            '20%': [100000, 200000],
-            '36.5%': [300000, 200000],
-            '55%': [500000, 500000],
-            '74%': [1000000, 1000000],
+            '19%': [100000, 200000],
+            '35%': [300000, 200000],
+            '51%': [500000, 500000],
+            '69%': [1000000, 1000000],
             'max': [2000000],
         },
         start: [300000],
@@ -280,18 +294,28 @@ $(document).ready(function() {
         }
     });
 
-    // making the last element like '>{number}' manually
-    $('#sum-slider .noUi-pips .noUi-value-sub:last-child').html('>1000000');
+    // remaking sum pips
+    sumPips = $('#sum-slider .noUi-pips .noUi-value-sub');
+    for(let i = 0; i < sumPips.length; i++) {
+        // making the end point like '>{number}' manually
+        if(i === sumPips.length - 1) {
+            $(sumPips[i]).html('>1 000 000');
+            continue;
+        }
+        // making the number orders
+        let htmlVal = parseInt($(sumPips[i]).html()).toLocaleString('ru');
+        $(sumPips[i]).html(htmlVal);
+    }
 
     sumCrawler.noUiSlider.on('update', (value, handle) => {
         // if we reach the last element, make its value different
         if(parseInt(value) === 2000000) {
-            value = '>1000000';
-            $('#sum-change').val(value);
+            value = '>1 000 000';
         }
         else {
-            $('#sum-change').val(parseInt(value));
+            value = (parseInt(value)).toLocaleString('ru');
         }
+        $('#sum-change').val(value);
     });
     // time slider
     function filterPipsTime(value, type) {
@@ -307,9 +331,9 @@ $(document).ready(function() {
     noUiSlider.create(timeCrawler, {
         range: {
             'min': [3, 3],
-            '32%': [6, 6],
-            '64%': [12, 12],
-            'max': [24],
+            '31%': [6, 6],
+            '62%': [12, 12],
+            'max': [24],    
         },
         start: 6,
         connect: [true, false],
@@ -348,9 +372,9 @@ $(document).ready(function() {
         range: {
             'min': [100000, 100000],
             '20%': [200000, 300000],
-            '38%': [500000, 500000],
-            '56%': [1000000, 1000000],
-            '75%': [2000000, 1000000],
+            '36%': [500000, 500000],
+            '52%': [1000000, 1000000],
+            '70%': [2000000, 1000000],
             'max': [3000000]
         },
         start: 500000,
@@ -362,7 +386,17 @@ $(document).ready(function() {
         }
     });
 
+    // remaking profit pips
+    profitPips = $('#profit-slider .noUi-pips .noUi-value-sub');
+    for(let i = 0; i < profitPips.length; i++) {
+        // making the number orders
+        let htmlVal = parseInt($(profitPips[i]).html()).toLocaleString('ru');
+        $(profitPips[i]).html(htmlVal);
+    }
+
+
     profitCrawler.noUiSlider.on('update', (value, handle) => {
-        $('#profit-change').val(parseInt(value));
+        value = (parseInt(value)).toLocaleString('ru');
+        $('#profit-change').val(value);
     })
 });
