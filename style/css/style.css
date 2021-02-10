@@ -59,12 +59,11 @@ button {
   border-radius: 10px;
   outline: none;
   background: none;
+  transition: .3s;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center; }
-  button:hover {
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); }
   button:active {
     transform: scale(1.05); }
 
@@ -131,9 +130,13 @@ button {
 
 .blue-button {
   background: #202b63; }
+  .blue-button:hover {
+    background: #cb2524; }
 
 .red-button {
   background: #cb2524; }
+  .red-button:hover {
+    background: #202b63; }
 
 .gray-buttons:hover {
   color: #FFF;
@@ -985,6 +988,7 @@ button {
         width: 30rem; } }
 
 .main-container_seo {
+  padding: 10rem 0;
   line-height: 1.5; }
   .main-container_seo_header {
     text-align: center;

@@ -88,15 +88,12 @@ button {
     border-radius: 10px;
     outline: none;
     background: none;
+    transition: .3s;
     cursor: pointer;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &:hover {
-        box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
-    }
 
     &:active {
         transform: scale(1.05);
@@ -180,10 +177,16 @@ button {
 // blue buttons
 .blue-button {
     background: $projectColor-blue;
+    &:hover {
+        background: $projectColor-red;
+    }
 }
 // red-buttons
 .red-button {
     background: $projectColor-red;
+    &:hover {
+        background: $projectColor-blue;
+    }
 }
 // gray-buttons
 .gray-buttons {
@@ -1636,6 +1639,7 @@ button {
 }
 
 .main-container_seo {
+    padding: 10rem 0;
     line-height: 1.5;
     &_header {
         text-align: center;
