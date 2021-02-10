@@ -48,13 +48,16 @@ html {
         font-size: 9px;
     }
 }
-
+// make impossible to scroll body while burger menu is active
+body.lock-scroll {
+    overflow: hidden;
+}
 // links without styles
 a {
     color: #FFF;
     text-decoration: none;
 }
-
+// default ul style
 ul {
     list-style: none;
 }
@@ -193,6 +196,12 @@ button {
     &:hover {
         color: #FFF;
         background: rgba(0, 0, 0, .5);
+    }
+}
+// fix email icon positioning
+.email-icon {
+    svg {
+        margin-top: 4px;
     }
 }
 // full img size
@@ -527,8 +536,8 @@ button {
 // styling crawler
 .noUi-horizontal .noUi-handle {
     top: -9px;
-    width: 21px;
-    height: 21px;
+    width: 22px;
+    height: 22px;
     background: $projectColor-red;
     box-shadow: none;
     border: none;
@@ -630,29 +639,128 @@ button {
             }
         }
     }
-
-    // @media(max-width: 550px) {
-    //     // all blocks with tabs
-    //     .tabs {
-    //         &_buttons {
-    //             &_item {
-    //                 &--active {
-    //                     font-size: 1.4rem;
-    //                     color: $subheaders-color;
-    //                     background: $defaultBackground-color;
-    //                 }
-    //                 &:not(.tabs_triggers_buttons_item--active):hover {
-    //                     text-decoration: underline;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 // HEADER
 .main-container_hat {
-    padding: 1.5rem 0;
+    width: 100%;
+    background: #FFF;
+    transition: .3s;
+    position: relative;
+    overflow-x: hidden;
+
+    &_wrapper {
+        padding: 1.5rem 0;
+    }
+
+    .burger {
+        position: relative;
+        z-index: 101;
+        width: 60px;
+        height: 60px;
+        display: none;
+
+        &_button:hover {
+            .burger_lines {
+                filter: brightness(.7);
+            }
+        }
+
+        &_lines, &_lines::after, &_lines::before {
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: black;
+        }
+
+        &_lines {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_lines::before {
+            content: '';
+            top: -7px;
+            transition: .5s;
+        }
+
+        &_lines::after {
+            content: '';
+            top: 7px;
+            transition: .5s;
+        }
+        // make animation after click
+        &_active .burger_lines {
+            background: rgba(0, 0, 0, .01);
+        }
+
+        &_active .burger_lines::before {
+            top: 0;
+            transform: rotate(45deg);
+            background: #FFF;
+        }
+
+        &_active .burger_lines::after {
+            top: 0;
+            transform: rotate(-45deg);
+            background: #FFF;
+        }
+    }
+
+    .burger-nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        width: 45%;
+        height: 100vh;
+        padding: 3rem 1rem;
+        background: rgba(0, 0, 0, .95);
+        transform: translateX(-101%);
+        transition: 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        ul {
+            height: 50%;
+            margin: 1rem 0;
+            font-size: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &_contacts, &_address {
+            width: 100%;
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        &_contacts {
+            padding: 3rem 0;
+            flex-direction: column;
+            &_phone, &_email {
+                &_text {
+                    font-size: 18px;
+                    color: #FFF;
+                }
+            }
+        }
+
+        &_address {
+            font-size: 16px;
+            color: #FFF;
+        }
+    }
+
+    .active-nav {
+        transform: translateX(0%);
+    }
+
     &_address, .profile-link {
         font-size: 1.2rem;
     }
@@ -689,13 +797,34 @@ button {
         }
     }
 
-    @media(max-width: 767px) {
+    @media(min-width: 991px) {
+        .active-nav {
+            display: none;
+        }
+    }
+
+    @media(max-width: 991px) {
+        .burger {
+            display: block;
+        }
         &_contacts {
             display: none;
         }
     }
 
-    @media(max-width: 520px) {
+    @media(max-width: 767px) {
+        .burger-nav {
+            width: 60%;
+        }
+        &_contacts {
+            display: none;
+        }
+    }
+
+    @media(max-width: 575px) {
+        .burger-nav {
+            width: 100%;
+        }
         &_phone-call {
             display: none;
         }
@@ -703,7 +832,6 @@ button {
 }
 // FIND-BUSINESS SECTION
 .main-container_find-business {
-    padding: 3rem 0;
     background: $defaultBackground-color;
     &_content {
         height: 68rem;
@@ -875,6 +1003,7 @@ button {
     }
 
     @media(max-width: 991px) {
+        padding: 3rem 0;
         &_content {
             &_container {
                 &_nav {

@@ -28,6 +28,9 @@ html {
     html {
       font-size: 9px; } }
 
+body.lock-scroll {
+  overflow: hidden; }
+
 a {
   color: #FFF;
   text-decoration: none; }
@@ -141,6 +144,9 @@ button {
 .gray-buttons:hover {
   color: #FFF;
   background: rgba(0, 0, 0, 0.5); }
+
+.email-icon svg {
+  margin-top: 4px; }
 
 .full-img {
   width: 100%;
@@ -375,8 +381,8 @@ button {
 
 .noUi-horizontal .noUi-handle {
   top: -9px;
-  width: 21px;
-  height: 21px;
+  width: 22px;
+  height: 22px;
   background: #cb2524;
   box-shadow: none;
   border: none;
@@ -435,7 +441,86 @@ button {
     display: none; } }
 
 .main-container_hat {
-  padding: 1.5rem 0; }
+  width: 100%;
+  background: #FFF;
+  transition: .3s;
+  position: relative;
+  overflow-x: hidden; }
+  .main-container_hat_wrapper {
+    padding: 1.5rem 0; }
+  .main-container_hat .burger {
+    position: relative;
+    z-index: 101;
+    width: 60px;
+    height: 60px;
+    display: none; }
+    .main-container_hat .burger_button:hover .burger_lines {
+      filter: brightness(0.7); }
+    .main-container_hat .burger_lines, .main-container_hat .burger_lines::after, .main-container_hat .burger_lines::before {
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background: black; }
+    .main-container_hat .burger_lines {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .main-container_hat .burger_lines::before {
+      content: '';
+      top: -7px;
+      transition: .5s; }
+    .main-container_hat .burger_lines::after {
+      content: '';
+      top: 7px;
+      transition: .5s; }
+    .main-container_hat .burger_active .burger_lines {
+      background: rgba(0, 0, 0, 0.01); }
+    .main-container_hat .burger_active .burger_lines::before {
+      top: 0;
+      transform: rotate(45deg);
+      background: #FFF; }
+    .main-container_hat .burger_active .burger_lines::after {
+      top: 0;
+      transform: rotate(-45deg);
+      background: #FFF; }
+  .main-container_hat .burger-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 45%;
+    height: 100vh;
+    padding: 3rem 1rem;
+    background: rgba(0, 0, 0, 0.95);
+    transform: translateX(-101%);
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .main-container_hat .burger-nav ul {
+      height: 50%;
+      margin: 1rem 0;
+      font-size: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+    .main-container_hat .burger-nav_contacts, .main-container_hat .burger-nav_address {
+      width: 100%; }
+      .main-container_hat .burger-nav_contacts svg, .main-container_hat .burger-nav_address svg {
+        width: 30px;
+        height: 30px; }
+    .main-container_hat .burger-nav_contacts {
+      padding: 3rem 0;
+      flex-direction: column; }
+      .main-container_hat .burger-nav_contacts_phone_text, .main-container_hat .burger-nav_contacts_email_text {
+        font-size: 18px;
+        color: #FFF; }
+    .main-container_hat .burger-nav_address {
+      font-size: 16px;
+      color: #FFF; }
+  .main-container_hat .active-nav {
+    transform: translateX(0%); }
   .main-container_hat_address, .main-container_hat .profile-link {
     font-size: 1.2rem; }
   .main-container_hat .profile-link {
@@ -456,15 +541,26 @@ button {
   @media (max-width: 1250px) {
     .main-container_hat_contacts {
       flex-direction: column; } }
-  @media (max-width: 767px) {
+  @media (min-width: 991px) {
+    .main-container_hat .active-nav {
+      display: none; } }
+  @media (max-width: 991px) {
+    .main-container_hat .burger {
+      display: block; }
     .main-container_hat_contacts {
       display: none; } }
-  @media (max-width: 520px) {
+  @media (max-width: 767px) {
+    .main-container_hat .burger-nav {
+      width: 60%; }
+    .main-container_hat_contacts {
+      display: none; } }
+  @media (max-width: 575px) {
+    .main-container_hat .burger-nav {
+      width: 100%; }
     .main-container_hat_phone-call {
       display: none; } }
 
 .main-container_find-business {
-  padding: 3rem 0;
   background: #EEE; }
   .main-container_find-business_content {
     height: 68rem; }
@@ -566,10 +662,12 @@ button {
         width: 43rem;
         right: 0; } }
   @media (max-width: 991px) {
-    .main-container_find-business_content_container_nav {
-      display: none; }
-    .main-container_find-business_content_crawlers_form {
-      min-width: 50rem; } }
+    .main-container_find-business {
+      padding: 3rem 0; }
+      .main-container_find-business_content_container_nav {
+        display: none; }
+      .main-container_find-business_content_crawlers_form {
+        min-width: 50rem; } }
   @media (max-width: 900px) {
     .main-container_find-business_content {
       height: auto;

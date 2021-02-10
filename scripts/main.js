@@ -23,15 +23,47 @@ function tabsLogic(parentClass, _this) {
 }
 
 // empty links without reacting for click
-let links = $("a");
-for(let item of links) {
-    $(item).click(function(event) {
-        event.preventDefault();
-    })
-}
+// let links = $("a");
+// for(let item of links) {
+//     $(item).click(function(event) {
+//         event.preventDefault();
+//     })
+// }
+
+// scroll logics
+$(document).scroll(function() {
+    let scrollTop = $(window).scrollTop();
+    let wrapper = $('.main-container_hat');
+    if (scrollTop >= 200) {
+        wrapper.css({
+            'position': 'fixed',
+            'z-index': 10,
+            'margin': 'auto',
+            'left': 0,
+            'right': 0,
+            'background': 'rgba(255, 255, 255, .95)',
+        });
+    }
+    else {
+        wrapper.css({
+            'position': 'static',
+            'background': 'none',
+        });
+    }
+})
 
 // main scripts
 $(document).ready(function() {
+    // menu for small devices
+    $('.burger').click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass('burger_active');
+        $('.burger-nav').toggleClass('active-nav');
+        $('body').toggleClass('lock-scroll');
+    });
+
+    $()
+
     // choose category
     let categoryLinks = $(".main-container_best-offers_options_menu_nav ul a");
     chooseRightLink(categoryLinks, "choosen-item");
