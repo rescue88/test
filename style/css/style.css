@@ -84,6 +84,7 @@ button {
   text-transform: uppercase; }
 
 .extra-headers {
+  color: #171E2B;
   font-size: 5rem;
   font-weight: 800;
   line-height: 1.1; }
@@ -490,37 +491,42 @@ button {
     z-index: 100;
     width: 45%;
     height: 100vh;
-    padding: 3rem 1rem;
+    padding: 3rem 5rem;
     background: rgba(0, 0, 0, 0.95);
     transform: translateX(-101%);
     transition: 1s;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
+    justify-content: center; }
     .main-container_hat .burger-nav ul {
       height: 50%;
-      margin: 1rem 0;
       font-size: 3rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
-    .main-container_hat .burger-nav_contacts, .main-container_hat .burger-nav_address {
-      width: 100%; }
-      .main-container_hat .burger-nav_contacts svg, .main-container_hat .burger-nav_address svg {
+    .main-container_hat .burger-nav_contacts {
+      padding-top: 6rem;
+      flex-direction: column; }
+      .main-container_hat .burger-nav_contacts_phone, .main-container_hat .burger-nav_contacts_email, .main-container_hat .burger-nav_contacts_address {
+        font-size: 1.6rem; }
+        .main-container_hat .burger-nav_contacts_phone_text, .main-container_hat .burger-nav_contacts_email_text, .main-container_hat .burger-nav_contacts_address_text {
+          color: #FFF; }
+      .main-container_hat .burger-nav_contacts svg {
+        margin-left: 0;
         width: 30px;
         height: 30px; }
-    .main-container_hat .burger-nav_contacts {
-      padding: 3rem 0;
-      flex-direction: column; }
-      .main-container_hat .burger-nav_contacts_phone_text, .main-container_hat .burger-nav_contacts_email_text {
-        font-size: 18px;
-        color: #FFF; }
-    .main-container_hat .burger-nav_address {
-      font-size: 16px;
-      color: #FFF; }
+    .main-container_hat .burger-nav_overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; }
   .main-container_hat .active-nav {
     transform: translateX(0%); }
+    .main-container_hat .active-nav .burger-nav_overlay {
+      display: block; }
   .main-container_hat_address, .main-container_hat .profile-link {
     font-size: 1.2rem; }
   .main-container_hat .profile-link {

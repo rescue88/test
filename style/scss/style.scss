@@ -123,6 +123,7 @@ button {
 }
 // extra headers settings
 .extra-headers {
+    color: $subheaders-color;
     font-size: 5rem;
     font-weight: 800;
     line-height: 1.1;
@@ -715,50 +716,55 @@ button {
         z-index: 100;
         width: 45%;
         height: 100vh;
-        padding: 3rem 1rem;
+        padding: 3rem 5rem;
         background: rgba(0, 0, 0, .95);
         transform: translateX(-101%);
         transition: 1s;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+
         ul {
             height: 50%;
-            margin: 1rem 0;
             font-size: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        &_contacts, &_address {
-            width: 100%;
+        &_contacts {
+            padding-top: 6rem;
+            flex-direction: column;
+
+            &_phone, &_email, &_address {
+                font-size: 1.6rem;
+                &_text {
+                    color: #FFF;
+                }
+            }
             svg {
+                margin-left: 0;
                 width: 30px;
                 height: 30px;
             }
         }
-
-        &_contacts {
-            padding: 3rem 0;
-            flex-direction: column;
-            &_phone, &_email {
-                &_text {
-                    font-size: 18px;
-                    color: #FFF;
-                }
-            }
-        }
-
-        &_address {
-            font-size: 16px;
-            color: #FFF;
+        // make a full width overlay(clicking other content closes menu)
+        &_overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
         }
     }
-
+    // open menu burger-nav has this class
     .active-nav {
         transform: translateX(0%);
+        .burger-nav_overlay {
+            display: block;
+        }
     }
 
     &_address, .profile-link {

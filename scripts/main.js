@@ -50,19 +50,30 @@ $(document).scroll(function() {
             'background': 'none',
         });
     }
-})
+});
+
+
+function toggleMenu() {
+    $('.burger-nav').toggleClass('active-nav');
+    // scroll is not available
+    $('body').toggleClass('lock-scroll');
+}
 
 // main scripts
 $(document).ready(function() {
     // menu for small devices
     $('.burger').click(function(e) {
         e.preventDefault();
+        // changes button
         $(this).toggleClass('burger_active');
-        $('.burger-nav').toggleClass('active-nav');
-        $('body').toggleClass('lock-scroll');
+        // opens menu
+        toggleMenu();
     });
-
-    $()
+    // overlay logic
+    $('.burger-nav_overlay').click(function() {
+        $('.burger').toggleClass('burger_active');
+        toggleMenu();
+    });
 
     // choose category
     let categoryLinks = $(".main-container_best-offers_options_menu_nav ul a");
