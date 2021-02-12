@@ -192,13 +192,6 @@ button {
         background: $projectColor-blue;
     }
 }
-// gray-buttons
-.gray-buttons {
-    &:hover {
-        color: #FFF;
-        background: rgba(0, 0, 0, .5);
-    }
-}
 // fix email icon positioning
 .email-icon {
     svg {
@@ -225,6 +218,13 @@ button {
         display: flex;
         align-items: center;
         padding: 5px;
+    }
+
+    .subheaders {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 // select styles
@@ -367,8 +367,9 @@ button {
         flex-basis: 30%;
     }
 
-    &_buttons{
+    &_buttons, &_buttons-bottom {
         flex-basis: 70%;
+        // carousel buttons
         .hat-carousel_buttons_prev, .hat-carousel_buttons_next {
             width: 4.5rem;
             height: 4.5rem;
@@ -389,7 +390,7 @@ button {
                 }
             }
         }
-
+        // disabled button styles
         .hat-carousel_buttons_prev.slick-disabled, .hat-carousel_buttons_next.slick-disabled {
             opacity: .5 ;
             &:hover {
@@ -402,6 +403,13 @@ button {
         :active:not(.slick-disabled) {
             transform: scale(1.2);
         }
+    }
+
+    &_buttons-bottom {
+        padding-top: 15px;
+        padding-right: 25px;
+        display: flex;
+        justify-content: flex-end;
     }
 }
 
@@ -669,9 +677,9 @@ button {
 
         &_lines, &_lines::after, &_lines::before {
             position: absolute;
-            width: 30px;
+            width: 25px;
             height: 4px;
-            background: black;
+            background: $headers-color;
         }
 
         &_lines {
@@ -717,7 +725,7 @@ button {
         width: 45%;
         height: 100vh;
         padding: 3rem 5rem;
-        background: rgba(0, 0, 0, .95);
+        background: $headers-color;
         transform: translateX(-101%);
         transition: 1s;
         display: flex;
@@ -921,6 +929,10 @@ button {
                     flex-direction: column;
                     justify-content: space-between;
 
+                    .select {
+                        background: $defaultBackground-color;
+                    }
+
                     .instrument {
                         &_value {
                             margin-bottom: 3rem;
@@ -937,14 +949,15 @@ button {
                                 }
                             }
                         }
+
+                        &_select {
+                            display: none;
+                        }
                     }
     
                     .instrument_branch {
-                        .select {
-                            background: $defaultBackground-color;
-                        }
                         label {
-                            margin-bottom: 9px;
+                            margin-bottom: 10px;
                         }
                     }
                 }
@@ -1048,11 +1061,29 @@ button {
     @media(max-width: 500px) {
         &_content {
             &_crawlers {
-                overflow: hidden;
-                overflow-x: auto;
-                white-space: nowrap;
                 &_form {
-                    display: inline-block;
+                    width: 100%;
+                    min-width: auto;
+                    padding: 2rem;
+                    .instrument-container {
+                        .instrument {
+                            .instrument_value {
+                                margin: 10px;
+                                justify-content: center;
+                                &_field {
+                                    display: none;
+                                }
+                            }
+
+                            &_select {
+                                display: block;
+                            }
+
+                            #sum-slider, #time-slider, #profit-slider {
+                                display: none;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1306,11 +1337,22 @@ button {
                     margin-bottom: 10px;
                 }
             }
+
             &_long-radio {
                 width: 70%;
                 display: flex;
                 flex-direction: column;
+
+                &_invest, &_profit {
+                    &_select {
+                        .select {
+                            background: $defaultBackground-color;
+                            display: none;
+                        }
+                    }
+                }
             }
+
             &_small-radio {
                 width: 25%;
                 display: flex;
@@ -1389,12 +1431,17 @@ button {
 
             label {
                 width: 100%;
+                height: 53px;
                 padding: 1.5rem;
                 background: $defaultBackground-color;
                 text-align: center;
                 color: $subheaders-color;
                 font-size: 1.2rem;
                 user-select: none;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             input[type="radio"]:checked + label {
@@ -1404,20 +1451,23 @@ button {
         }
     }
 
-    @media(max-width: 1450px) {
+    @media(max-width: 1375px) {
         &_form {
-            & > div {
-                min-width: 700px;
-            }
             &_container {
                 flex-direction: column;
                 align-items: flex-start;
                 &_long-radio {
-                    min-width: 700px;
+                    width: 100%;
                 }
 
                 &_small-radio {
-                    min-width: 300px;
+                    width: 100%;
+                    padding-top: 10px;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    &_city, &_payback {
+                        flex-basis: 45%;
+                    }
                 }
             }
             &_branches {
@@ -1430,11 +1480,71 @@ button {
         }
     }
 
-    @media(max-width: 800px) {
+    @media(max-width: 767px) {
         &_form {
-            overflow: hidden;
-            overflow-x: auto;
-            white-space: nowrap;
+            &_container {
+                &_long-radio {
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    &_invest, &_profit {
+                        flex-basis: 45%;
+                        justify-content: space-between;
+                        &_radio.filter-radio {
+                            display: none;
+                        }
+
+                        &_select {
+                            .select {
+                                background: $defaultBackground-color;
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+            &_results {
+                flex-direction: column;
+                &_matches {
+                    text-align: center;
+                    margin: 25px;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 650px) {
+        &_form {
+            &_branches {
+                &_checkbox {
+                    justify-content: center;
+                    &_item {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 450px) {
+        &_form {
+            &_container {
+                &_long-radio, &_small-radio {
+                    flex-direction: column;
+                }
+            }
+
+            &_results {
+                &_show-offers {
+                    &_submit {
+                        button {
+                            padding: 0;
+                            width: 19rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -1522,14 +1632,8 @@ button {
     &_container {
         flex-wrap: wrap;
         .typical-item {
-            width: 35rem;
-            margin: 1rem;
+            flex-basis: 30%;
             border-radius: 5px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: space-between;
-
             &_picture {
                 height: 24rem;
             }
@@ -1544,37 +1648,45 @@ button {
                 }
             }
         }
+    }
 
-        &_watch-all {
-            margin-top: 4rem;
-            margin-bottom: 5rem;
-            button {
-                color: $subheaders-color;
-                border: 1px solid black;
+    &_watch-all {
+        margin-top: 4rem;
+        margin-bottom: 5rem;
+        button {
+            color: $subheaders-color;
+            border: 1px solid black;
+            &:hover {
+                background: $projectColor-red;
+                color: #FFF;
             }
         }
     }
 
     @media(max-width: 1550px) {
         &_container {
-            justify-content: center;
             .typical-item {
-                width: 32rem;
+                flex-basis: 32%;
+            }
+        }
+    }
+
+    @media(max-width: 1250px) {
+        &_container {
+            justify-content: center;
+            flex-wrap: wrap;
+            .typical-item {
+                flex-basis: auto;
+                width: 36rem;
+                margin: 1rem;
             }
         }
     }
 
     @media(max-width: 767px) {
-        &_container {
-            flex-direction: column;
-            &_item {
-                width: 30rem;
-                height: 32rem;
-                margin: 2rem 0;
-                .typical-item_subheader {
-                    font-size: 1.4rem;
-                }
-            }
+        &_watch-all {
+            background: red;
+            display: none;
         }
     }
 }
@@ -1590,20 +1702,32 @@ button {
             }
         }
     }
+
     &_how-sell {
         flex-wrap: wrap;
-        justify-content: center;
         .typical-item {
-            width: 27rem;
-            margin: 1rem;
+            flex-basis: 23%;
             background: #FFF;
 
             &_picture {
-                height: 18rem;
+                height: 19rem;
             }
 
             &_subheader {
                 margin-bottom: 2.5rem;
+            }
+        }
+    }
+
+    @media(max-width: 1350px) {
+        &_how-sell {
+            justify-content: center;
+            align-items: center;
+            .typical-item {
+                flex-basis: auto;
+                width: 26rem;
+                margin: 1rem;
+
             }
         }
     }
@@ -1674,6 +1798,10 @@ button {
                 }
             }
 
+            &_radio, &_name, &_phone, &_submit {
+                flex-basis: 22%;
+            }
+
             &_name, &_phone {
                 label {
                     font-size: 1.6rem;
@@ -1681,7 +1809,7 @@ button {
                 }
         
                 input {
-                    width: 24rem;
+                    width: 100%;
                     height: 53px;
                     padding: 0 1rem;
                     border: none;
@@ -1697,35 +1825,34 @@ button {
             &_submit {
                 align-self: flex-end;
                 button {
-                    width: 24rem;
+                    width: 100%;
                 }
             }
         }
     }
 
-    @media(max-width: 1400px) {
+    @media(max-width: 1300px) {
         &_container {
             &_form {
-                .buy-sell_label {
-                    &_fake {
-                        width: 1.5rem;
-                        height: 1.5rem;
-                    }
-                    &_text {
-                        font-size: 1.2rem;
+                &_radio {
+                    flex-basis: 20%;
+                    .buy-sell_label {
+                        &_fake {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                        &_text {
+                            font-size: 1.2rem;
+                        }
                     }
                 }
 
                 &_name, &_phone {
-                    input {
-                        width: 19rem;
-                    }
+                    flex-basis: 23%;
                 }
 
                 &_submit {
-                    button {
-                        width: 20rem;
-                    }
+                    flex-basis: 25%;
                 }
             }
         }

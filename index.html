@@ -256,8 +256,19 @@
                                             Сумма
                                         </div>
                                         <div class="instrument_value_field plain-text">
-                                            <input id="sum-change" class="headers" type="text" disabled> ₽
+                                            <input id="sum-change" name="sum" class="headers" type="text" disabled> ₽
                                         </div>
+                                    </div>
+                                    <div class="instrument_select">
+                                        <select class="select" id="sum" name="sum">
+                                            <option disabled>Выбрать</option>
+                                            <option value="50000">50 000 ₽</option>
+                                            <option value="100000">100 000 ₽</option>
+                                            <option value="300000">300 000 ₽</option>
+                                            <option value="500000">500 000 ₽</option>
+                                            <option value="1000000">1 000 000 ₽</option>
+                                            <option value=">1000000">>1 000 000 ₽</option>
+                                        </select>
                                     </div>
                                     <div id="sum-slider"></div>
                                 </div>
@@ -267,8 +278,17 @@
                                             Срок
                                         </div>
                                         <div class="instrument_value_field plain-text">
-                                            <input id="time-change" class="headers" type="text" disabled> мес.
+                                            <input id="time-change" name="time" class="headers" type="text" disabled> мес.
                                         </div>
+                                    </div>
+                                    <div class="instrument_select">
+                                        <select class="select" id="time" name="time">
+                                            <option disabled>Выбрать</option>
+                                            <option value="3">3 мес.</option>
+                                            <option value="6">6 мес.</option>
+                                            <option value="12">12 мес.</option>
+                                            <option value=">12">>12 мес.</option>
+                                        </select>
                                     </div>
                                     <div id="time-slider"></div>
                                 </div>
@@ -278,8 +298,19 @@
                                             Прибыль
                                         </div>
                                         <div class="instrument_value_field plain-text">
-                                            <input id="profit-change" class="headers" type="text" disabled> ₽
+                                            <input id="profit-change" name="profit" class="headers" type="text" disabled> ₽
                                         </div>
+                                    </div>
+                                    <div class="instrument_select">
+                                        <select class="select" id="profit" name="profit">
+                                            <option disabled>Выбрать</option>
+                                            <option value="100000">100 000 ₽</option>
+                                            <option value="200000">200 000 ₽</option>
+                                            <option value="500000">500 000 ₽</option>
+                                            <option value="1000000">1 000 000 ₽</option>
+                                            <option value="2000000">2 000 000 ₽</option>
+                                            <option value="3000000">3 000 000 ₽</option>
+                                        </select>
                                     </div>
                                     <div id="profit-slider"></div>
                                 </div>
@@ -516,6 +547,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="hat-carousel_buttons-bottom"></div>
             </section>
 
             <section class="main-container_invest-top">
@@ -707,6 +739,19 @@
                                 <div class="main-container_filter_form_container_long-radio_invest_title filter-title">
                                     Вложения, до
                                 </div>
+                                <div class="main-container_filter_form_container_long-radio_invest_select">
+                                    <label for="invest">
+                                        <select class="select" id="invest" name="invest">
+                                            <option disabled>Выбрать</option>
+                                            <option value="50000">50 000 ₽</option>
+                                            <option value="100000">100 000 ₽</option>
+                                            <option value="300000">300 000 ₽</option>
+                                            <option value="500000">500 000 ₽</option>
+                                            <option value="1000000">1 000 000 ₽</option>
+                                            <option value=">1000000">>1 000 000 ₽</option>
+                                        </select>
+                                    </label>
+                                </div>
                                 <div class="main-container_filter_form_container_long-radio_invest_radio filter-radio">
                                     <div class="main-container_filter_form_container_long-radio_invest_radio_item filter-radio_item">
                                         <input id="invest-min" type="radio" name="invest" checked>
@@ -737,6 +782,19 @@
                             <div class="main-container_filter_form_container_long-radio_profit">
                                 <div class="main-container_filter_form_container_long-radio_profit_title filter-title">
                                     Прибыль, до
+                                </div>
+                                <div class="main-container_filter_form_container_long-radio_profit_select">
+                                    <label for="profit">
+                                        <select class="select" id="profit" name="profit">
+                                            <option disabled>Выбрать</option>
+                                            <option value="100000">100 000 ₽</option>
+                                            <option value="200000">200 000 ₽</option>
+                                            <option value="500000">500 000 ₽</option>
+                                            <option value="1000000">1 000 000 ₽</option>
+                                            <option value="2000000">2 000 000 ₽</option>
+                                            <option value="3000000">3 000 000 ₽</option>
+                                        </select>
+                                    </label>
                                 </div>
                                 <div class="main-container_filter_form_container_long-radio_profit_radio filter-radio">
                                     <div class="main-container_filter_form_container_long-radio_profit_radio_item filter-radio_item">
@@ -912,7 +970,7 @@
                     </div>
                     <div class="main-container_filter_form_results space-between">
                         <div class="main-container_filter_form_results_matches plain-text">
-                            <span class="subheaders">91 предложение </span>подходит под ваши параметры 
+                            <span class="subheaders">91 предложение</span> подходит под ваши параметры 
                         </div>
                         <div class="main-container_filter_form_results_show-offers align-center">
                             <div class="main-container_filter_form_results_show-offers_clear-filter">
@@ -1090,7 +1148,7 @@
                         </div>
                     </a>
                 </div>
-
+                <div class="hat-carousel_buttons-bottom"></div>
             </section>
 
             <section class="main-container_reviews">
@@ -1216,6 +1274,7 @@
                         </div>
                     </a>
                 </div>
+                <div class="hat-carousel_buttons-bottom"></div>
 
             </section>
 
@@ -1375,9 +1434,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="main-container_news_container_watch-all center-childs">
+                <div class="main-container_news_watch-all center-childs">
                     <button class="gray-buttons">Смотреть все публикации</button>
                 </div>
+                <div class="hat-carousel_buttons-bottom"></div>
 
             </section>
 
@@ -1464,11 +1524,11 @@
                         </div>
                         <div class="main-container_free-call_container_form_name">
                             <label for="name">Ваше имя</label>
-                            <input id="name" type="text" name="name" placeholder="Александр" maxlength="15">
+                            <input id="name" type="text" name="name" maxlength="15">
                         </div>
                         <div class="main-container_free-call_container_form_phone">
                             <label for="">Номер телефона</label>
-                            <input id="phone" type="tel" name="phone" placeholder="+7(495)126-35-40">
+                            <input id="phone" type="tel" name="phone">
                         </div>
                         <div class="main-container_free-call_container_form_submit">
                             <button class="red-button" type="submit">Свяжитесь со мной</button>

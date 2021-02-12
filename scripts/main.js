@@ -23,34 +23,34 @@ function tabsLogic(parentClass, _this) {
 }
 
 // empty links without reacting for click
-// let links = $("a");
-// for(let item of links) {
-//     $(item).click(function(event) {
-//         event.preventDefault();
-//     })
-// }
+let links = $("a");
+for(let item of links) {
+    $(item).click(function(event) {
+        event.preventDefault();
+    })
+}
 
 // scroll logics
-$(document).scroll(function() {
-    let scrollTop = $(window).scrollTop();
-    let wrapper = $('.main-container_hat');
-    if (scrollTop >= 200) {
-        wrapper.css({
-            'position': 'fixed',
-            'z-index': 10,
-            'margin': 'auto',
-            'left': 0,
-            'right': 0,
-            'background': 'rgba(255, 255, 255, .95)',
-        });
-    }
-    else {
-        wrapper.css({
-            'position': 'static',
-            'background': 'none',
-        });
-    }
-});
+// $(document).scroll(function() {
+//     let scrollTop = $(window).scrollTop();
+//     let wrapper = $('.main-container_hat');
+//     if (scrollTop >= 200) {
+//         wrapper.css({
+//             'position': 'fixed',
+//             'z-index': 10,
+//             'margin': 'auto',
+//             'left': 0,
+//             'right': 0,
+//             'background': 'rgba(255, 255, 255, .95)',
+//         });
+//     }
+//     else {
+//         wrapper.css({
+//             'position': 'static',
+//             'background': 'none',
+//         });
+//     }
+// });
 
 
 function toggleMenu() {
@@ -207,22 +207,26 @@ $(document).ready(function() {
             {
                 breakpoint: 850,
                 settings: {
-                    arrows: false,
                     slidesToShow: 1,
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    arrows: false,
                     slidesToShow: 1.5,
+                    arrows: true,
+                    appendArrows: $('.main-container_best-offers .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
                 }
             },
             {
                 breakpoint: 500,
                 settings: {
-                    arrows: false,
                     slidesToShow: 1,
+                    appendArrows: $('.main-container_best-offers .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
                 }
             },
         ],
@@ -253,22 +257,31 @@ $(document).ready(function() {
             {
                 breakpoint: 767,
                 settings: {
-                    arrows: false,
                     slidesToShow: 2,
+                    arrows: true,
+                    appendArrows: $('.main-container_work-with .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
                 }
             },
             {
                 breakpoint: 700,
                 settings: {
-                    arrows: false,
                     slidesToShow: 2,
+                    arrows: true,
+                    appendArrows: $('.main-container_work-with .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
                 }
             },
             {
                 breakpoint: 575,
                 settings: {
-                    arrows: false,
                     slidesToShow: 1.5,
+                    arrows: true,
+                    appendArrows: $('.main-container_work-with .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
                 }
             },
         ],
@@ -298,13 +311,74 @@ $(document).ready(function() {
                 }
             },
             {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: true,
+                    appendArrows: $('.main-container_reviews .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+                }
+            },
+            {
                 breakpoint: 650,
                 settings: {
-                    arrows: false,
                     slidesToShow: 1,
+                    arrows: true,
+                    appendArrows: $('.main-container_reviews .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
                 }
             },
         ],
+    });
+    // news block slider(max-width: 767px)
+    $('.main-container_news_container').slick({
+        responsive: [
+            {
+                breakpoint: 9999,
+                settings: 'unslick',
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    infinite: false,
+                    adaptiveHeight: true,
+                    draggable: false,
+                    slidesToShow: 2,
+                    arrows: true,
+                    appendArrows: $('.main-container_news .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+                }
+            },
+            {
+                breakpoint: 630,
+                settings: {
+                    infinite: false,
+                    adaptiveHeight: true,
+                    draggable: false,
+                    slidesToShow: 1.5,
+                    arrows: true,
+                    appendArrows: $('.main-container_news .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+                }
+            },
+            {
+                breakpoint: 475,
+                settings: {
+                    infinite: false,
+                    adaptiveHeight: true,
+                    draggable: false,
+                    slidesToShow: 1,
+                    arrows: true,
+                    appendArrows: $('.main-container_news .hat-carousel_buttons-bottom'),
+                    prevArrow: `<div class="hat-carousel_buttons_prev center-childs">${chevronLeft}</div>`,
+                    nextArrow: `<div class="hat-carousel_buttons_next center-childs">${chevronRight}</div>`,
+                }
+            }
+        ]
     });
 
     // value sliders(crawlers)
