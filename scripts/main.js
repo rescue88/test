@@ -31,26 +31,26 @@ for(let item of links) {
 }
 
 // scroll logics
-// $(document).scroll(function() {
-//     let scrollTop = $(window).scrollTop();
-//     let wrapper = $('.main-container_hat');
-//     if (scrollTop >= 200) {
-//         wrapper.css({
-//             'position': 'fixed',
-//             'z-index': 10,
-//             'margin': 'auto',
-//             'left': 0,
-//             'right': 0,
-//             'background': 'rgba(255, 255, 255, .95)',
-//         });
-//     }
-//     else {
-//         wrapper.css({
-//             'position': 'static',
-//             'background': 'none',
-//         });
-//     }
-// });
+$(document).scroll(function() {
+    let scrollTop = $(window).scrollTop();
+    let wrapper = $('.main-container_hat');
+    if (scrollTop >= 100) {
+        wrapper.css({
+            'position': 'fixed',
+            'z-index': 10,
+            'margin': '0 auto',
+            'left': 0,
+            'right': 0,
+            'background': 'rgba(255, 255, 255, .95)',
+        });
+    }
+    else {
+        wrapper.css({
+            'position': 'static',
+            'background': 'none',
+        });
+    }
+});
 
 
 function toggleMenu() {

@@ -449,9 +449,7 @@ button {
 .main-container_hat {
   width: 100%;
   background: #FFF;
-  transition: .3s;
-  position: relative;
-  overflow-x: hidden; }
+  transition: .5s; }
   .main-container_hat_wrapper {
     padding: 1.5rem 0; }
   .main-container_hat .burger {

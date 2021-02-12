@@ -654,9 +654,7 @@ button {
 .main-container_hat {
     width: 100%;
     background: #FFF;
-    transition: .3s;
-    position: relative;
-    overflow-x: hidden;
+    transition: .5s;
 
     &_wrapper {
         padding: 1.5rem 0;
@@ -2010,4 +2008,4 @@ button {
             }
         }
     }
-}   
+}
