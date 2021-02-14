@@ -1,0 +1,900 @@
+// Fonts
+@font-face {
+    font-family: "Geometria";
+    src: url(./../../fonts/Geometria/Geometria.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Geometria";
+    src: url(./../../fonts/Geometria/Geometria-Bold.woff);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Geometria";
+    src: url(./../../fonts/Geometria/Geometria-ExtraBold.woff);
+    font-weight: 800;
+}
+
+// Colors
+$projectColor-blue: rgb(32,43,99);
+$projectColor-red: rgb(203,37,36);
+$projectColor-red-blur: rgba(203,37,36,.8);
+$defaultBackground-color: #EEE;
+
+$headers-color: #1D1E20;
+$subheaders-color: #171E2B;
+$plainText-color: #7B8FA7;
+$plainText-color-2: #9CAABB;
+$helpColor: #ecf0f9;
+$helpButtons-color: #325899;
+
+// Common default tags
+*, ::before, ::after {
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geometria', "Arial";
+}
+// standart font settings
+html {
+    font-size: 10px;
+    font-weight: 400;
+
+    @media(max-width: 991px) {
+        font-size: 9px;
+    }
+}
+// make impossible to scroll body while burger menu is active
+body.lock-scroll {
+    overflow: hidden;
+}
+// links without styles
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+// default ul style
+ul {
+    list-style: none;
+}
+// let the inputs being under/upper label
+label {
+    display: block;
+    cursor: pointer;
+}
+// standart svg icon settings
+svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 1rem;
+
+    fill: $plainText-color;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: $plainText-color;
+}
+
+// button settings
+button {
+    height: 53px;
+    padding: 1.8rem 3rem;
+    color: #FFF;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: none;
+    transition: .3s;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:active {
+        transform: scale(1.05);
+    }
+}
+
+// Common classes
+
+// block in center with a fixed width
+.centered {
+    width: 70%;
+    margin: 0 auto;
+}
+// block in center without borders on the right
+.not-centered {
+    width: 85%;
+    margin-left: 15%;
+}
+// headers settings
+.headers {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+// extra headers settings
+.extra-headers {
+    color: $subheaders-color;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+// subheaders settings
+.subheaders {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $subheaders-color;
+}
+// plain text
+.plain-text {
+    font-size: 1.4rem;
+    color: $plainText-color;
+}
+// other type of plain text
+.plain-text-2 {
+    font-size: 1.4rem;
+    color: $plainText-color-2;
+}
+.underlined-text {
+    color: $helpButtons-color;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+.underlined-text-bold {
+    color: $helpButtons-color;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
+// filter titles above the buttons
+.filter-title {
+    margin-bottom: 7px;
+    color: $plainText-color;
+    font-size: 1.6rem;
+}
+// centralize childs
+.center-childs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// space-between set
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+// align center without resituating elements
+.align-center {
+    display: flex;
+    align-items: center;
+}
+// blue buttons
+.blue-button {
+    background: $projectColor-blue;
+    &:hover {
+        background: $projectColor-red;
+    }
+}
+// red-buttons
+.red-button {
+    background: $projectColor-red;
+    &:hover {
+        background: $projectColor-blue;
+    }
+}
+// fix email icon positioning
+.email-icon {
+    svg {
+        margin-top: 4px;
+    }
+}
+// full img size
+.full-img {
+    width: 100%;
+    height: 100%;
+}
+// repeating logo block
+.logo {
+    color: #222933;
+    img {
+        margin-right: 7px;
+    }
+}
+
+// repeating contacts block
+.contacts {
+    display: flex;
+    & > div {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .subheaders {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+// select styles
+.select {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 53px;
+    border-radius: 5px;
+    background: #FFF;
+    color: $subheaders-color;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+}
+
+.new-select {
+    position: relative;
+    padding: 0 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.new-select__list {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    background: #fff;
+    user-select: none;
+}
+
+.new-select__list.on {
+    display: block;
+}
+
+.new-select__item span {
+    display: block;
+    padding: 10px 15px;
+}
+
+.new-select__item span:hover {
+    background: $projectColor-red-blur;
+}
+
+.new-select:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    opacity: 0.6;
+
+    -webkit-transition: all .27s ease-in-out;
+        -o-transition: all .27s ease-in-out;
+            transition: all .27s ease-in-out;
+
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+
+.new-select.on:after {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.custom-select {
+    &--show {
+        .custom-select__current {
+            &::after {
+                transform: rotate(-180deg);
+                top: 40%;
+            }
+        }
+    }
+}
+
+// tabs logic
+.tabs {
+    &_triggers {
+        &_header {
+            margin-bottom: 4rem;
+        }
+        &_buttons {
+            align-self: flex-end;
+            margin-bottom: 2rem;
+            &_item {
+                height: 100%;
+                font-weight: bold;
+                padding: 2rem 2rem;
+                margin: 0 .5rem;
+                border-radius: 5px 5px 0 0;
+                background: $helpColor;
+                transition: all .3s;
+                &--active {
+                    font-size: 1.6rem;
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                    color: $subheaders-color;
+                    background: $defaultBackground-color;
+                }
+                &:not(.tabs_triggers_buttons_item--active):hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &_content {
+        background: $defaultBackground-color;
+        &_wrapper {
+            &_item {
+                padding: 5rem 0;
+                display: none;
+                &--active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// slider blocks hat(header+buttons)
+.hat-carousel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    &_header {
+        flex-basis: 30%;
+    }
+
+    &_buttons, &_buttons-bottom {
+        flex-basis: 70%;
+        // carousel buttons
+        .hat-carousel_buttons_prev, .hat-carousel_buttons_next {
+            width: 4.5rem;
+            height: 4.5rem;
+            margin: 0 1rem;
+            border-radius: 5px;
+            background: $defaultBackground-color;
+            cursor: pointer;
+
+            svg {
+                width: 40%;
+                height: 40%;
+            }
+
+            &:hover {
+                background: $projectColor-red-blur;
+                svg {
+                    fill: #FFF; 
+                }
+            }
+        }
+        // disabled button styles
+        .hat-carousel_buttons_prev.slick-disabled, .hat-carousel_buttons_next.slick-disabled {
+            opacity: .5 ;
+            &:hover {
+                background: $defaultBackground-color;
+                svg {
+                    fill: $plainText-color;
+                }
+            }
+        }
+        :active:not(.slick-disabled) {
+            transform: scale(1.2);
+        }
+    }
+
+    &_buttons-bottom {
+        padding-top: 15px;
+        padding-right: 25px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+// most of items sets
+.typical-item {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    }
+
+    & > div {
+        width: 100%;
+    }
+
+    & > div:not(.typical-item_picture) {
+        padding: 0 1.5rem;
+    }
+    // same components
+    &_picture {
+        height: 65%;
+        margin-bottom: 15px;
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    &_date {
+        font-size: 1.2rem;
+        color: $plainText-color-2;
+    }
+    // only for news block
+    &_open {
+        a svg {
+            margin: 0;
+            fill: $plainText-color-2;
+            :hover {
+                fill: $projectColor-red;
+            }
+            :active {
+                transform: scale(1.1);
+            }
+        }
+    }
+    // only for help block
+    &_show-more {
+        padding: 1.5rem;
+        text-align: right;
+    }
+    // only for best-offers block
+    &_location {
+        color: $subheaders-color;
+        margin-top: 9px;
+        svg {
+            margin: 0;
+        }
+    }
+    &_advantages {
+        height: 50px;
+        margin: 1.5rem 0;
+        &_profit, &_yield, &_payback {
+            span {
+                color: $subheaders-color;
+            }
+        }
+    }
+    &_more {
+        height: 100px;
+        background: $helpColor;
+        border-radius: 0 0 5px 5px;
+        &_sum {
+            span {
+                color: #202B63;
+                font-size: 3rem;
+            }
+        }
+
+        &_button {
+            button {
+                width: 130px;
+            }
+        }
+    }
+}
+
+// block mouse jump
+.block-jump {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: $defaultBackground-color;
+    transform: rotate(-45deg);
+    position: relative;
+    top: -40px;
+    svg {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+        transform: rotate(45deg);
+    }
+}
+
+// standart slider settings
+.slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.slick-list {
+    overflow: hidden;
+}
+.slick-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slick-slide:active, .slick-slide:focus {
+    border: none;
+    outline: none;
+}
+
+// value sliders
+// cralwer's road
+.noUi-target {
+    height: 5px;
+    background: #D1D3D6;
+    border: none;
+    box-shadow: none;
+}
+// crawler's active part
+.noUi-connect {
+    background: $projectColor-red;
+}
+// hiding density points
+.noUi-marker-normal, .noUi-marker-sub {
+    display: none;
+}
+// hiding crawler pseudos
+.noUi-handle::after, .noUi-handle::before {
+    display: none;
+}
+// styling crawler
+.noUi-horizontal .noUi-handle {
+    top: -9px;
+    width: 22px;
+    height: 22px;
+    background: $projectColor-red;
+    box-shadow: none;
+    border: none;
+    border-radius: 50%;
+
+    &:focus {
+        outline: none;
+    }
+}
+// styling numbers
+.noUi-pips .noUi-value-sub {
+    font-size: 11px;
+    color: $plainText-color;
+    left: 0 !important;
+}
+// deleting standart positioning(numbers scale)
+.noUi-value-horizontal {
+    transform: none;
+}
+// positioning numbers scale
+.noUi-pips-horizontal, .noUi-pips .noUi-value-sub {
+    position: relative;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// MAIN CONTAINER + media queries for same classes
+.main-container {
+    @media(max-width:1450px) {
+        .headers {
+            font-size: 1.8rem;
+        }
+        .hat-carousel {
+            &_header {
+                flex-basis: 40%;
+            }
+
+            &_buttons {
+                flex-basis: 60%;
+            }
+        }
+    }
+    
+    @media(max-width: 1200px) {
+        .tabs {
+            &_triggers {
+                &_buttons {
+                    &_item {
+                        padding-left: 1.5rem;
+                        padding-right: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 991px) {
+        // tablet/mobile full width
+        .centered, .not-centered {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        // all blocks with carousel
+        .hat-carousel {
+            margin-bottom: 50px;
+        }
+
+        // all blocks with tabs
+        .tabs {
+            &_triggers {
+                flex-direction: column;
+                &_header {
+                    text-align: center;
+                }
+
+                &_header {
+                    margin-bottom: 5rem;
+                }
+
+                &_buttons {
+                    align-self: inherit;
+                }
+            }
+        }
+
+        // get rid of block transitions
+        .block-jump {
+            display: none;
+        }
+    }
+
+    @media(max-width: 767px) {
+        // all blocks with sliders
+        .hat-carousel {
+            &_header {
+                flex-basis: 100%;
+                text-align: center;
+            }
+            &_buttons {
+                display: none;
+            }
+        }
+    }
+}
+
+// HEADER
+.main-container_hat {
+    width: 100%;
+    background: #FFF;
+    transition: all .3s;
+
+    &_wrapper {
+        padding: 1.5rem 0;
+        transition: all .3s ease-out;
+    }
+
+    .burger {
+        position: relative;
+        z-index: 101;
+        width: 60px;
+        height: 60px;
+        display: none;
+
+        &_button:hover {
+            .burger_lines {
+                filter: brightness(.7);
+            }
+        }
+
+        &_lines, &_lines::after, &_lines::before {
+            position: absolute;
+            width: 25px;
+            height: 4px;
+            background: $headers-color;
+        }
+
+        &_lines {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_lines::before {
+            content: '';
+            top: -7px;
+            transition: .5s;
+        }
+
+        &_lines::after {
+            content: '';
+            top: 7px;
+            transition: .5s;
+        }
+        // make animation after click
+        &_active .burger_lines {
+            background: rgba(0, 0, 0, .01);
+        }
+
+        &_active .burger_lines::before {
+            top: 0;
+            transform: rotate(45deg);
+            background: #FFF;
+        }
+
+        &_active .burger_lines::after {
+            top: 0;
+            transform: rotate(-45deg);
+            background: #FFF;
+        }
+    }
+
+    .burger-nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        width: 45%;
+        height: 100vh;
+        padding: 7rem 3rem 1rem;
+        background: $headers-color;
+        transform: translateX(-101%);
+        transition: 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        ul {
+            height: 50%;
+            font-size: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &_contacts {
+            padding-top: 6rem;
+            flex-direction: column;
+
+            &_phone, &_email, &_address {
+                font-size: 1.6rem;
+                &_text {
+                    color: #FFF;
+                }
+            }
+            svg {
+                margin-left: 0;
+                width: 30px;
+                height: 30px;
+            }
+        }
+        // make a full width overlay(clicking other content closes menu)
+        &_overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    }
+    // open menu burger-nav has this class
+    .active-nav {
+        transform: translateX(0%);
+        .burger-nav_overlay {
+            display: block;
+        }
+    }
+
+    &_address, .profile-link {
+        font-size: 1.2rem;
+    }
+
+    .profile-link {
+        color: $subheaders-color;
+        font-weight: 700;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &_phone-call {
+        button {
+            width: 18rem;
+            padding: 1.5rem;
+            svg {
+                margin: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    @media(max-width: 1450px) {
+        &_address {
+            display: none;
+        }
+    }
+
+    @media(max-width: 1250px) {
+        &_contacts {
+            flex-direction: column;
+        }
+    }
+
+    @media(min-width: 991px) {
+        .active-nav {
+            display: none;
+        }
+    }
+
+    @media(max-width: 991px) {
+        .burger {
+            display: block;
+        }
+        &_contacts {
+            display: none;
+        }
+    }
+
+    @media(max-width: 767px) {
+        .burger-nav {
+            width: 60%;
+        }
+        &_contacts {
+            display: none;
+        }
+    }
+
+    @media(max-width: 575px) {
+        .burger-nav {
+            width: 100%;
+        }
+        &_phone-call {
+            display: none;
+        }
+    }
+}
+
+// MENU
+.main-container_nav {
+    padding: 2.5rem 0;
+    background: $defaultBackground-color;
+    ul {
+        height: 100%;
+        display: flex;
+        :not(:last-child) li {
+            border-right: 1px solid black;
+            padding-right: 2rem;
+        }
+        :not(:first-child) li {
+            padding-left: 2rem;
+        }
+        a {
+            height: 100%;
+            color: $headers-color;  
+            &:hover {
+                color: $plainText-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    @media(max-width: 991px) {
+        display: none;
+    }
+}
+
+// CURRENT PAGE
+
+.main-container_current-page {
+    padding: 4rem 0;
+}

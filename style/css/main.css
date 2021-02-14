@@ -258,7 +258,7 @@ button {
 .tabs_content {
   background: #EEE; }
   .tabs_content_wrapper_item {
-    padding: 7rem 0;
+    padding: 5rem 0;
     display: none; }
     .tabs_content_wrapper_item--active {
       display: block; }
@@ -349,8 +349,19 @@ button {
     .typical-item_more_button button {
       width: 130px; }
 
-.margin-item {
-  margin: 2rem; }
+.block-jump {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: #EEE;
+  transform: rotate(-45deg);
+  position: relative;
+  top: -40px; }
+  .block-jump svg {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    transform: rotate(45deg); }
 
 .slick-track {
   display: flex;
@@ -437,7 +448,9 @@ button {
     .main-container .tabs_triggers_header {
       margin-bottom: 5rem; }
     .main-container .tabs_triggers_buttons {
-      align-self: inherit; } }
+      align-self: inherit; }
+  .main-container .block-jump {
+    display: none; } }
 
 @media (max-width: 767px) {
   .main-container .hat-carousel_header {
@@ -449,9 +462,10 @@ button {
 .main-container_hat {
   width: 100%;
   background: #FFF;
-  transition: .5s; }
+  transition: all .3s; }
   .main-container_hat_wrapper {
-    padding: 1.5rem 0; }
+    padding: 1.5rem 0;
+    transition: all .3s ease-out; }
   .main-container_hat .burger {
     position: relative;
     z-index: 101;
@@ -494,7 +508,7 @@ button {
     z-index: 100;
     width: 45%;
     height: 100vh;
-    padding: 3rem 5rem;
+    padding: 7rem 3rem 1rem;
     background: #1D1E20;
     transform: translateX(-101%);
     transition: 1s;
@@ -568,6 +582,30 @@ button {
       width: 100%; }
     .main-container_hat_phone-call {
       display: none; } }
+
+.main-container_nav {
+  padding: 2.5rem 0;
+  background: #EEE; }
+  .main-container_nav ul {
+    height: 100%;
+    display: flex; }
+    .main-container_nav ul :not(:last-child) li {
+      border-right: 1px solid black;
+      padding-right: 2rem; }
+    .main-container_nav ul :not(:first-child) li {
+      padding-left: 2rem; }
+    .main-container_nav ul a {
+      height: 100%;
+      color: #1D1E20; }
+      .main-container_nav ul a:hover {
+        color: #7B8FA7;
+        text-decoration: underline; }
+  @media (max-width: 991px) {
+    .main-container_nav {
+      display: none; } }
+
+.main-container_current-page {
+  padding: 4rem 0; }
 
 .main-container_find-business {
   background: #EEE; }
@@ -682,10 +720,10 @@ button {
   @media (max-width: 900px) {
     .main-container_find-business_content {
       height: auto;
-      text-align: center;
       flex-direction: column; }
       .main-container_find-business_content_container {
-        margin-top: 3rem; }
+        margin-top: 3rem;
+        text-align: center; }
       .main-container_find-business_content_crawlers {
         width: 100%;
         padding: 5rem 0; }
@@ -698,8 +736,7 @@ button {
       min-width: auto;
       padding: 2rem; }
       .main-container_find-business_content_crawlers_form .instrument-container .instrument .instrument_value {
-        margin: 10px;
-        justify-content: center; }
+        margin-bottom: 10px; }
         .main-container_find-business_content_crawlers_form .instrument-container .instrument .instrument_value_field {
           display: none; }
       .main-container_find-business_content_crawlers_form .instrument-container .instrument_select {
@@ -799,13 +836,19 @@ button {
         width: 26rem; }
       .main-container_invest-top_form > div:not(:last-child), .main-container_invest-bottom_form > div:not(:last-child) {
         margin-bottom: 20px; }
+      .main-container_invest-top_form_profit, .main-container_invest-top_form_price-from, .main-container_invest-top_form_price-for, .main-container_invest-bottom_form_profit, .main-container_invest-bottom_form_price-from, .main-container_invest-bottom_form_price-for {
+        min-width: 36rem; }
       .main-container_invest-top_form_submit, .main-container_invest-bottom_form_submit {
         align-self: normal;
         margin: 0 auto; } }
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     .main-container_invest-top .tabs_triggers_buttons_item, .main-container_invest-bottom .tabs_triggers_buttons_item {
       margin: 0;
-      font-size: 1.2rem; } }
+      font-size: 1.2rem; }
+    .main-container_invest-top_form, .main-container_invest-bottom_form {
+      padding: 0 2rem; }
+      .main-container_invest-top_form_profit, .main-container_invest-top_form_price-from, .main-container_invest-top_form_price-for, .main-container_invest-bottom_form_profit, .main-container_invest-bottom_form_price-from, .main-container_invest-bottom_form_price-for {
+        min-width: 100%; } }
 
 .main-container_tips {
   padding: 5rem 0; }
